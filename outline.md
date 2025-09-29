@@ -38,7 +38,7 @@ You'll get an inside look at the following game-changing developments:
 - **Complex attribute values** – support for nested objects and arrays that actually make sense
 - **User-facing OpenTelemetry Logging API** – giving developers a proper way to log with OTel
 
-But here's the kicker: these aren't isolated improvements.
+These aren't isolated improvements.
 They represent a coordinated effort to unify and modernize telemetry data, improve correlation across ALL signals, and enable richer observability experiences.
 
 We'll dive into the technical challenges, design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
@@ -84,4 +84,24 @@ There's nothing like a free meal, and every useless "It works" message is burnin
 Plus, it slows down your application.
 Morevoert, it adds noise to the captured telemetry.
 THIS is why we need better logging standards.
+
+## syntax
+
+So what does a proper log look like in OpenTelemetry? Let's talk about the Logs Data Model.
+
+In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
+
+- **Timestamp** – when it happened, obviously
+- **Observed Timestamp** – when it was actually captured, because clocks drift
+- **Trace Context** – the trace and span IDs for correlation magic
+- **Severity** – not just "INFO/WARN/ERROR" but proper severity levels
+- **Body** – the actual log message (can be structured!)
+- **Attributes** – key-value pairs for structured metadata
+- **EventName** – identifies the type of event being logged
+- **Resource** – who/what generated this log
+- **Instrumentation Scope** – which library/component created it
+
+This isn't just regular logging made more complicated.
+It's logs that actually integrate with your traces and metrics.
+It's logs that carry context. It's logs that make sense.
 
