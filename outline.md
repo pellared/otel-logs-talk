@@ -21,3 +21,25 @@ Disclaimer: I am not an English native speaker.
 But if something is not clear, don't blame my English.
 It simply means I have no idea whay I am talking about.
 
+## init()
+
+People usually talk about the past, present, and future. But honestly, who cares about the past?
+We're here to talk about what's happening NOW and what's coming NEXT.
+
+This presentation is about how OpenTelemetry Logs are driving a major shift across the entire OpenTelemetry ecosystem.
+We're not just talking about logs in isolation
+We're talking about how logs are becoming the catalyst for foundational changes that reshape how we think about telemetry as a whole.
+
+You'll get an inside look at the following game-changing developments:
+
+- **OpenTelemetry Events** – the recent addition that's redefining structured logging
+- **Expanded semantic conventions** – finally aligning with real-world logging use cases  
+- **Complex attribute values** – support for nested objects and arrays that actually make sense
+- **User-facing OpenTelemetry Logging API** – giving developers a proper way to log with OTel
+
+But here's the kicker: these aren't isolated improvements. They represent a coordinated effort to unify and modernize telemetry data, improve correlation across ALL signals, and enable richer observability experiences.
+
+We'll dive into the technical challenges, design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
+
+By the end of this talk, you'll understand why logs are no longer an afterthought, but the secret sauce for better trace-log correlation, more consistent metadata across signals, and more expressive data formats that reflect how we actually log in the real world.
+
