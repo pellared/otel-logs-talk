@@ -1,635 +1,634 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
+background: https://source.unsplash.com/1920x1080/?logs,data,technology
+title: OpenTelemetry Logs Driving a Major Shift
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply UnoCSS classes to the current slide
+  ## OpenTelemetry Logs: Events, Richer Data, and Smarter Semantics
+  How logs became the foundation for next-gen observability
 class: text-center
-# https://sli.dev/features/drawing
 drawings:
   persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 ---
 
-# Welcome to Slidev
+# OpenTelemetry Logs Driving a Major Shift
+## Events, Richer Data, and Smarter Semantics
 
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
+<div class="pt-12">
+  <span class="px-2 py-1 rounded cursor-pointer" hover:bg="white hover:bg-opacity-10">
+    From "Legacy Baggage" to "Secret Sauce" 🚀
+  </span>
 </div>
 
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
+<div class="abs-br m-6 flex gap-2">
+  <a href="https://github.com/pellared" target="_blank" alt="GitHub" title="Open in GitHub"
+    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+    <carbon-logo-github />
   </a>
 </div>
 
 <!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+Welcome to my talk about how OpenTelemetry logs evolved from the least mature signal to potentially the foundation of everything else.
 -->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc text-sm minDepth="1" maxDepth="2" />
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
 
 ---
 layout: center
 class: text-center
 ---
 
-# Learn More
+# whoami
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<div class="text-2xl text-left mx-auto max-w-3xl">
 
-<PoweredBySlidev mt-10 />
+🏠 **Kraków, Poland** - where pierogi are legendary and WiFi is surprisingly good
+
+�‍💻 **@pellared** on GitHub - probably pushing at 2 AM
+
+💼 **Software Engineer at Splunk** (a Cisco company) - paid to do open source!
+
+🔧 **OpenTelemetry Go** maintainer + **Logs** architect (since Nov 2023)
+
+� **3rd top OTel contributor** - not sure if impressive or I need better hobbies
+
+� **10 years of logs** - deciphering "something went wrong" messages
+
+</div>
+
+<div class="text-lg mt-8 opacity-70">
+  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
+  If unclear, blame my ideas, not my English! 😄
+</div>
+
+<!--
+Introduce yourself with humor and credibility. The disclaimer is endearing and sets expectations.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Who Cares About the Past?
+
+<div class="text-4xl font-bold text-orange-400 mb-8">
+  We're here for NOW and NEXT! 🚀
+</div>
+
+<div class="text-xl max-w-4xl mx-auto">
+  OpenTelemetry Logs are driving a <strong>major shift</strong> across the entire ecosystem.
+  
+  Not just logs in isolation — logs as the <strong>catalyst</strong> for foundational changes.
+</div>
+
+<!--
+Hook the audience immediately. Skip the past, focus on current excitement.
+-->
+
+---
+layout: default
+---
+
+# Game-Changing Developments
+
+<div class="text-lg space-y-4">
+
+✨ **OpenTelemetry Logs Data Model** — structured telemetry that actually makes sense
+
+🎯 **Complex attribute values** — nested objects across ALL signals  
+
+📚 **Semantic conventions** — finally standardizing how we name things
+
+⚡ **Events vs Log Records** — when structure matters most
+
+🌊 **Wide Events** — one log to rule them all
+
+🚀 **Enabled functionality** — performance + OS-native integration
+
+🔧 **User-facing Logging API** — developers finally get proper tools
+
+</div>
+
+<div class="mt-8 text-center text-2xl font-bold text-blue-400">
+  From "Legacy Baggage" → "Secret Sauce"
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# 🗑️ Trash Logs Hall of Fame
+
+<div class="text-6xl mb-8">🙋‍♂️</div>
+
+## Who has seen logs like this?
+
+<div class="text-2xl font-bold text-red-400 mb-4">
+  Keep your hands up!
+</div>
+
+<div class="text-lg opacity-75">
+  Don't worry, I won't judge...<br/>
+  We've ALL been there! 😅
+</div>
+
+<!--
+Interactive moment - get audience engagement early. Set the stage for the problem.
+-->
+
+---
+layout: default
+---
+
+# The Horror Show 😱
+
+```text
+[2025-09-10 14:22:01] INFO: It works
+[2025-09-10 14:22:02] INFO: Still works  
+[2025-09-10 14:22:03] INFO: Yep, still working
+[2025-09-10 14:23:44] ERROR: Failed
+[2025-09-10 14:25:10] DEBUG: User payload: {"user":"alice","password":"hunter2"}
+[2025-09-10 14:26:30] WARN: Something went wrong!!!
+StackTrace: java.lang.Exception: oh no
+at com.company.module.Class.method(Class.java:42)
+...
+LOGGING HERE ----------------------------------
+value=1
+LOGGING HERE ----------------------------------
+value=2
+```
+
+<div class="mt-6 grid grid-cols-3 gap-4 text-center">
+  <div class="text-red-400">💸 **Costs Money**</div>
+  <div class="text-yellow-400">🐌 **Slows Apps**</div>
+  <div class="text-blue-400">📢 **Creates Noise**</div>
+</div>
+
+---
+layout: center
+class: text-center  
+---
+
+# There's Nothing Like a Free Meal 🍽️
+
+<div class="text-3xl font-bold text-red-400 mb-8">
+  Every useless "It works" message<br/>
+  burns through your observability budget
+</div>
+
+<div class="text-xl">
+  <strong>THIS</strong> is why we need better logging standards!
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# OpenTelemetry Logs Data Model
+
+<div class="text-2xl mb-6 text-blue-400">
+  Not just strings with timestamps
+</div>
+
+<div class="text-lg space-y-2 max-w-2xl mx-auto text-left">
+  
+⏰ **Timestamp** + **Observed Timestamp** (clocks drift!)
+
+🔗 **Trace Context** (correlation magic)
+
+📊 **Severity** (proper levels, not just INFO/WARN/ERROR)  
+
+📝 **Body** (can be structured!)
+
+🏷️ **Attributes** (key-value metadata)
+
+🎯 **EventName** (event type identifier)
+
+📍 **Resource** + **Instrumentation Scope**
+
+</div>
+
+<div class="mt-8 text-xl font-bold text-green-400">
+  Logs that carry context. Logs that make sense! ✨
+</div>
+
+---
+layout: default
+---
+
+# A Proper Log Record
+
+```json {1-5|6-10|11-15|16-25}
+{
+  "Timestamp": "2023-11-15T09:15:20.250Z",
+  "ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
+  "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+  "SpanId": "c1d2e3f4a5b6c7d8",
+  "TraceFlags": 1,
+  "SeverityText": "ERROR",
+  "SeverityNumber": 17,
+  "Body": "Exception occurred while fetching user data",
+  "EventName": "database.connection.failed",
+  "Attributes": {
+    "exception.type": "java.sql.SQLTransientConnectionException",
+    "exception.message": "Connection timeout after 3000ms",
+    "user.id": "alice",
+    "db.operation": "select"
+  },
+  "Resource": {
+    "Attributes": {
+      "service.name": "user-service",
+      "service.version": "1.5.2", 
+      "deployment.environment": "staging"
+    }
+  }
+}
+```
+
+---
+layout: center
+---
+
+# Complex Data Types 📊
+
+## Beyond Plain Strings
+
+<v-clicks>
+
+- **ArrayValue**: `["error", "timeout", "retry"]`
+- **KeyValueList**: Nested maps within maps  
+- **BytesValue**: Binary data in logs
+- **AnyValue**: Dynamic type system
+
+</v-clicks>
+
+<div v-click class="mt-8 text-lg">
+  <span class="text-orange-500">💡</span> Make your attributes as rich as your data!
+</div>
+
+<style>
+h1 {
+  background: linear-gradient(45deg, #f39800, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+
+---
+layout: default
+---
+
+# Complex Values In Action 🚀
+
+```json {1-4|5-10|11-16|17-22}
+{
+  "event": "user.login",
+  "result": "success",
+  "tags": ["important", "security", "audit"],
+  "retry_attempts": [
+    {"timestamp": "2023-11-15T09:15:15.100Z", "result": "timeout"},
+    {"timestamp": "2023-11-15T09:15:18.200Z", "result": "success"}
+  ],
+  "user_permissions": {
+    "read": true,
+    "write": false,
+    "admin": false
+  },
+  "session_metadata": {
+    "ip": "192.168.1.100",
+    "user_agent": "Mozilla/5.0...", 
+    "geo": {
+      "country": "US",
+      "city": "San Francisco"
+    }
+  }
+}
+```
+
+<div class="text-center mt-6 text-lg">
+  <span class="text-green-400">✨</span> Rich, structured, meaningful data!
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Semantic Conventions 🧭
+
+## Making Logs Searchable & Comparable
+
+<div class="text-2xl font-bold text-blue-400 mb-6">
+  Same semantics = Better queries
+</div>
+
+<div class="grid grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+  
+<div>
+
+### HTTP Requests 🌐
+- `http.request.method`
+- `http.response.status_code`  
+- `url.full`
+- `user_agent.original`
+
+</div>
+
+<div>
+
+### Database Operations 🗄️
+- `db.system` (postgresql, mysql)
+- `db.statement`
+- `db.operation.name`
+- `server.address`
+
+</div>
+
+</div>
+
+<div class="mt-8 text-lg text-green-400">
+  <strong>One convention, infinite possibilities!</strong> 🚀
+</div>
+
+---
+layout: center
+---
+
+# Events vs Log Records 🎭
+
+<div class="text-2xl mb-8 text-center">
+  <span class="text-blue-400">Event</span> or <span class="text-green-400">Log Record</span>?<br/>
+  <span class="text-gray-400 text-lg">Plot twist: They're the same!</span>
+</div>
+
+<div class="grid grid-cols-2 gap-8 text-lg">
+
+<div class="text-center">
+
+### Event 🎉
+```json
+{
+  "EventName": "user.login",
+  "Body": "User logged in successfully"
+}
+```
+
+**When something happens**
+
+</div>
+
+<div class="text-center">
+
+### Log Record 📝
+```json
+{
+  "SeverityText": "INFO", 
+  "Body": "User logged in successfully"
+}
+```
+
+**When you want to remember it**
+
+</div>
+
+</div>
+
+<div class="text-center mt-8 text-xl text-yellow-400">
+  Same data model, different perspectives! 🤝
+</div>
+
+---
+layout: center
+---
+
+# What Gets Enabled? 🔥
+
+## The Magic Happens Here
+
+<v-clicks>
+
+<div class="text-xl space-y-4">
+
+🔍 **Cross-service tracing** - Follow requests across microservices
+
+📊 **Rich dashboards** - Visual metrics that actually make sense  
+
+🚨 **Smart alerting** - Context-aware notifications
+
+🐛 **Faster debugging** - Jump from log → trace → problem
+
+⚡ **Performance insights** - See the full picture, not just fragments
+
+🤖 **AI/ML ready** - Structured data feeds better into models
+
+</div>
+
+</v-clicks>
+
+<div v-click class="mt-8 text-center text-xl text-green-400">
+  **This is why we do the hard work!** ✨
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Wide Events 🌊
+
+## Jeremy Morrell's Big Idea
+
+<div class="text-xl mb-8 text-blue-400">
+  Capture everything in ONE event instead of scattered logs
+</div>
+
+<div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+
+<div>
+
+### Before: 😵‍💫
+```text
+[INFO] Request started
+[DEBUG] Validating input  
+[DEBUG] Calling database
+[INFO] Response sent
+[ERROR] Cache miss
+```
+
+</div>
+
+<div>
+
+### After: 🎯
+```json
+{
+  "event": "http.request.complete",
+  "duration_ms": 245,
+  "cache_hit": false,
+  "validation_errors": 0,
+  "db_calls": 3,
+  "response_size": 1024
+}
+```
+
+</div>
+
+</div>
+
+<div class="mt-8 text-lg text-green-400">
+  **One event to rule them all!** 💍
+</div>
+
+---
+layout: center
+---
+
+# What Gets Enabled? 🔥
+
+## The Magic Happens Here
+
+<v-clicks>
+
+<div class="text-xl space-y-4">
+
+🔍 **Cross-service tracing** - Follow requests across microservices
+
+📊 **Rich dashboards** - Visual metrics that actually make sense  
+
+🚨 **Smart alerting** - Context-aware notifications
+
+🐛 **Faster debugging** - Jump from log → trace → problem
+
+⚡ **Performance insights** - See the full picture, not just fragments
+
+🤖 **AI/ML ready** - Structured data feeds better into models
+
+</div>
+
+</v-clicks>
+
+<div v-click class="mt-8 text-center text-xl text-green-400">
+  **This is why we do the hard work!** ✨
+</div>
+
+---
+layout: default
+---
+
+# User-Facing Logging APIs 🛠️
+
+## Making It Easy for Developers
+
+```go {1-5|6-10|11-15|16-20}
+// The olog library - Zero-alloc, structured logging
+import "go.opentelemetry.io/contrib/bridges/olog"
+
+// Simple structured logging
+olog.InfoContext(ctx, "User operation completed",
+    "user.id", userID,
+    "operation", "update_profile",
+    "duration_ms", duration)
+
+// Event-style logging  
+olog.WarnContext(ctx, "Cache miss occurred",
+    "cache.key", cacheKey,
+    "fallback", "database_query")
+
+// Rich context flows naturally
+olog.ErrorContext(ctx, "Payment processing failed",
+    "transaction.id", txnID,
+    "amount", amount,
+    "error", err.Error())
+```
+
+<div class="text-center mt-6 text-lg text-blue-400">
+  **Clean code, structured output!** 🎯
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# TL;DR 📝
+
+<div class="text-2xl mb-8 text-blue-400">
+  OpenTelemetry Logs: The Missing Piece
+</div>
+
+<div class="grid grid-cols-2 gap-8 text-lg max-w-4xl mx-auto text-left">
+
+<div>
+
+### What We Learned 🧠
+- Logs are more than strings
+- Structure unlocks superpowers  
+- Semantic conventions = consistency
+- Events = structured logs
+- Wide events = fewer, richer logs
+
+</div>
+
+<div>
+
+### What You Get 🎁
+- Cross-service correlation
+- Better dashboards & alerts
+- Faster debugging
+- ML/AI ready data
+- Future-proof observability
+
+</div>
+
+</div>
+
+<div class="mt-8 text-xl text-green-400">
+  **Ready to level up your logging game?** 🚀
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Questions? 🤔
+
+<div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
+
+<div class="text-2xl mb-6 text-blue-400">
+  Let's chat about logs, traces, and everything observability!
+</div>
+
+<div class="text-lg space-y-2">
+  
+**Twitter/X**: @ropajak_robert  
+**Email**: robert@example.com  
+**LinkedIn**: /in/robertropajak
+
+</div>
+
+<div class="mt-8 text-xl text-green-400">
+  Don't let your logs be trash! 🗑️➡️✨
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Thank You! 🙏
+
+<div class="text-6xl mb-8">🎉</div>
+
+<div class="text-2xl mb-6 text-blue-400">
+  May your logs be structured<br/>
+  and your traces be complete!
+</div>
+
+<div class="mt-8 text-xl">
+  <span class="text-red-500">❤️</span> 
+  <span class="text-blue-400">OpenTelemetry</span>
+  <span class="text-red-500">❤️</span>
+</div>
