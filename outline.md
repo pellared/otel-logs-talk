@@ -255,3 +255,34 @@ Storage costs, processing overhead, the existential crisis of "am I doing observ
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial tag to your metric.
 And always remember, there is no silver bulet.
+
+## enabled
+
+Now, let's talk about performance.
+Because what good is amazing structured logging if it kills your application's performance?
+
+OpenTelemetry recently added Enabled functionality.
+It is a way to check if logging is actually needed before you do all the expensive work of building log records.
+Think of it as "measure twice, cut once" but for telemetry.
+
+The idea is simple: before you spend CPU cycles formatting messages, serializing complex objects, or building those beautiful structured attributes, you ask: "Hey, is anyone actually going to process this log?".
+If the answer is no, you skip all the work.
+
+But here's where it gets really exciting.
+This Enabled functionality doesn't just make the OpenTelemetry Logs faster.
+It opens the door to hooking into extremely performant, OS-native tracing systems like:
+
+- **Linux user_events** – kernel-level event tracing that's blazingly fast
+- **Windows ETW (Event Tracing for Windows)** – Microsoft's high-performance event system
+
+These systems are so fast they make regular logging look like writing with a quill pen.
+We're talking about nanosecond-level overhead when events are disabled.
+
+If you want the deep dive into this rabbit hole, check out the presentation by Cijo Thomas & Chris Gray: "Beyond OTLP: Unlocking the Potential of OS-native Tracing" (https://www.youtube.com/watch?v=Ej-z2WwWWak).
+Fair warning: after watching it, you might start questioning everything you thought you knew about telemetry performance.
+
+The bottom line? OpenTelemetry logs are not just getting smarter and more structured.
+They're getting faster too.
+And that's the kind of evolution that makes everyone happy: developers get better observability, ops teams get cleaner data, and performance engineers don't have to sacrifice telemetry on the altar of latency.
+
+
