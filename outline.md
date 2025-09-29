@@ -105,3 +105,32 @@ This isn't just regular logging made more complicated.
 It's logs that actually integrate with your traces and metrics.
 It's logs that carry context. It's logs that make sense.
 
+Here is an example:
+
+```json
+{
+  "Timestamp": "2023-11-15T09:15:20.250Z",
+  "ObservedTimestamp": "2023-11-15T09:15:20.251Z",
+  "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+  "SpanId": "c1d2e3f4a5b6c7d8",
+  "TraceFlags": 1,
+  "SeverityText": "ERROR",
+  "SeverityNumber": 17,
+  "Body": "Exception occurred while fetching user data",
+  "Attributes": {
+    "exception.type": "java.sql.SQLTransientConnectionException",
+    "exception.message": "Connection is not available, request timed out after 3000ms",
+    "exception.stacktrace": "java.sql.SQLTransientConnectionException: Connection is not available, request timed out after 3000ms.\\n\\tat com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)\\n\\tat com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)\\n\\tat com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)\\n\\tat com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)\\n\\tat org.example.user.repository.UserRepository.findUserById(UserRepository.java:42)\\n\\tat org.example.user.service.UserService.getUser(UserService.java:25)\\n\\tat org.example.user.controller.UserController.getUser(UserController.java:15)\\n\\t... 42 more"
+  },
+  "Resource": {
+    "Attributes": {
+      "service.name": "user-service",
+      "service.version": "1.5.2",
+      "deployment.environment": "staging"
+    }
+  },
+  "InstrumentationScope": {
+    "Name": "org.example.user.controller.UserController"
+  }
+}
+```
