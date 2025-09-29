@@ -155,4 +155,5 @@ This isn't just a logs feature.
 It's like getting a free upgrade to business class for your entire observability stack.
 Imagine spans with complex attributes that can hold entire request/response objects.
 We're talking about a unified approach to complex data across all telemetry signals.
+Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breakingp?" discussions.
 It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
