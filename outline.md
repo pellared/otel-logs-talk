@@ -157,3 +157,69 @@ Imagine spans with complex attributes that can hold entire request/response obje
 We're talking about a unified approach to complex data across all telemetry signals.
 Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breakingp?" discussions.
 It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
+
+## semantics
+
+We've got structure and complex data.
+But how do we make sure everybody calls things the *same* way so we can actually search, correlate, and NOT cry when we merge data from five services written by five teams?
+That's where **semantic conventions** come in.
+
+Think of them as a giant shared dictionary of attribute names that all SDKs, libraries, and instrumentation agree to use.
+Without them, we'd have `userId`, `user_id`, `uid`, `userid`, and `id` all meaning the same thing.
+
+The **semantic conventions registry** is organized into groups:
+
+**Cross-cutting attributes** – apply across many signals and use cases:
+- `code.line_number` – because knowing where it broke is half the battle
+- `exception.message` – the actual error
+- `service.name`, `deployment.environment` – so you know if you broke production or just staging
+
+**Signal-specific attributes** – e.g. here are ones that make sense only for log records:
+- `log.record.uid` – stable unique ID for the log record
+- `log.iostream` – stdout, stderr, or that custom log stream you regret creating
+
+**Domain-specific attributes** – focused on protocols, systems, and shiny new tech:
+- `http.method`, `http.request.body.size` – web stuff
+- `db.system`, `db.statement` – database things
+- `gen_ai.provider.name`, `gen_ai.response.id` – yes, even AI has semantics now
+
+## event vs log
+
+OpenTelemetry distinguishes between **Log Records** and **Event Records**.
+
+Log Record is for general-purpose logging, human-readable, "something happened".
+Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened".
+
+An Event Record is a Log Record with an event name and a well-known structure.
+
+Regular log record:
+
+```json
+{
+  "Body": "User login failed for alice",
+  "Attributes": {
+    "user.id": "alice",
+    "error": "bad password"
+  }
+}
+```
+
+Event record:
+
+```json
+{
+  "EventName": "user.login.failed", 
+  "Attributes": {
+    "user.id": "alice",
+    "auth.method": "password",
+    "error.type": "invalid_credentials"
+  }
+}
+```
+
+Why the distinction?
+Because not every line your app spits out deserves to be treated like a meaningful business event.
+Events are intentional, instrumented with purpose, not sprinkled around like debugging salt.
+
+This matters because platforms can now treat Events as first-class citizens.
+You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
