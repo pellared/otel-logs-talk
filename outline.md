@@ -33,9 +33,12 @@ We're talking about how logs are becoming the catalyst for foundational changes 
 
 You'll get an inside look at the following game-changing developments:
 
-- **OpenTelemetry Events** – the recent addition that's redefining structured logging
-- **Expanded semantic conventions** – finally aligning with real-world logging use cases  
-- **Complex attribute values** – support for nested objects and arrays that actually make sense
+- **OpenTelemetry Logs Data Model** – structured telemetry that actually makes sense
+- **Complex attribute values** – support for nested objects and arrays across all signals
+- **Semantic conventions** – finally standardizing how we name things
+- **Events vs Log Records** – when to use structured events vs regular logs
+- **Wide Events** – deriving spans and metrics from rich log events
+- **Enabled functionality** – performance optimization and OS-native integration
 - **User-facing OpenTelemetry Logging API** – giving developers a proper way to log with OTel
 
 These aren't isolated improvements.
