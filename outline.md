@@ -134,3 +134,25 @@ Here is an example:
   }
 }
 ```
+
+## complex data
+
+The **Body** and **Attributes** fields in OpenTelemetry logs can contain complex data structures.
+Not just simple strings and numbers that make you cry at 3 AM.
+
+You can have:
+- **Nested objects** with multiple levels of structure (like a Russian doll, but useful)
+- **Arrays** of values or objects (finally, proper lists!)  
+- **Mixed data types** within the same attribute (chaos, but organized chaos)
+
+This means you can log entire payloads, complex error objects, or structured events without flattening them into strings.
+Remember the dark days of parsing "user=alice,role=admin,lastLogin=2023-01-01"?
+Yeah, we don't talk about those anymore.
+No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
+
+But wait, there's more! These **complex values are coming to ALL OpenTelemetry signals**: traces, metrics, and profiles.
+This isn't just a logs feature.
+It's like getting a free upgrade to business class for your entire observability stack.
+Imagine spans with complex attributes that can hold entire request/response objects.
+We're talking about a unified approach to complex data across all telemetry signals.
+It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
