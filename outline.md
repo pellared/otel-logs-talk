@@ -367,11 +367,19 @@ There's no silver bullet.
 Storage costs, processing overhead, and existential crises about "am I doing observability wrong?" are still real.
 But at least now you have options that don't involve archaeological digs through your own log files.
 
-**My Personal Confession:**
-I was doing wide events in 2019 because I only had a good logs backend.
-Sometimes constraints breed innovation. Sometimes you just get lucky.
-
 Remember: logs are no longer an afterthought.
 They're the secret sauce for better correlation, richer context, and fewer 3 AM debugging sessions where you stare at "something went wrong" and question your life choices.
 
 Now go forth and log responsibly!
+
+## q&a
+
+Alright, that was a lot of information about logs, events, complex data.
+I apparently spend too much time talking.
+
+Time for questions! 
+
+Don't be shy – I promise I won't judge your logging practices too harshly.
+After all, we've all been the person who wrote `console.log("HERE")` and forgot to remove it before deploying to production.
+
+Fire away!
