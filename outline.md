@@ -370,8 +370,6 @@ But at least now you have options that don't involve archaeological digs through
 Remember: logs are no longer an afterthought.
 They're the secret sauce for better correlation, richer context, and fewer 3 AM debugging sessions where you stare at "something went wrong" and question your life choices.
 
-Now go forth and log responsibly!
-
 ## q&a
 
 Alright, that was a lot of information about logs, events, complex data.
@@ -383,3 +381,23 @@ Don't be shy – I promise I won't judge your logging practices too harshly.
 After all, we've all been the person who wrote `console.log("HERE")` and forgot to remove it before deploying to production.
 
 Fire away!
+
+## thanks
+
+Thank you all for listening.
+I hope you learned something useful today, or at least got a few laughs.
+
+Special thanks to:
+
+- **Liudmila Molkova, Trask Stalnaker, Ted Young, Austin Parker, Tyler Yahn, Cijo Thomas** who continously help with all the logs work
+- **OpenTelemetry Go SIG** who give me a lot of feedback about the logs implementation in OTel Go
+- **The entire OpenTelemetry community** for reviewing my pull requests and providing a lot of feedback
+- **Splunk** for paying me to contribute to open source (best job ever!)
+- **Everyone who raised their hands** during the "trash logs" section; your honesty is appreciated
+
+And finally, thank you to **all the developers who've ever written "LOGGING HERE" with dashes**.
+Without you, I wouldn't have a career in observability.
+
+You can find me on GitHub as **@pellared** and on CNCF Slack as **Robert Pajak**, if you have questions that didn't fit into today's talk.
+
+Now go forth and log responsibly!
