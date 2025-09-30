@@ -50,26 +50,6 @@ By the end of this talk, you'll understand why logs are no longer an afterthough
 
 ## trash logs
 
-```
-[2025-09-10 14:22:01] INFO: It works
-[2025-09-10 14:22:02] INFO: Still works
-[2025-09-10 14:22:03] INFO: Yep, still working
-[2025-09-10 14:23:44] ERROR: Failed
-[2025-09-10 14:25:10] DEBUG: User payload: {"user":"alice","password":"hunter2"}
-[2025-09-10 14:26:30] WARN: Something went wrong!!!
-StackTrace: java.lang.Exception: oh no
-at com.company.module.Class.method(Class.java:42)
-at com.company.module.Other.method(Other.java:99)
-at com.company...
-(more 800 lines)
-LOGGING HERE ----------------------------------
-value=1
-LOGGING HERE ----------------------------------
-value=2
-LOGGING HERE ----------------------------------
-value=3
-```
-
 Show hands: Who has seen logs like this?
 Keep your hands up!
 Don't worry, I won't judge you.
@@ -107,36 +87,6 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 This isn't just regular logging made more complicated.
 It's logs that actually integrate with your traces and metrics.
 It's logs that carry context. It's logs that make sense.
-
-Here is an example:
-
-```json
-{
-  "Timestamp": "2023-11-15T09:15:20.250Z",
-  "ObservedTimestamp": "2023-11-15T09:15:20.251Z",
-  "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
-  "SpanId": "c1d2e3f4a5b6c7d8",
-  "TraceFlags": 1,
-  "SeverityText": "ERROR",
-  "SeverityNumber": 17,
-  "Body": "Exception occurred while fetching user data",
-  "Attributes": {
-    "exception.type": "java.sql.SQLTransientConnectionException",
-    "exception.message": "Connection is not available, request timed out after 3000ms",
-    "exception.stacktrace": "java.sql.SQLTransientConnectionException: Connection is not available, request timed out after 3000ms.\\n\\tat com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:696)\\n\\tat com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:197)\\n\\tat com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:162)\\n\\tat com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:128)\\n\\tat org.example.user.repository.UserRepository.findUserById(UserRepository.java:42)\\n\\tat org.example.user.service.UserService.getUser(UserService.java:25)\\n\\tat org.example.user.controller.UserController.getUser(UserController.java:15)\\n\\t... 42 more"
-  },
-  "Resource": {
-    "Attributes": {
-      "service.name": "user-service",
-      "service.version": "1.5.2",
-      "deployment.environment": "staging"
-    }
-  },
-  "InstrumentationScope": {
-    "Name": "org.example.user.controller.UserController"
-  }
-}
-```
 
 ## complex data
 

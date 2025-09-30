@@ -34,31 +34,27 @@ layout: center
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
-  <v-clicks>
+<v-clicks>
 
-  🏠 Kraków, Poland
+🏠 Kraków, Poland
 
-  ‍💻 @pellared on GitHub
+‍💻 @pellared on GitHub
 
-  💼 Software Engineer at Splunk a Cisco company
+💼 Software Engineer at Splunk a Cisco company
 
-  🔧 OpenTelemetry Go maintainer
+🔧 OpenTelemetry Go maintainer
 
-  🌟 3rd top OTel contributor
+🌟 3rd top OTel contributor
 
-  🌴 Contributing to OTel Logs since Nov 2023
+🌴 Contributing to OTel Logs since Nov 2023
 
-  <div class="text-lg mt-8 opacity-80">
-    <strong>Disclaimer:</strong> Non-native English speaker.<br/>
-  </div>
-
-  </v-clicks>
-
+<div class="text-lg mt-8 opacity-80">
+  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
 </div>
 
-<!--
-Introduce yourself with humor and credibility. The disclaimer is endearing and sets expectations.
--->
+</v-clicks>
+
+</div>
 
 ---
 layout: center
@@ -85,23 +81,23 @@ layout: center
 
 <div class="text-lg space-y-4">
 
-  <v-clicks>
+<v-clicks>
 
-  ✨ OpenTelemetry Logs Data Model
+✨ OpenTelemetry Logs Data Model
 
-  🎯 Complex attribute values
+🎯 Complex attribute values
 
-  📚 Semantic conventions
+📚 Semantic conventions
 
-  ⚡  Events vs Log Records
+⚡  Events vs Log Records
 
-  🌊 Wide Events
+🌊 Wide Events
 
-  🚀 Enabled functionality
+🚀 Enabled functionality
 
-  🔧 User-facing Logging API
+🔧 User-facing Logging API
 
-  </v-clicks>
+</v-clicks>
 
 </div>
 
@@ -140,22 +136,11 @@ value=3
 Who has seen logs like this? 🙋‍♂️
 </div>
 
-
 ---
-layout: center
-class: text-center  
+layout: statement
 ---
 
-# There's Nothing Like a Free Meal 🍽️
-
-<div class="text-3xl font-bold text-red-400 mb-8">
-  Every useless "It works" message<br/>
-  burns through your observability budget
-</div>
-
-<div class="text-xl">
-  <strong>THIS</strong> is why we need better logging standards!
-</div>
+# THIS is why we need better logging standards
 
 ---
 layout: center
@@ -164,62 +149,61 @@ class: text-center
 
 # OpenTelemetry Logs Data Model
 
-<div class="text-2xl mb-6 text-blue-400">
-  Not just strings with timestamps
+<div class="text-lg space-y-4 text-left">
+<v-clicks>
+
+⏰ Timestamp
+
+🔗 Trace Context
+
+📊 Severity
+
+📝 Body
+
+🏷️ Attributes
+
+🎯 Event Name
+
+📍 Resource & Instrumentation Scope
+
+<div class="text-xl mb-6 text-blue-400">
+  Not just strings with timestamps.
 </div>
-
-<div class="text-lg space-y-2 max-w-2xl mx-auto text-left">
-  
-⏰ **Timestamp** + **Observed Timestamp** (clocks drift!)
-
-🔗 **Trace Context** (correlation magic)
-
-📊 **Severity** (proper levels, not just INFO/WARN/ERROR)  
-
-📝 **Body** (can be structured!)
-
-🏷️ **Attributes** (key-value metadata)
-
-🎯 **EventName** (event type identifier)
-
-📍 **Resource** + **Instrumentation Scope**
-
-</div>
-
 <div class="mt-8 text-xl font-bold text-green-400">
   Logs that carry context. Logs that make sense! ✨
+</div>
+
+</v-clicks>
 </div>
 
 ---
 layout: default
 ---
 
-# A Proper Log Record
+# Log Record
 
-```json {1-5|6-10|11-15|16-25}
-{
-  "Timestamp": "2023-11-15T09:15:20.250Z",
-  "ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
-  "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
-  "SpanId": "c1d2e3f4a5b6c7d8",
-  "TraceFlags": 1,
-  "SeverityText": "ERROR",
-  "SeverityNumber": 17,
-  "Body": "Exception occurred while fetching user data",
-  "EventName": "database.connection.failed",
-  "Attributes": {
-    "exception.type": "java.sql.SQLTransientConnectionException",
-    "exception.message": "Connection timeout after 3000ms",
-    "user.id": "alice",
-    "db.operation": "select"
-  },
-  "Resource": {
-    "Attributes": {
-      "service.name": "user-service",
-      "service.version": "1.5.2", 
-      "deployment.environment": "staging"
-    }
-  }
+```json {1-2|3-5|6-7|8|9-14|15-19|20-22}
+"Timestamp": "2023-11-15T09:15:20.250Z",
+"ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
+"TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
+"SpanId": "c1d2e3f4a5b6c7d8",
+"TraceFlags": 1,
+"SeverityText": "ERROR",
+"SeverityNumber": 17,
+"Body": "Exception occurred while fetching user data",
+"Attributes": {
+  "exception.type": "java.sql.SQLTransientConnectionException",
+  "exception.message": "Connection timeout after 3000ms",
+  "user.id": "alice",
+  "db.operation": "select"
+},
+"Resource": {
+  "service.name": "user-service",
+  "service.version": "1.5.2", 
+  "deployment.environment": "staging"
+},
+"InstrumentationScope": {
+  "Name": "org.example.user.controller.UserController"
 }
 ```
 
