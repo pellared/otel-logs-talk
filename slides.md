@@ -1,27 +1,24 @@
 ---
-theme: seriph
-background: https://source.unsplash.com/1920x1080/?logs,data,technology
+theme: default
 title: OpenTelemetry Logs Driving a Major Shift
 info: |
   ## OpenTelemetry Logs: Events, Richer Data, and Smarter Semantics
   How logs became the foundation for next-gen observability
 class: text-center
-drawings:
-  persist: false
 transition: slide-left
 mdc: true
 ---
 
 # OpenTelemetry Logs Driving a Major Shift
+
 ## Events, Richer Data, and Smarter Semantics
 
 <div class="pt-12">
-  <span class="px-2 py-1 rounded cursor-pointer" hover:bg="white hover:bg-opacity-10">
-    From "Legacy Baggage" to "Secret Sauce" 🚀
-  </span>
+  by Robert Pająk
 </div>
 
-<div class="abs-br m-6 flex gap-2">
+<div>
+  pellared @
   <a href="https://github.com/pellared" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
@@ -41,23 +38,26 @@ class: text-center
 
 <div class="text-2xl text-left mx-auto max-w-3xl">
 
-🏠 **Kraków, Poland** - where pierogi are legendary and WiFi is surprisingly good
+  <v-clicks>
 
-�‍💻 **@pellared** on GitHub - probably pushing at 2 AM
+  🏠 **Kraków, Poland**
 
-💼 **Software Engineer at Splunk** (a Cisco company) - paid to do open source!
+  ‍💻 **@pellared** on GitHub
 
-🔧 **OpenTelemetry Go** maintainer + **Logs** architect (since Nov 2023)
+  💼 **Software Engineer at Splunk** a Cisco company
 
-� **3rd top OTel contributor** - not sure if impressive or I need better hobbies
+  🔧 **OpenTelemetry Go** maintainer
 
-� **10 years of logs** - deciphering "something went wrong" messages
+  🌟 **3rd top OTel contributor** 
 
-</div>
+  🌴 Contributing to **OTel Logs** since Nov 2023
 
-<div class="text-lg mt-8 opacity-70">
-  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
-  If unclear, blame my ideas, not my English! 😄
+  <div class="text-lg mt-8 opacity-80">
+    <strong>Disclaimer:</strong> Non-native English speaker.<br/>
+  </div>
+
+  </v-clicks>
+
 </div>
 
 <!--
@@ -99,7 +99,7 @@ layout: default
 
 📚 **Semantic conventions** — finally standardizing how we name things
 
-⚡ **Events vs Log Records** — when structure matters most
+⚡  — when structure**Events vs Log Records** matters most
 
 🌊 **Wide Events** — one log to rule them all
 
