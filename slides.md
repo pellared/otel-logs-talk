@@ -61,9 +61,7 @@ layout: center
 class: text-center
 ---
 
-# init()
-
-<div class="text-2xl text-left mx-auto">
+<div class="text-5xl text-left mx-auto space-y-18">
 
 <span v-click.hide>🕰️ Past</span>
 
@@ -77,9 +75,9 @@ class: text-center
 layout: center
 ---
 
-# Game-Changing Developments
+# init()
 
-<div class="text-lg space-y-4">
+<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
 <v-clicks>
 
@@ -132,7 +130,7 @@ value=3
 
 </div>
 
-<div class="text-xl">
+<div class="text-2xl">
 Who has seen logs like this? 🙋‍♂️
 </div>
 
@@ -149,7 +147,7 @@ class: text-center
 
 # OpenTelemetry Logs Data Model
 
-<div class="text-lg space-y-4 text-left">
+<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
 ⏰ Timestamp
