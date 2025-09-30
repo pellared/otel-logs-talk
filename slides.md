@@ -1,9 +1,6 @@
 ---
 theme: default
 title: OpenTelemetry Logs Driving a Major Shift
-info: |
-  ## OpenTelemetry Logs: Events, Richer Data, and Smarter Semantics
-  How logs became the foundation for next-gen observability
 class: text-center
 transition: slide-left
 mdc: true
@@ -65,11 +62,14 @@ Introduce yourself with humor and credibility. The disclaimer is endearing and s
 
 ---
 layout: center
+class: text-center
 ---
 
-<div class="text-4xl text-left mx-auto space-y-12">
+# init()
 
-🕰️ Past
+<div class="text-2xl text-left mx-auto">
+
+<span v-click.hide>🕰️ Past</span>
 
 📍 Present
 
@@ -110,52 +110,36 @@ layout: center
 class: text-center
 ---
 
-# 🗑️ Trash Logs Hall of Fame
+# trash logs
 
-<div class="text-6xl mb-8">🙋‍♂️</div>
+<div class="text-left">
 
-## Who has seen logs like this?
-
-<div class="text-2xl font-bold text-red-400 mb-4">
-  Keep your hands up!
-</div>
-
-<div class="text-lg opacity-75">
-  Don't worry, I won't judge...<br/>
-  We've ALL been there! 😅
-</div>
-
-<!--
-Interactive moment - get audience engagement early. Set the stage for the problem.
--->
-
----
-layout: default
----
-
-# The Horror Show 😱
-
-```text
+```log
 [2025-09-10 14:22:01] INFO: It works
-[2025-09-10 14:22:02] INFO: Still works  
+[2025-09-10 14:22:02] INFO: Still works
 [2025-09-10 14:22:03] INFO: Yep, still working
 [2025-09-10 14:23:44] ERROR: Failed
 [2025-09-10 14:25:10] DEBUG: User payload: {"user":"alice","password":"hunter2"}
 [2025-09-10 14:26:30] WARN: Something went wrong!!!
 StackTrace: java.lang.Exception: oh no
 at com.company.module.Class.method(Class.java:42)
-...
+at com.company.module.Other.method(Other.java:99)
+at com.company...
+(more 800 lines)
 LOGGING HERE ----------------------------------
 value=1
 LOGGING HERE ----------------------------------
 value=2
+LOGGING HERE ----------------------------------
+value=3
 ```
 
-<div class="mt-6 grid grid-cols-3 gap-4 text-center">
-  <div class="text-red-400">💸 **Costs Money**</div>
-  <div class="text-yellow-400">🐌 **Slows Apps**</div>
-  <div class="text-blue-400">📢 **Creates Noise**</div>
 </div>
+
+<div class="text-xl">
+Who has seen logs like this? 🙋‍♂️
+</div>
+
 
 ---
 layout: center
