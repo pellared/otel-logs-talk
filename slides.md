@@ -31,26 +31,25 @@ Welcome to my talk about how OpenTelemetry logs evolved from the least mature si
 
 ---
 layout: center
-class: text-center
 ---
 
 # whoami
 
-<div class="text-2xl text-left mx-auto max-w-3xl">
+<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
   <v-clicks>
 
-  🏠 **Kraków, Poland**
+  🏠 Kraków, Poland
 
-  ‍💻 **@pellared** on GitHub
+  ‍💻 @pellared on GitHub
 
-  💼 **Software Engineer at Splunk** a Cisco company
+  💼 Software Engineer at Splunk a Cisco company
 
-  🔧 **OpenTelemetry Go** maintainer
+  🔧 OpenTelemetry Go maintainer
 
-  🌟 **3rd top OTel contributor** 
+  🌟 3rd top OTel contributor
 
-  🌴 Contributing to **OTel Logs** since Nov 2023
+  🌴 Contributing to OTel Logs since Nov 2023
 
   <div class="text-lg mt-8 opacity-80">
     <strong>Disclaimer:</strong> Non-native English speaker.<br/>
@@ -66,51 +65,44 @@ Introduce yourself with humor and credibility. The disclaimer is endearing and s
 
 ---
 layout: center
-class: text-center
 ---
 
-# Who Cares About the Past?
+<div class="text-4xl text-left mx-auto space-y-12">
 
-<div class="text-4xl font-bold text-orange-400 mb-8">
-  We're here for NOW and NEXT! 🚀
+🕰️ Past
+
+📍 Present
+
+🚀 Future
+
 </div>
-
-<div class="text-xl max-w-4xl mx-auto">
-  OpenTelemetry Logs are driving a <strong>major shift</strong> across the entire ecosystem.
-  
-  Not just logs in isolation — logs as the <strong>catalyst</strong> for foundational changes.
-</div>
-
-<!--
-Hook the audience immediately. Skip the past, focus on current excitement.
--->
 
 ---
-layout: default
+layout: center
 ---
 
 # Game-Changing Developments
 
 <div class="text-lg space-y-4">
 
-✨ **OpenTelemetry Logs Data Model** — structured telemetry that actually makes sense
+  <v-clicks>
 
-🎯 **Complex attribute values** — nested objects across ALL signals  
+  ✨ OpenTelemetry Logs Data Model
 
-📚 **Semantic conventions** — finally standardizing how we name things
+  🎯 Complex attribute values
 
-⚡  — when structure**Events vs Log Records** matters most
+  📚 Semantic conventions
 
-🌊 **Wide Events** — one log to rule them all
+  ⚡  Events vs Log Records
 
-🚀 **Enabled functionality** — performance + OS-native integration
+  🌊 Wide Events
 
-🔧 **User-facing Logging API** — developers finally get proper tools
+  🚀 Enabled functionality
 
-</div>
+  🔧 User-facing Logging API
 
-<div class="mt-8 text-center text-2xl font-bold text-blue-400">
-  From "Legacy Baggage" → "Secret Sauce"
+  </v-clicks>
+
 </div>
 
 ---
