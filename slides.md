@@ -376,53 +376,47 @@ layout: center
 </div>
 
 ---
-layout: center
+layout: statement
 ---
 
-# Wide Events 🌊
+# spans & metrics from events
 
-## Jeremy Morrell's Big Idea
+<v-clicks>
 
-<div class="text-xl mb-8 text-blue-400">
-  Capture everything in ONE event instead of scattered logs
+<div class="text-left">
+
+```sh
+time="23:00:00.000Z" eventName="span.start" traceID=T01 spanID=S01 parentID=    spanName=requestHandler
+time="23:00:00.010Z" eventName="span.start" traceID=T01 spanID=S02 parentID=S01 spanName=storeJob
+time="23:00:00.150Z" eventName="span.start" traceID=T02 spanID=S03 parentID=    spanName=requestHandler
+time="23:00:00.160Z" eventName="span.start" traceID=T02 spanID=S04 parentID=S03 spanName=storeJob
+time="23:00:00.250Z" eventName="job.stored" traceID=T02 spanID=S04 parentID=S03
+time="23:00:00.486Z" eventName="span.end"   traceID=T02 spanID=S04 parentID=S03 spanName=storeJob       duration=326ms
+time="23:00:00.490Z" eventName="job.done"   traceID=T02 spanID=S04 parentID=S03
+time="23:00:00.500Z" eventName="span.end"   traceID=T02 spanID=S03 parentID=    spanName=requestHandler duration=230ms
+time="23:00:00.900Z" eventName="job.stored" traceID=T01 spanID=S02 parentID=S01
+time="23:00:01.010Z" eventName="span.end"   traceID=T01 spanID=S02 parentID=S01 spanName=storeJob       duration=1s
+time="23:00:01.020Z" eventName="job.done"   traceID=T01 spanID=S02 parentID=S01
+time="23:00:01.123Z" eventName="span.end"   traceID=T01 spanID=S01 parentID=    spanName=requestHandler duration=1123ms
+```  
+
 </div>
 
-<div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+<div v-click class="text-xl mb-8 text-red-400">
+⚠️ There are trade-offs ⚠️
+</div>
 
 <div>
-
-### Before: 😵‍💫
-```text
-[INFO] Request started
-[DEBUG] Validating input  
-[DEBUG] Calling database
-[INFO] Response sent
-[ERROR] Cache miss
-```
-
+Read more about: <code>Canonical Log Lines</code> and <code>Wide Events</code>.
 </div>
 
-<div>
+</v-clicks>
 
-### After: 🎯
-```json
-{
-  "event": "http.request.complete",
-  "duration_ms": 245,
-  "cache_hit": false,
-  "validation_errors": 0,
-  "db_calls": 3,
-  "response_size": 1024
-}
-```
+---
+layout: section
+---
 
-</div>
-
-</div>
-
-<div class="mt-8 text-lg text-green-400">
-  **One event to rule them all!** 💍
-</div>
+# api
 
 ---
 layout: center

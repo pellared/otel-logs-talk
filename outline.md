@@ -152,9 +152,9 @@ Events are intentional, instrumented with purpose, not sprinkled around like deb
 This matters because platforms can now treat Events as first-class citizens.
 You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
 
-## wide events
+## spans & metrics from events
 
-Jeremy Morrell wrote this brilliant blog post called "A Practitioner's Guide to Wide Events" (https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events/) that basically says: "What if we just logged everything we need in really rich, wide events?"
+Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" (https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events/) that basically says: "What if we just logged everything we need in really rich, wide events?"
 
 The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed log events that contain ALL the context you need.
 Then you can derive spans and metrics from these logs with proper semantics.
@@ -174,14 +174,10 @@ Not because I was some visionary genius, but because I only had access to an eff
 When you're stuck with one tool, you get creative.
 Turns out, constraints sometimes lead to good architectural decisions. Who knew?
 
-The beauty is that with OpenTelemetry's structured events and semantic conventions, this approach actually becomes feasible at scale.
-You're not just dumping JSON blobs and hoping for the best.
-You're creating well-structured, semantically rich events that tools can understand and process intelligently.
-
-Of course, there are trade-offs.
-Storage costs, processing overhead, the existential crisis of "am I doing observability wrong?".
+Of course, there are huge trade-offs.
+Storage costs and processing overhead on the backend, bigger network traffic, the existential crisis of "am I doing observability wrong?".
 But when it works, it's like having X-ray vision into your systems.
-Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial tag to your metric.
+Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
 And always remember, there is no silver bulet.
 
 ## enabled
