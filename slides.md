@@ -63,11 +63,11 @@ class: text-center
 
 <div class="text-5xl text-left mx-auto space-y-18">
 
-<span v-click.hide>🕰️ Past</span>
+<span v-click.hide>🕰️ Past (Deprecated)</span>
 
-📍 Present
+📍 Present (Stable)
 
-🚀 Future
+🚀 Future (Development)
 
 </div>
 
@@ -81,17 +81,11 @@ layout: center
 
 <v-clicks>
 
-✨ OpenTelemetry Logs Data Model
+🔧 syntax
 
-🎯 Complex values
+📚 semantics
 
-📚 Semantic conventions
-
-⚡  Events vs Logs
-
-🔧 User-facing logging API
-
-🚀 Enabled functionality
+⚡  api
 
 </v-clicks>
 
