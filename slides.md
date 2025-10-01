@@ -507,44 +507,31 @@ if logger.InfoEnabled(ctx) {
 
 ---
 layout: center
-class: text-center
 ---
 
-# TL;DR 📝
+# `tl;dr;`
 
-<div class="text-2xl mb-8 text-blue-400">
-  OpenTelemetry Logs: The Missing Piece
-</div>
+<v-clicks>
 
-<div class="grid grid-cols-2 gap-8 text-lg max-w-4xl mx-auto text-left">
+### syntax
 
-<div>
+📝 Logs are more than strings
 
-### What We Learned 🧠
-- Logs are more than strings
-- Structure unlocks superpowers  
-- Semantic conventions = consistency
-- Events = structured logs
-- Wide events = fewer, richer logs
+⚡ Structure unlocks superpowers  
 
-</div>
+### semantics
 
-<div>
+🎯 Semantic conventions = consistency
 
-### What You Get 🎁
-- Cross-service correlation
-- Better dashboards & alerts
-- Faster debugging
-- ML/AI ready data
-- Future-proof observability
+✨ Events are logs with well-known structure
 
-</div>
+### api
 
-</div>
+🔧 Direct usage
 
-<div class="mt-8 text-xl text-green-400">
-  **Ready to level up your logging game?** 🚀
-</div>
+🚀 Performance and integration improvements
+
+</v-clicks>
 
 ---
 layout: center
@@ -555,22 +542,6 @@ class: text-center
 
 <div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
 
-<div class="text-2xl mb-6 text-blue-400">
-  Let's chat about logs, traces, and everything observability!
-</div>
-
-<div class="text-lg space-y-2">
-  
-**Twitter/X**: @ropajak_robert  
-**Email**: robert@example.com  
-**LinkedIn**: /in/robertropajak
-
-</div>
-
-<div class="mt-8 text-xl text-green-400">
-  Don't let your logs be trash! 🗑️➡️✨
-</div>
-
 ---
 layout: center
 class: text-center
@@ -578,11 +549,22 @@ class: text-center
 
 # Thank You! 🙏
 
-<div class="text-6xl mb-8">🎉</div>
+<div class="mt-8 text-xl text-green-400">
+  Don't let your logs be trash! 🗑️➡️✨
+</div>
+
 
 <div class="text-2xl mb-6 text-blue-400">
   May your logs be structured<br/>
   and your traces be complete!
+</div>
+
+<div class="text-lg">
+  
+**GitHub**: @pellared
+
+**CNCF Slack**: Robert Pajak
+
 </div>
 
 <div class="mt-8 text-xl">
