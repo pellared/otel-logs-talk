@@ -30,7 +30,7 @@ Welcome to my talk about how OpenTelemetry logs evolved from the least mature si
 layout: center
 ---
 
-# whoami
+# `whoami`
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
@@ -75,7 +75,7 @@ class: text-center
 layout: center
 ---
 
-# init()
+# `init()`
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
@@ -83,17 +83,17 @@ layout: center
 
 ✨ OpenTelemetry Logs Data Model
 
-🎯 Complex attribute values
+🎯 Complex values
 
 📚 Semantic conventions
 
-⚡  Events vs Log Records
+⚡  Events vs Logs
 
 🌊 Wide Events
 
 🚀 Enabled functionality
 
-🔧 User-facing Logging API
+🔧 User-facing logging API
 
 </v-clicks>
 
@@ -138,7 +138,13 @@ Who has seen logs like this? 🙋‍♂️
 layout: statement
 ---
 
-# THIS is why we need better logging standards
+# THIS is why<br>we need better logging standards
+
+---
+layout: section
+---
+
+# syntax
 
 ---
 layout: center
@@ -175,7 +181,7 @@ class: text-center
 </div>
 
 ---
-layout: default
+layout: center
 ---
 
 # Log Record
@@ -209,189 +215,168 @@ layout: default
 layout: center
 ---
 
-# Complex Data Types 📊
+# complex data
 
-## Beyond Plain Strings
+`Attribute` and `Body` values can be complex.
+
+`AnyValue` can be one of:
 
 <v-clicks>
 
-- **ArrayValue**: `["error", "timeout", "retry"]`
-- **KeyValueList**: Nested maps within maps  
-- **BytesValue**: Binary data in logs
-- **AnyValue**: Dynamic type system
+- primitive value (`string`, `int`, `bool`, `double`)
+- array of `AnyValue`
+- map of `string` to `AnyValue`
+- byte array (BLOB)
+- empty value
 
 </v-clicks>
 
-<div v-click class="mt-8 text-lg">
-  <span class="text-orange-500">💡</span> Make your attributes as rich as your data!
-</div>
-
-<style>
-h1 {
-  background: linear-gradient(45deg, #f39800, #ff6b35);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-</style>
-
 ---
-layout: default
+layout: center
 ---
 
-# Complex Values In Action 🚀
+# Complex values
 
-```json {1-4|5-10|11-16|17-22}
-{
-  "event": "user.login",
-  "result": "success",
-  "tags": ["important", "security", "audit"],
-  "retry_attempts": [
-    {"timestamp": "2023-11-15T09:15:15.100Z", "result": "timeout"},
-    {"timestamp": "2023-11-15T09:15:18.200Z", "result": "success"}
-  ],
-  "user_permissions": {
-    "read": true,
-    "write": false,
-    "admin": false
+```json
+"gen_ai.request.model": "gpt-4-turbo",
+"gen_ai.usage.input_tokens": 110,
+"gen_ai.usage.output_tokens": 45,
+"gen_ai.prompt": [
+  {
+    "role": "system",
+    "content": "You are a helpful and knowledgeable AI assistant from Splunk."
   },
-  "session_metadata": {
-    "ip": "192.168.1.100",
-    "user_agent": "Mozilla/5.0...", 
-    "geo": {
-      "country": "US",
-      "city": "San Francisco"
-    }
+  {
+    "role": "user",
+    "content": "What is OpenTelemetry?"
   }
-}
+],
+"gen_ai.completion": [
+  {
+    "role": "assistant",
+    "content": "OpenTelemetry is an open-source observability framework for collecting telemetry data."
+  }
+]
 ```
 
-<div class="text-center mt-6 text-lg">
+<div class="mt-6 text-lg">
   <span class="text-green-400">✨</span> Rich, structured, meaningful data!
 </div>
 
 ---
-layout: center
-class: text-center
+layout: statement
 ---
 
-# Semantic Conventions 🧭
+# Complex values<br>are coming<br>to ALL signals!
 
-## Making Logs Searchable & Comparable
+OTel is dropping the attributes values restriction
+
+---
+layout: section
+---
+
+# semantics
+
+---
+layout: statement
+---
+
+# OpenTelemetry<br>Semantic Conventions
+
+Making logs searchable & comparable
 
 <div class="text-2xl font-bold text-blue-400 mb-6">
-  Same semantics = Better queries
-</div>
-
-<div class="grid grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
-  
-<div>
-
-### HTTP Requests 🌐
-- `http.request.method`
-- `http.response.status_code`  
-- `url.full`
-- `user_agent.original`
-
-</div>
-
-<div>
-
-### Database Operations 🗄️
-- `db.system` (postgresql, mysql)
-- `db.statement`
-- `db.operation.name`
-- `server.address`
-
-</div>
-
-</div>
-
-<div class="mt-8 text-lg text-green-400">
-  <strong>One convention, infinite possibilities!</strong> 🚀
+  Same semantics = Better queries and dashbaords
 </div>
 
 ---
 layout: center
 ---
 
-# Events vs Log Records 🎭
+# Cross-cutting attributes
 
-<div class="text-2xl mb-8 text-center">
-  <span class="text-blue-400">Event</span> or <span class="text-green-400">Log Record</span>?<br/>
-  <span class="text-gray-400 text-lg">Plot twist: They're the same!</span>
-</div>
+- `code.line_number`
+- `exception.message`
+- `service.name`, `deployment.environment`
+
+---
+layout: center
+---
+
+# Signal-specific attributes
+
+- `log.record.uid`
+- `log.iostream` 
+
+---
+layout: center
+---
+
+# Domain-specific attributes
+
+- `http.method`, `http.request.body.size`
+- `db.system`, `db.statement`
+- `gen_ai.provider.name`, `gen_ai.response.id`
+
+---
+layout: section
+---
+
+# event vs log
+
+---
+layout: statement
+---
+
+# An Event Record<br>is a Log Record<br>with an event name<br>and a well-known structure
+
+---
+layout: center
+---
 
 <div class="grid grid-cols-2 gap-8 text-lg">
 
-<div class="text-center">
+<div class="text-left">
 
-### Event 🎉
+### Log
+
+```json
+{
+  "Body": "User logged in successfully",
+  "SeverityNumber": 9,
+  "SeverityText": "INFO", 
+  "Attributes": {
+    "user.id": "octobot"
+  }
+}
+```
+
+</div>
+
+<div class="text-left">
+
+### Event
+
 ```json
 {
   "EventName": "user.login",
-  "Body": "User logged in successfully"
+  "SeverityNumber": 9,
+  "Attributes": {
+    "user.id": "octobot"
+  }
 }
 ```
 
-**When something happens**
-
-</div>
-
-<div class="text-center">
-
-### Log Record 📝
-```json
-{
-  "SeverityText": "INFO", 
-  "Body": "User logged in successfully"
-}
-```
-
-**When you want to remember it**
-
 </div>
 
 </div>
 
-<div class="text-center mt-8 text-xl text-yellow-400">
-  Same data model, different perspectives! 🤝
+<div class="text-center mt-8 text-xl text-blue-400">
+  Same data model, different semantics.
 </div>
 
 ---
 layout: center
----
-
-# What Gets Enabled? 🔥
-
-## The Magic Happens Here
-
-<v-clicks>
-
-<div class="text-xl space-y-4">
-
-🔍 **Cross-service tracing** - Follow requests across microservices
-
-📊 **Rich dashboards** - Visual metrics that actually make sense  
-
-🚨 **Smart alerting** - Context-aware notifications
-
-🐛 **Faster debugging** - Jump from log → trace → problem
-
-⚡ **Performance insights** - See the full picture, not just fragments
-
-🤖 **AI/ML ready** - Structured data feeds better into models
-
-</div>
-
-</v-clicks>
-
-<div v-click class="mt-8 text-center text-xl text-green-400">
-  **This is why we do the hard work!** ✨
-</div>
-
----
-layout: center
-class: text-center
 ---
 
 # Wide Events 🌊
@@ -438,6 +423,39 @@ class: text-center
 <div class="mt-8 text-lg text-green-400">
   **One event to rule them all!** 💍
 </div>
+
+---
+layout: center
+---
+
+# What Gets Enabled? 🔥
+
+## The Magic Happens Here
+
+<v-clicks>
+
+<div class="text-xl space-y-4">
+
+🔍 **Cross-service tracing** - Follow requests across microservices
+
+📊 **Rich dashboards** - Visual metrics that actually make sense  
+
+🚨 **Smart alerting** - Context-aware notifications
+
+🐛 **Faster debugging** - Jump from log → trace → problem
+
+⚡ **Performance insights** - See the full picture, not just fragments
+
+🤖 **AI/ML ready** - Structured data feeds better into models
+
+</div>
+
+</v-clicks>
+
+<div v-click class="mt-8 text-center text-xl text-green-400">
+  **This is why we do the hard work!** ✨
+</div>
+
 
 ---
 layout: center

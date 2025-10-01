@@ -145,31 +145,6 @@ Event Record is a well-defined occurrence with stronger semantics, "this specifi
 
 An Event Record is a Log Record with an event name and a well-known structure.
 
-Regular log record:
-
-```json
-{
-  "Body": "User login failed for alice",
-  "Attributes": {
-    "user.id": "alice",
-    "error": "bad password"
-  }
-}
-```
-
-Event record:
-
-```json
-{
-  "EventName": "user.login.failed", 
-  "Attributes": {
-    "user.id": "alice",
-    "auth.method": "password",
-    "error.type": "invalid_credentials"
-  }
-}
-```
-
 Why the distinction?
 Because not every line your app spits out deserves to be treated like a meaningful business event.
 Events are intentional, instrumented with purpose, not sprinkled around like debugging salt.
@@ -301,8 +276,8 @@ OpenTelemetry logs are no longer the weird cousin at the observability family di
 They're now:
 
 - **Structured** – with actual fields that make sense
-- **Complex** – nested objects and arrays (like Russian dolls, but useful)
-- **Semantic** – everyone agrees on attribute names (miraculous!)
+- **Complex** – nested objects and arrays
+- **Semantic** – everyone agrees on attribute names
 - **Event-aware** – distinguishing between "something happened" and "SOMETHING IMPORTANT happened"
 - **Wide** – one log to rule them all (Jeremy Morrell's brilliant idea)
 - **Fast** – with Enabled functionality and OS-native integration
