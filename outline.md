@@ -37,9 +37,8 @@ You'll get an inside look at the following game-changing developments:
 - **Complex attribute values** – support for nested objects and arrays across all signals
 - **Semantic conventions** – finally standardizing how we name things
 - **Events vs Log Records** – when to use structured events vs regular logs
-- **Wide Events** – deriving spans and metrics from rich log events
-- **Enabled functionality** – performance optimization and OS-native integration
 - **User-facing OpenTelemetry Logging API** – giving developers a proper way to log with OTel
+- **Enabled functionality** – performance optimization and OS-native integration
 
 These aren't isolated improvements.
 They represent a coordinated effort to unify and modernize telemetry data, improve correlation across ALL signals, and enable richer observability experiences.
@@ -180,6 +179,42 @@ But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
 And always remember, there is no silver bulet.
 
+## user-facing api
+
+Now here's the big one – the **User-facing OpenTelemetry Logging API**.
+This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
+
+Until now, OpenTelemetry logs were mostly about collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
+But what if you want to log directly using OpenTelemetry APIs?
+What if you want to emit those beautiful structured events we've been talking about?
+
+Well, now you can! The OpenTelemetry Logs API lets you:
+
+- **Emit log records directly** using OpenTelemetry's structured format
+- **Create events** with proper event names and semantic attributes
+- **Leverage all the goodies** – complex data types, trace correlation, resource attribution
+- **Skip the middleman** – no need to go through traditional logging libraries
+
+You can use the Logs API directly or use some more user-friendly facade.
+
+This is huge because it means:
+
+1. **Direct integration** – your telemetry and application logic can be tightly coupled when needed
+2. **No format conversion** – you're already speaking OpenTelemetry's language
+3. **Full feature access** – complex attributes, reuse of attributes accross signals, everything we've discussed
+4. **Consistency** – same patterns whether you're tracing, logging, or emitting metrics
+
+The best part?
+It plays nicely with existing logging.
+You can gradually migrate, use both approaches, or pick the right tool for each job.
+It's not about replacing everything – it's about giving you options.
+
+And yes, it takes forever to get right.
+Designing APIs that developers will actually want to use is hard.
+Making them consistent across 10+ programming languages?
+Even harder.
+But we're getting there.
+
 ## enabled
 
 Now, let's talk about performance.
@@ -209,53 +244,6 @@ The bottom line? OpenTelemetry logs are not just getting smarter and more struct
 They're getting faster too.
 And that's the kind of evolution that makes everyone happy: developers get better observability, ops teams get cleaner data, and performance engineers don't have to sacrifice telemetry on the altar of latency.
 
-## api
-
-Now here's the big one – the **User-facing OpenTelemetry Logging API**.
-This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
-
-Until now, OpenTelemetry logs were mostly about collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
-But what if you want to log directly using OpenTelemetry APIs?
-What if you want to emit those beautiful structured events we've been talking about?
-
-Well, now you can! The OpenTelemetry Logs API lets you:
-
-- **Emit log records directly** using OpenTelemetry's structured format
-- **Create events** with proper event names and semantic attributes
-- **Leverage all the goodies** – complex data types, trace correlation, resource attribution
-- **Skip the middleman** – no need to go through traditional logging libraries
-
-You can use the Logs API directly or use some more user-friendly facade.
-Here's what it looks like:
-
-```go
-logger := olog.New()
-
-logger.InfoContext(ctx, "User successfully authenticated",
-    olog.String("user.id", "alice"),
-    olog.String("auth.method", "oauth2"),
-    olog.String("session.id", sessionID),
-)
-```
-
-This is huge because it means:
-
-1. **Direct integration** – your telemetry and application logic can be tightly coupled when needed
-2. **No format conversion** – you're already speaking OpenTelemetry's language
-3. **Full feature access** – complex attributes, reuse of attributes accross signals, everything we've discussed
-4. **Consistency** – same patterns whether you're tracing, logging, or emitting metrics
-
-The best part?
-It plays nicely with existing logging.
-You can gradually migrate, use both approaches, or pick the right tool for each job.
-It's not about replacing everything – it's about giving you options.
-
-And yes, it takes forever to get right.
-Designing APIs that developers will actually want to use is hard.
-Making them consistent across 10+ programming languages?
-Even harder.
-But we're getting there.
-
 ## tl;dr;
 
 So what did we learn today?
@@ -275,7 +263,6 @@ They're now:
 - **Complex** – nested objects and arrays
 - **Semantic** – everyone agrees on attribute names
 - **Event-aware** – distinguishing between "something happened" and "SOMETHING IMPORTANT happened"
-- **Wide** – one log to rule them all (Jeremy Morrell's brilliant idea)
 - **Fast** – with Enabled functionality and OS-native integration
 - **Developer-friendly** – finally, an API you might actually want to use
 

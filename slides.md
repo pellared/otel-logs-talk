@@ -89,11 +89,9 @@ layout: center
 
 ⚡  Events vs Logs
 
-🌊 Wide Events
+🔧 User-facing logging API
 
 🚀 Enabled functionality
-
-🔧 User-facing logging API
 
 </v-clicks>
 
@@ -422,100 +420,90 @@ layout: section
 layout: center
 ---
 
-# What Gets Enabled? 🔥
+# User-facing logging API
 
-## The Magic Happens Here
+```go
+// Emit an event record.
+logger.WarnEvent(ctx, "rate_limit.approached",
+    semconv.ClientIP("192.168.1.100"),            // Reuse attribute from semantic conventions.
+    attribute.Int("rate_limit.max_per_sec", 100), // Custom application-specific attribute.
+) 
+```
 
-<v-clicks>
-
-<div class="text-xl space-y-4">
-
-🔍 **Cross-service tracing** - Follow requests across microservices
-
-📊 **Rich dashboards** - Visual metrics that actually make sense  
-
-🚨 **Smart alerting** - Context-aware notifications
-
-🐛 **Faster debugging** - Jump from log → trace → problem
-
-⚡ **Performance insights** - See the full picture, not just fragments
-
-🤖 **AI/ML ready** - Structured data feeds better into models
-
+<div class="text-center mt-6 text-lg text-blue-400">
+  For instrumentation authors as well as application developers
 </div>
-
-</v-clicks>
-
-<div v-click class="mt-8 text-center text-xl text-green-400">
-  **This is why we do the hard work!** ✨
-</div>
-
 
 ---
 layout: center
 ---
 
-# What Gets Enabled? 🔥
+# `Enabled` functionality
 
-## The Magic Happens Here
+<div class="text-left mx-auto space-y-6">
 
 <v-clicks>
 
-<div class="text-xl space-y-4">
+⚡ Check before you emit records to skip expensive work
 
-🔍 **Cross-service tracing** - Follow requests across microservices
+🚀 A door for better integrations
 
-📊 **Rich dashboards** - Visual metrics that actually make sense  
-
-🚨 **Smart alerting** - Context-aware notifications
-
-🐛 **Faster debugging** - Jump from log → trace → problem
-
-⚡ **Performance insights** - See the full picture, not just fragments
-
-🤖 **AI/ML ready** - Structured data feeds better into models
-
+<div class="text-xl mt-8 text-blue-400">
+  Performance + Rich telemetry + Integrations = 💖
 </div>
 
 </v-clicks>
 
-<div v-click class="mt-8 text-center text-xl text-green-400">
-  **This is why we do the hard work!** ✨
 </div>
 
 ---
-layout: default
+layout: center
 ---
 
-# User-Facing Logging APIs 🛠️
+<div class="grid grid-cols-2 gap-8 text-lg">
 
-## Making It Easy for Developers
+<div v-click class="text-left">
 
-```go {1-5|6-10|11-15|16-20}
-// The olog library - Zero-alloc, structured logging
-import "go.opentelemetry.io/contrib/bridges/olog"
+### Before ❌
 
-// Simple structured logging
-olog.InfoContext(ctx, "User operation completed",
-    "user.id", userID,
-    "operation", "update_profile",
-    "duration_ms", duration)
-
-// Event-style logging  
-olog.WarnContext(ctx, "Cache miss occurred",
-    "cache.key", cacheKey,
-    "fallback", "database_query")
-
-// Rich context flows naturally
-olog.ErrorContext(ctx, "Payment processing failed",
-    "transaction.id", txnID,
-    "amount", amount,
-    "error", err.Error())
+```go
+// Always does the work
+logger.Info(ctx, "User operation",
+  formatMessage(),             // CPU cycles!
+  buildComplexAttributes()...) // Memory allocs!
 ```
 
-<div class="text-center mt-6 text-lg text-blue-400">
-  **Clean code, structured output!** 🎯
+<div class="text-red-400 mt-4">
+  💸 Wasted CPU cycles<br/>
+  📈 Memory allocations<br/>
+  🐌 Performance impact
 </div>
+
+</div>
+
+<div v-click class="text-left">
+
+### After ✅
+
+```go
+// Check first, work later
+if logger.InfoEnabled(ctx) {
+  logger.Info(ctx, "User operation",
+    formatMessage(),          // Smart!
+    buildComplexAttributes()) // Only when needed!
+}
+```
+
+<div class="text-green-400 mt-4">
+  ⚡ Zero overhead when disabled<br/>
+  🚀 OS-native performance<br/>
+  🎯 Work only when necessary
+</div>
+
+</div>
+
+</div>
+
 
 ---
 layout: center
