@@ -1,6 +1,7 @@
 ---
 theme: default
 title: OpenTelemetry Logs Driving a Major Shift
+favicon: ./favicon-32x32.png
 class: text-center
 transition: slide-left
 mdc: true
