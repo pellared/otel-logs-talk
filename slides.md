@@ -451,8 +451,18 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 ) 
 ```
 
-<div class="text-center mt-6 text-2xl text-green">
-  For instrumentation authors<br>as well as application developers
+<div class="grid grid-cols-2 gap-8 text-xl max-w-4xl mx-auto">
+  <div v-click class="text-center p-6 bg-blue-900 rounded-xl border-2 border-blue-400">
+    <div class="text-4xl mb-4">🔧</div>
+    <div class="text-blue-400 font-bold mb-2">Instrumentation Authors</div>
+    <div class="text-sm text-gray-300">Library & framework developers</div>
+  </div>
+  
+  <div v-click class="text-center p-6 bg-green-900 rounded-xl border-2 border-green-400">
+    <div class="text-4xl mb-4">👩‍💻</div>
+    <div class="text-green-400 font-bold mb-2">Application Developers</div>
+    <div class="text-sm text-gray-300">Business logic & features</div>
+  </div>
 </div>
 
 ---
