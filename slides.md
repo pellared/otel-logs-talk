@@ -29,6 +29,8 @@ Logs
   </a>
 </div>
 
+<https://otel-logs-talk.netlify.app>
+
 <!--
 Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially the foundation of new major enhancements.
 -->
