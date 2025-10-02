@@ -572,6 +572,8 @@ layout: center
 
 # Thank You!
 
+This presentation: <https://otel-logs-talk.netlify.app>
+
 <div class="text-5xl mb-8"></div>
 
 ## Special thanks 🙏
