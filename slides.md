@@ -568,7 +568,6 @@ class: text-center
 
 ---
 layout: center
-class: text-center
 ---
 
 # Thank You!
@@ -577,7 +576,7 @@ class: text-center
 
 ## Special thanks 🙏
 
-<div class="text-lg text-left mx-auto space-y-6">
+<div class="text-lg mx-auto space-y-6">
 
 <v-clicks>
 
