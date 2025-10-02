@@ -226,19 +226,42 @@ layout: center
 
 # complex data
 
-`Attribute` and `Body` values can be complex.
+<div class="mb-8">
+  <div class="text-2xl text-blue mb-4">
+    <code class="text-orange">Attribute</code> and <code class="text-orange">Body</code> values can be complex
+    (<code class="text-green">AnyValue</code>).
+  </div>
+  
+  <div class="text-2xl">
+    <code class="text-green">AnyValue</code> can be one of:
+  </div>
+</div>
 
-`AnyValue` can be one of:
-
+<div class="grid grid-cols-1 gap-4 max-w-4xl mx-auto text-xl">
 <v-clicks>
 
-- primitive value (`string`, `int`, `bool`, `double`)
-- array of `AnyValue`
-- map of `string` to `AnyValue`
-- byte array (BLOB)
-- empty value
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  🔤 <span class="font-mono text-blue">primitive value</span> <span class="text-gray">(<code>string</code>, <code>int</code>, <code>bool</code>, <code>double</code>)</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
+  📋 <span class="font-mono text-green">array of AnyValue</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
+  🗂️ <span class="font-mono text-purple">map of string to AnyValue</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
+  💾 <span class="font-mono text-yellow">byte array (BLOB)</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-gray">
+  ⚪ <span class="font-mono text-gray">empty value</span>
+</div>
 
 </v-clicks>
+</div>
 
 ---
 layout: center
