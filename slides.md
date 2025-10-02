@@ -30,7 +30,7 @@ Logs
 </div>
 
 <!--
-Welcome to my talk about how OpenTelemetry logs evolved from the least mature signal to potentially the foundation of everything else.
+Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially the foundation of new major enhancements.
 -->
 
 ---
