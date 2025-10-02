@@ -8,8 +8,8 @@ mdc: true
 
 <h1>
 <strong>
-<span class="text-orange-400">Open</span>
-<span class="text-blue-400">Telemetry</span>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
 Logs
 </strong><br>
 <u>Driving a Major Shift</u>
@@ -150,7 +150,15 @@ layout: center
 class: text-center
 ---
 
-# OpenTelemetry Logs Data Model
+<h1>
+<strong>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
+Logs
+</strong>
+<br>
+Data Model
+</h1>
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
@@ -280,11 +288,16 @@ layout: section
 layout: statement
 ---
 
-# OpenTelemetry<br>Semantic Conventions
+<h1>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
+<br>
+Semantic Conventions
+</h1>
 
 Making logs searchable & comparable
 
-<div class="text-2xl font-bold text-blue-400 mb-6">
+<div class="text-2xl font-bold text-green mb-6">
   Same semantics = Better queries and dashbaords
 </div>
 
@@ -459,7 +472,7 @@ logger.Info(ctx, "User operation",
   buildComplexAttributes()...) // Memory allocs!
 ```
 
-<div class="text-red-400 mt-4">
+<div class="text-red mt-4">
   💸 Wasted CPU cycles<br/>
   📈 Memory allocations<br/>
   🐌 Performance impact
@@ -480,7 +493,7 @@ if logger.InfoEnabled(ctx) {
 }
 ```
 
-<div class="text-green-400 mt-4">
+<div class="text-green mt-4">
   ⚡ Zero overhead when disabled<br/>
   🚀 OS-native performance<br/>
   🎯 Work only when necessary
@@ -560,30 +573,41 @@ class: text-center
 
 # Thank You!
 
-<div class="text-5xl">🙏</div>
+<div class="text-5xl mb-8"></div>
 
+## Special thanks 🙏
+
+<div class="text-lg text-left mx-auto space-y-6">
+
+<v-clicks>
+
+- Liudmila Molkova, Trask Stalnaker, Ted Young, Austin Parker
+- Tyler Yahn, Cijo Thomas
+- OpenTelemetry Go and Specification SIG
+- Everyone who raised their hands
+
+</v-clicks>
+</div>
+
+<div v-click>
 <div class="mt-8 text-xl text-red">
   Don't let your logs be trash 🗑️
 </div>
-
-
 <div class="text-2xl mb-6 text-green">
   May your logs be structured! 🎉
 </div>
+</div>
 
-<div class="text-lg">
+<div v-click class="text-xl">
   
 **GitHub**: @pellared
 <br>
 **CNCF Slack**: Robert Pajak
 
-</div>
-
-<div class="mt-8 text-xl">
-  ❤️
-  <strong>
-  <span class="text-orange">Open</span>
-  <span class="text-blue">Telemetry</span>
-  ❤️
-  </strong>
+❤️
+<strong>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
+❤️
+</strong>
 </div>
