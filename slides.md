@@ -640,10 +640,12 @@ This presentation: <https://otel-logs-talk.netlify.app>
 <br>
 **CNCF Slack**: Robert Pajak
 
-❤️
-<strong>
-<span class="text-orange">Open</span>
-<span class="text-blue">Telemetry</span>
-❤️
-</strong>
+<div class="flex gap-2">
+  <img src="./opentelemetry-logo-nav.png" alt="OpenTelemetry" class="h-8" />
+  <strong>
+    <span class="text-orange">Open</span>
+    <span class="text-blue">Telemetry</span>
+  </strong>
+  ❤️
+</div>
 </div>
