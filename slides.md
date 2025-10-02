@@ -6,7 +6,14 @@ transition: slide-left
 mdc: true
 ---
 
-# OpenTelemetry Logs Driving a Major Shift
+<h1>
+<strong>
+<span class="text-orange-400">Open</span>
+<span class="text-blue-400">Telemetry</span>
+Logs
+</strong><br>
+<u>Driving a Major Shift</u>
+</h1>
 
 ## Events, Richer Data, and Smarter Semantics
 
@@ -162,10 +169,10 @@ class: text-center
 
 📍 Resource & Instrumentation Scope
 
-<div class="text-xl mb-6 text-blue-400">
+<div class="text-xl mb-6 text-orange">
   Not just strings with timestamps.
 </div>
-<div class="mt-8 text-xl font-bold text-green-400">
+<div class="mt-8 text-xl font-bold text-blue">
   Logs that carry context. Logs that make sense! ✨
 </div>
 
@@ -252,7 +259,7 @@ layout: center
 ```
 
 <div class="mt-6 text-lg">
-  <span class="text-green-400">✨</span> Rich, structured, meaningful data!
+  <span class="text-green">✨</span> Rich, structured, meaningful data!
 </div>
 
 ---
@@ -320,7 +327,12 @@ layout: section
 layout: statement
 ---
 
-# An Event Record<br>is a Log Record<br>with an event name<br>and a well-known structure
+<h1>
+An Event Record<br>
+is a Log Record<br>
+with an <span class="text-orange">event name</span><br>
+and a <span class="text-blue">well-known structure</span>.
+</h1>
 
 ---
 layout: center
@@ -363,7 +375,7 @@ layout: center
 
 </div>
 
-<div class="text-center mt-8 text-xl text-blue-400">
+<div class="text-center mt-8 text-xl text-green">
   Same data model, different semantics.
 </div>
 
@@ -375,7 +387,7 @@ layout: statement
 
 <v-clicks>
 
-<div class="text-left">
+<div class="text-left mb-8">
 
 ```sh
 time="23:00:00.000Z" eventName="span.start" traceID=T01 spanID=S01 parentID=    spanName=requestHandler
@@ -394,7 +406,7 @@ time="23:00:01.123Z" eventName="span.end"   traceID=T01 spanID=S01 parentID=    
 
 </div>
 
-<div v-click class="text-xl mb-8 text-red-400">
+<div v-click class="text-2xl mb-8 text-red">
 ⚠️ There are trade-offs ⚠️
 </div>
 
@@ -424,41 +436,21 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 ) 
 ```
 
-<div class="text-center mt-6 text-lg text-blue-400">
-  For instrumentation authors as well as application developers
+<div class="text-center mt-6 text-2xl text-green">
+  For instrumentation authors<br>as well as application developers
 </div>
 
 ---
 layout: center
 ---
 
-# `Enabled` functionality
-
-<div class="text-left mx-auto space-y-6">
-
-<v-clicks>
-
-⚡ Check before you emit records to skip expensive work
-
-🚀 A door for better integrations
-
-<div class="text-xl mt-8 text-blue-400">
-  Performance + Rich telemetry + Integrations = 💖
-</div>
-
-</v-clicks>
-
-</div>
-
----
-layout: center
----
+# `Enabled` API
 
 <div class="grid grid-cols-2 gap-8 text-lg">
 
 <div v-click class="text-left">
 
-### Before ❌
+Before ❌
 
 ```go
 // Always does the work
@@ -477,7 +469,7 @@ logger.Info(ctx, "User operation",
 
 <div v-click class="text-left">
 
-### After ✅
+After ✅
 
 ```go
 // Check first, work later
@@ -498,6 +490,31 @@ if logger.InfoEnabled(ctx) {
 
 </div>
 
+---
+layout: center
+---
+
+# `Enabled` functionality
+
+<div class="text-left mx-auto space-y-6">
+
+<v-clicks>
+
+⚡ Check before you emit records to skip expensive work
+
+🚀 A door for better integrations
+
+<div class="text-xl mt-8">
+  <span class="text-orange">Performance</span> + 
+  <span class="text-blue">Rich telemetry</span> +
+  <span class="text-green">Integrations</span> = 💖
+</div>
+
+<Youtube id="Ej-z2WwWWak" />
+
+</v-clicks>
+
+</div>
 
 ---
 layout: center
@@ -532,7 +549,7 @@ layout: center
 class: text-center
 ---
 
-# Questions? 🤔
+# Questions?
 
 <div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
 
@@ -541,28 +558,32 @@ layout: center
 class: text-center
 ---
 
-# Thank You! 🙏
+# Thank You!
 
-<div class="mt-8 text-xl text-green-400">
-  Don't let your logs be trash! 🗑️➡️✨
+<div class="text-5xl">🙏</div>
+
+<div class="mt-8 text-xl text-red">
+  Don't let your logs be trash 🗑️
 </div>
 
 
-<div class="text-2xl mb-6 text-blue-400">
-  May your logs be structured<br/>
-  and your traces be complete!
+<div class="text-2xl mb-6 text-green">
+  May your logs be structured! 🎉
 </div>
 
 <div class="text-lg">
   
 **GitHub**: @pellared
-
+<br>
 **CNCF Slack**: Robert Pajak
 
 </div>
 
 <div class="mt-8 text-xl">
-  <span class="text-red-500">❤️</span> 
-  <span class="text-blue-400">OpenTelemetry</span>
-  <span class="text-red-500">❤️</span>
+  ❤️
+  <strong>
+  <span class="text-orange">Open</span>
+  <span class="text-blue">Telemetry</span>
+  ❤️
+  </strong>
 </div>
