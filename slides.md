@@ -130,6 +130,26 @@ A **framework** for generating, processing, and exporting telemetry data:
 
 </div>
 
+<!--
+
+For those who might be new to OpenTelemetry, let me give you a quick overview.
+
+[click] OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
+It provides a unified approach to observability across different signal such as
+
+[click] traces
+
+[click] metrics
+
+[click] logs
+
+[click] profiles
+
+[click] The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
+Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
+
+-->
+
 ---
 layout: center
 class: text-center
@@ -144,6 +164,17 @@ class: text-center
 🚀 Future (Development)
 
 </div>
+
+<!--
+
+People usually talk about the past, present, and future.
+
+[click] But honestly, who cares about the past?
+We're here to talk about what's happening NOW and what's coming NEXT.
+We're not just talking about logs in isolation.
+We're talking about how logs and how they're driving major improvements across the entire OpenTelemetry ecosystem.
+
+-->
 
 ---
 layout: center
@@ -164,6 +195,21 @@ layout: center
 </v-clicks>
 
 </div>
+
+<!--
+During the talk are are going to explore the following areas in the context of OpenTelemetry:
+
+[click] the syntax (or data model) of logs,
+
+[click] the semantics of logs and events,
+
+[click] the logging APIs.
+
+We'll dive into the design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
+
+By the end of this talk, you'll understand why logs are no longer an afterthought, but a first-class citizen among other OpenTelemetry signals.
+
+-->
 
 ---
 layout: center
@@ -200,17 +246,51 @@ value=3
 Who has seen logs like this? 🙋‍♂️
 </div>
 
+<!--
+
+Show hands: Who has seen logs like this?
+Keep your hands up!
+Don't worry, I won't judge you.
+
+*Say what part of the audience have their hands up.*
+
+I've written logs like this too.
+We've ALL been there.
+"LOGGING HERE" with dashes?
+Classic debugging technique.
+Passwords in debug logs?
+Academic excellence right there.
+-->
+
 ---
 layout: statement
 ---
 
 # THIS is why<br>we need better logging standards
 
+<!--
+But seriously, this is what we're working with in production systems everywhere.
+
+Note that wasted logs cost money.
+
+There's nothing like a free meal, and every useless "It works" message is burning through your observability budget.
+
+Plus, it slows down your application.
+
+Moreover, it adds noise to the captured telemetry.
+
+THIS is why we need better logging standards.
+-->
+
 ---
 layout: section
 ---
 
 # syntax
+
+<!--
+What does a proper log record look like in OpenTelemetry? Let's talk about the Logs Data Model.
+-->
 
 ---
 layout: center
@@ -230,7 +310,7 @@ Data Model
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-⏰ Timestamp
+⏰ Timestamp & Observed Timestamp
 
 🔗 Trace Context
 
@@ -253,6 +333,31 @@ Data Model
 
 </v-clicks>
 </div>
+
+<!--
+In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
+
+[click] the timestamps when it happened and when it was captured
+
+[click] the trace and span IDs for correlation magic
+
+[click] not just "INFO/WARN/ERROR" but proper severity levels
+
+[click] the actual log message or payload that can be complex
+
+[click] the key-value pairs for structured metadata
+
+[click] the event name identifies the type of event being recorded - we are going to discuss it later
+
+[click] the information what application and which library or component generated this log
+
+[click]
+This isn't just regular logging made more complicated.
+
+[click]
+It is structured logging that actually integrate with your traces.
+
+-->
 
 ---
 layout: center

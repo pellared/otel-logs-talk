@@ -32,40 +32,34 @@ It provides a unified approach to observability across different signal such as 
 The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
 
-Today we're focusing specifically on logs and how they're driving major improvements across the entire OpenTelemetry ecosystem.
-
 ## init()
 
 People usually talk about the past, present, and future.
+
 But honestly, who cares about the past?
 We're here to talk about what's happening NOW and what's coming NEXT.
-
-This presentation is about how OpenTelemetry Logs are driving a major shift across the entire OpenTelemetry ecosystem.
 We're not just talking about logs in isolation.
-We're talking about how logs are becoming the catalyst for foundational changes that reshape how we think about telemetry as a whole.
+We're talking about how logs and how they're driving major improvements across the entire OpenTelemetry ecosystem.
 
-You'll get an inside look at the following game-changing developments:
+During the talk are are going to explore the following areas in the context of OpenTelemetry:
 
-- **OpenTelemetry Logs Data Model** – structured telemetry that actually makes sense
-- **Complex attribute values** – support for nested objects and arrays across all signals
-- **Semantic conventions** – finally standardizing how we name things
-- **Events vs Log Records** – when to use structured events vs regular logs
-- **User-facing OpenTelemetry Logging API** – giving developers a proper way to log with OTel
-- **Enabled functionality** – performance optimization and OS-native integration
+the syntax (or data model) of logs,
 
-These aren't isolated improvements.
-They represent a coordinated effort to unify and modernize telemetry data, improve correlation across ALL signals, and enable richer observability experiences.
+the semantics of logs and events,
 
-We'll dive into the technical challenges, design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
+the logging APIs.
 
-By the end of this talk, you'll understand why logs are no longer an afterthought, but the secret sauce for better trace-log correlation, more consistent metadata across signals, and more expressive data formats that reflect how we actually log in the real world.
+We'll dive into the design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
+By the end of this talk, you'll understand why logs are no longer an afterthought, but a first-class citizen among other OpenTelemetry signals.
 
 ## trash logs
 
 Show hands: Who has seen logs like this?
 Keep your hands up!
 Don't worry, I won't judge you.
+
 *Say what part of the audience have their hands up.*
+
 I've written logs like this too.
 We've ALL been there.
 "LOGGING HERE" with dashes?
@@ -77,28 +71,25 @@ But seriously, this is what we're working with in production systems everywhere.
 Note that wasted logs cost money.
 There's nothing like a free meal, and every useless "It works" message is burning through your observability budget.
 Plus, it slows down your application.
-Morevoert, it adds noise to the captured telemetry.
+Moreover, it adds noise to the captured telemetry.
 THIS is why we need better logging standards.
 
 ## syntax
 
-So what does a proper log look like in OpenTelemetry? Let's talk about the Logs Data Model.
+What does a proper log record look like in OpenTelemetry? Let's talk about the Logs Data Model.
 
 In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
 
-- **Timestamp** – when it happened, obviously
-- **Observed Timestamp** – when it was actually captured, because clocks drift
-- **Trace Context** – the trace and span IDs for correlation magic
-- **Severity** – not just "INFO/WARN/ERROR" but proper severity levels
-- **Body** – the actual log message (can be structured!)
-- **Attributes** – key-value pairs for structured metadata
-- **EventName** – identifies the type of event being logged
-- **Resource** – who/what generated this log
-- **Instrumentation Scope** – which library/component created it
+- the timestamps when it happened and when it was captured
+- the trace and span IDs for correlation magic
+- not just "INFO/WARN/ERROR" but proper severity levels
+- the actual log message or payload that can be complex
+- the key-value pairs for structured metadata
+- the event name identifies the type of event being recorded - we are going to discuss it later
+- the information what application and which library or component generated this log
 
 This isn't just regular logging made more complicated.
-It's logs that actually integrate with your traces and metrics.
-It's logs that carry context. It's logs that make sense.
+It is structured logging that actually integrate with your traces.
 
 ## complex data
 
