@@ -40,7 +40,7 @@ Logs
   </a>
 </div>
 
-<https://otel-logs-talk.netlify.app>
+<https://pellared.github.io/otel-logs-talk>
 
 <!--
 Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially the foundation of new major enhancements.
@@ -1010,7 +1010,7 @@ layout: center
 
 # Thank You!
 
-This presentation: <https://otel-logs-talk.netlify.app>
+This presentation: <https://pellared.github.io/otel-logs-talk>
 
 <div class="text-lg mx-auto space-y-2">
 
