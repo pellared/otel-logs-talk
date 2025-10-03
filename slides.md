@@ -1029,7 +1029,7 @@ This presentation: <https://otel-logs-talk.netlify.app>
 <v-clicks>
 
 - Liudmila Molkova, Trask Stalnaker, Ted Young, Austin Parker
-- Tyler Yahn, Cijo Thomas
+- Tyler Yahn, Cijo Thomas, Jonathan Amsterdam
 - OpenTelemetry Go and Specification SIG
 - Everyone who raised their hands
 - GenAI (sic!)
@@ -1062,3 +1062,26 @@ This presentation: <https://otel-logs-talk.netlify.app>
 
 [**CNCF Slack**](https://slack.cncf.io/): Robert Pajak
 </div>
+
+<!--
+
+Thank you all for listening.
+I hope you learned something useful today, or at least got a few laughs.
+
+[click] Special credits to
+
+[click] People who continously help with all the logs work
+
+[click] Those who helped me a lot during implementation of logs in OTel Go 
+
+[click] OTel contributors for reviewing my pull requests and providing a lot of comments
+
+[click] Everyone who raised their hands during the "trash logs" section; your honesty is appreciated. Also thank you for all those that asked questions.
+
+[click] GenAI and Copilot who helped me a lot in preparing the presentation.
+
+[click] Now go forth and log responsibly!
+
+[click] You can find me on GitHub as pellared and on CNCF Slack as Robert Pajak, if you have questions that didn't fit into today's talk.
+
+-->
