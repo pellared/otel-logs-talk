@@ -53,7 +53,6 @@ layout: center
 # `whoami`
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
-
 <v-clicks>
 
 🏠 Kraków, Poland
@@ -62,19 +61,37 @@ layout: center
 
 💼 Software Engineer at Splunk a Cisco company
 
-🔧 OpenTelemetry Go maintainer
-
-🌟 3rd top OTel contributor
+🔧 OpenTelemetry Go maintainer and Specification sponsor
 
 🌴 Contributing to OTel Logs since Nov 2023
 
 <div class="text-lg mt-8 opacity-80">
   <strong>Disclaimer:</strong> Non-native English speaker.<br/>
 </div>
-
 </v-clicks>
-
 </div>
+
+<!--
+
+[click] I've traveled from the beautiful city of Kraków (Cracow).
+
+[click] You can find me lurking around GitHub as **pellared**, probably creating some issue or opening yet another pull request.
+
+[click] I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
+
+[click] I am an OpenTelemetry Go maintainer.
+I'm also an OpenTelemetry Specification sponsor.
+Fun fact: I'm apparently the 3rd top OpenTelemetry Contributor according to Linux Foundation Insights.
+I'm not sure if that's impressive or just means I need better hobbies.
+
+[click] I volunteered to design OpenTelemetry Go Logs in November 2023. 
+Apparently, someone thought I knew what I was doing.
+
+[click] I am not an English native speaker.
+But if something is not clear, don't blame my English.
+It simply means I have no idea whay I am talking about.
+
+-->
 
 ---
 layout: center
