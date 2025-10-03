@@ -722,11 +722,15 @@ time="23:00:01.123Z" eventName="span.end"   traceID=T01 spanID=S01 parentID=    
 
 </div>
 
-<div v-click class="text-2xl mb-8 text-red">
-⚠️ There are trade-offs ⚠️
+<div v-click class="text-lg mb-8 text-red">
+⚠️ Trade-offs ⚠️
+
+💸 Additional storage costs 🔢 Processing overhead  🌐 Bigger network traffic
 </div>
 
 <div>
+✨ X-ray vision into your systems where everything is connected ✨
+
 Read more about: <code><a href="https://brandur.org/canonical-log-lines">Canonical Log Lines</a></code> and <code><a href="https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events">Wide Events</a></code>.
 </div>
 
@@ -754,11 +758,14 @@ When you're stuck with one tool, you get creative.
 [click]
 Of course, there are huge trade-offs of such approach.
 Additional storage costs, processing overhead on the backend, bigger network traffic, not mentioning the existential crisis of "am I doing observability wrong?".
-But when it works, it's like having X-ray vision into your systems.
-Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
-However, always remember, there is no silver bulet.
+
 
 [click]
+But when it works, it's like having X-ray vision into your systems.
+Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
+
+However, always remember, there is no silver bulet.
+
 You can read about it more online.
 -->
 
