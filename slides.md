@@ -827,6 +827,32 @@ logger.WarnEvent(ctx, "rate_limit.approached",
   </div>
 </div>
 
+<!--
+Now here's the big one – the User-facing OpenTelemetry Logging API.
+This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
+
+[click] There is no need to go through traditional logging libraries and have the bridge overhead.
+
+[click] You can use complex attributes and 
+
+[click] You can also reuse the attributes accross signals.
+
+[click] It is critical for libraries and frameworks adding OpenTelemetry instrumentation to make sure to not couple it to any other library like log4j.
+
+[click] But it is all the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
+
+The best part? It plays nicely with existing logging.
+You can gradually migrate, use both approaches, or pick the right tool for each job.
+
+It's not about replacing everything. It's about giving you options.
+
+And yes, it takes forever to get right.
+Designing APIs that developers will actually want to use is hard.
+Making them consistent across 10+ programming languages?
+Even harder.
+But we're getting there.
+-->
+
 ---
 layout: center
 ---

@@ -227,7 +227,7 @@ It's not about replacing everything – it's about giving you options.
 
 And yes, it takes forever to get right.
 Designing APIs that developers will actually want to use is hard.
-Making them consistent across 10+ programming languages?
+Making them consistent across many programming languages?
 Even harder.
 But we're getting there.
 
