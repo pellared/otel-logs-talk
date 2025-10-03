@@ -873,9 +873,8 @@ logger.Info(ctx, "User operation",
 ```
 
 <div class="text-red mt-4">
-  💸 Wasted CPU cycles<br/>
+  🐌 Wasted CPU cycles<br/>
   📈 Memory allocations<br/>
-  🐌 Performance impact
 </div>
 
 </div>
@@ -895,13 +894,28 @@ if logger.InfoEnabled(ctx) {
 
 <div class="text-green mt-4">
   ⚡ Zero overhead when disabled<br/>
-  🚀 OS-native performance<br/>
   🎯 Work only when necessary
 </div>
 
 </div>
 
 </div>
+
+<!--
+Now, let's talk about performance.
+
+[click]
+Because what good is amazing structured logging if it kills your application's performance?
+
+[click]
+OpenTelemetry recently added Enabled API.
+It is a way to check if logging is actually needed before you do all the expensive work of building log records.
+Think of it as "measure twice, cut once" but for telemetry.
+
+The idea is simple: before you spend CPU cycles formatting messages, serializing complex objects, or building those beautiful structured attributes, you ask: "Hey, is anyone actually going to process this log?".
+If the answer is no, you skip all the work.
+
+-->
 
 ---
 layout: center
@@ -917,17 +931,29 @@ layout: center
 
 🚀 A door for better integrations
 
-<div class="text-xl mt-8">
-  <span class="text-orange">Performance</span> + 
-  <span class="text-blue">Rich telemetry</span> +
-  <span class="text-green">Integrations</span> = 💖
-</div>
-
 <Youtube id="Ej-z2WwWWak" />
+
+
 
 </v-clicks>
 
 </div>
+
+<!--
+
+But here's where it gets really exciting.
+
+[click]
+This Enabled functionality doesn't just make the OpenTelemetry Logs faster.
+
+[click]
+It opens the door to hooking into extremely performant, OS-native tracing systems like Linux user_events and 
+ETW (Event Tracing for Windows).
+These systems are so fast they make regular logging look like writing with a pen.
+
+[click]
+If you want the deep dive, check out the presentation by Cijo Thomas & Chris Gray: "Beyond OTLP: Unlocking the Potential of OS-native Tracing".
+-->
 
 ---
 layout: center
@@ -954,6 +980,12 @@ layout: center
 🔧 Direct usage
 
 🚀 Performance and integration improvements
+
+<div class="text-xl mt-8">
+  <span class="text-orange">Performance</span> + 
+  <span class="text-blue">Rich telemetry</span> +
+  <span class="text-green">Integrations</span> = 💖
+</div>
 
 </v-clicks>
 

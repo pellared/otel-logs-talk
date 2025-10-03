@@ -236,7 +236,7 @@ But we're getting there.
 Now, let's talk about performance.
 Because what good is amazing structured logging if it kills your application's performance?
 
-OpenTelemetry recently added Enabled functionality.
+OpenTelemetry recently added Enabled API.
 It is a way to check if logging is actually needed before you do all the expensive work of building log records.
 Think of it as "measure twice, cut once" but for telemetry.
 
@@ -244,7 +244,7 @@ The idea is simple: before you spend CPU cycles formatting messages, serializing
 If the answer is no, you skip all the work.
 
 But here's where it gets really exciting.
-This Enabled functionality doesn't just make the OpenTelemetry Logs faster.
+
 It opens the door to hooking into extremely performant, OS-native tracing systems like:
 
 - **Linux user_events** – kernel-level event tracing that's blazingly fast
@@ -256,11 +256,11 @@ We're talking about nanosecond-level overhead when events are disabled.
 If you want the deep dive into this rabbit hole, check out the presentation by Cijo Thomas & Chris Gray: "Beyond OTLP: Unlocking the Potential of OS-native Tracing" (https://www.youtube.com/watch?v=Ej-z2WwWWak).
 Fair warning: after watching it, you might start questioning everything you thought you knew about telemetry performance.
 
+## tl;dr;
+
 The bottom line? OpenTelemetry logs are not just getting smarter and more structured.
 They're getting faster too.
 And that's the kind of evolution that makes everyone happy: developers get better observability, ops teams get cleaner data, and performance engineers don't have to sacrifice telemetry on the altar of latency.
-
-## tl;dr;
 
 So what did we learn today?
 Let me summarize this journey through the wonderfully chaotic world of OpenTelemetry Logs:
