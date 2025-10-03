@@ -71,7 +71,7 @@ layout: center
 ---
 
 <h1 class="flex gap-2">
-<span>What is</span>
+<code>uname</code>
 <span class="flex gap-2">
   <img src="./opentelemetry-logo-nav.png" alt="OpenTelemetry" class="h-10" />
   <strong>
