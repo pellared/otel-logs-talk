@@ -75,7 +75,7 @@ layout: center
 
 [click] I've traveled from the beautiful city of Kraków (Cracow).
 
-[click] You can find me lurking around GitHub as **pellared**, probably creating some issue or opening yet another pull request.
+[click] You can find me lurking around GitHub as pellared, probably creating some issue or opening yet another pull request.
 
 [click] I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
 
