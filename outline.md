@@ -91,6 +91,20 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 This isn't just regular logging made more complicated.
 It is structured logging that actually integrate with your traces.
 
+Here you can see the timestamp when the something happened and when it was recorded in OpenTelemetry.
+
+As you can see the log record contains the trace context.
+
+The severity is a level which is a number, but it is also a text so that the names from logging libraries can be preserved.
+
+Body is typically the log message.
+
+Attributes are any additional metadata or log fields.
+
+Resource contains the data boostrapped by OpenTelemetry SDK that allows identifying the software that emited the log record.
+
+Instrumentation scope contains the information about the source code that emited the log record.
+
 ## complex data
 
 The **Body** and **Attributes** fields in OpenTelemetry logs can contain complex data structures.

@@ -390,6 +390,24 @@ layout: center
 }
 ```
 
+<!--
+
+Here you can see the timestamp when the something happened and when it was recorded in OpenTelemetry.
+
+[click] As you can see the log record contains the trace context.
+
+[click] The severity is a level which is a number, but it is also a text so that the names from logging libraries can be preserved.
+
+[click] Body is typically the log message.
+
+[click] Attributes are any additional metadata or log fields.
+
+[click] Resource contains the data boostrapped by OpenTelemetry SDK that allows identifying the software that emited the log record.
+
+[click] Instrumentation scope contains the information about the source code that emited the log record.
+
+-->
+
 ---
 layout: center
 ---
