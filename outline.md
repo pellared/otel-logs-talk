@@ -15,7 +15,7 @@ I'm also an OpenTelemetry Specification sponsor.
 Fun fact: I'm apparently the 3rd top OpenTelemetry Contributor according to Linux Foundation Insights.
 I'm not sure if that's impressive or just means I need better hobbies.
 
-I volunteered to design OpenTelemetry Go Logs in November 2023. 
+I volunteered to design OpenTelemetry Go Logs and improve the OpenTelemetry Logs Specification in November 2023. 
 Apparently, someone thought I knew what I was doing.
 
 I am not an English native speaker.
