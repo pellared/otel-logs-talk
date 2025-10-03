@@ -6,6 +6,7 @@ I've traveled from the beautiful city of Kraków (Cracow), where the pierogi are
 You can find me lurking around GitHub as **pellared**, probably opening yet another pull request at 2 AM.
 
 I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
+
 I've been an OpenTelemetry Go maintainer a month or two before I foolishly volunteered to design OpenTelemetry Go Logs in November 2023.
 Apparently, someone thought I knew what I was doing.
 

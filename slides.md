@@ -7,6 +7,16 @@ transition: slide-left
 mdc: true
 ---
 
+<style>
+/* Ensure presenter notes are visible. */
+.dark .prose {
+  color: white;
+}
+.light .prose {
+  color: black;
+}
+</style>
+
 <h1>
 <strong>
 <span class="text-orange">Open</span>
