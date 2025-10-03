@@ -961,8 +961,6 @@ layout: center
 
 # `tl;dr;`
 
-<v-clicks>
-
 ### syntax
 
 📝 Logs are more than strings
@@ -987,7 +985,17 @@ layout: center
   <span class="text-green">Integrations</span> = 💖
 </div>
 
-</v-clicks>
+<!--
+What did we learn today?
+Let me summarize this journey through the chaotic world of logs.
+
+We've all been writing trash logs. "LOGGING HERE" with dashes?
+We've ALL been there. But trash logs cost money, slow down apps, and make observability engineers cry into their coffee.
+
+In OpenTelemetry, logs are structured and can contain complex data. Moreover, complex attributes are going to also arrive to other signals. OpenTelemetry has semantic conventions that not only define the attributes, but also distinguish between log and event records. Logs are getting faster too.
+
+That's the kind of evolution that should make everyone happy: developers get better observability, operations get cleaner data.
+-->
 
 ---
 layout: center
@@ -997,6 +1005,14 @@ class: text-center
 # Questions?
 
 <div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
+
+<!--
+Alright, that was a lot of information about logs, events, complex data.
+
+I apparently spend too much time talking.
+
+Time for questions! Fire away!
+-->
 
 ---
 layout: center
