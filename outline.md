@@ -21,6 +21,18 @@ Disclaimer: I am not an English native speaker.
 But if something is not clear, don't blame my English.
 It simply means I have no idea whay I am talking about.
 
+## What is OpenTelemetry?
+
+For those who might be new to OpenTelemetry, let me give you a quick overview.
+
+OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
+It provides a unified approach to observability across different signal such as traces, metrics, logs, profiles.
+
+The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
+Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
+
+Today we're focusing specifically on logs and how they're driving major improvements across the entire OpenTelemetry ecosystem.
+
 ## init()
 
 People usually talk about the past, present, and future.

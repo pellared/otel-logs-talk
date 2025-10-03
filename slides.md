@@ -68,6 +68,43 @@ layout: center
 
 ---
 layout: center
+---
+
+<h1 class="flex gap-2">
+<span>What is</span>
+<span class="flex gap-2">
+  <img src="./opentelemetry-logo-nav.png" alt="OpenTelemetry" class="h-10" />
+  <strong>
+    <span class="text-orange">Open</span>
+    <span class="text-blue">Telemetry</span>
+  </strong>
+</span>
+</h1>
+
+<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
+
+<v-clicks>
+
+A **framework** for generating, processing, and exporting telemetry data:
+
+📊 **traces** - distributed request flows
+
+📈 **metrics** - numerical measurements over time
+
+📝 **logs** - timestamped records
+
+🔍 **profiles** - performance profiling data
+
+<div class="text-xl mt-8 text-orange">
+  One standard to observe them all 💍
+</div>
+
+</v-clicks>
+
+</div>
+
+---
+layout: center
 class: text-center
 ---
 
