@@ -1,6 +1,6 @@
 # OpenTelemetry Logs Driving a Major Shift: Events, Richer Data, and Smarter Semantics
 
-Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially the foundation of new major enhancements.
+Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially becoming the foundation of major new enhancements.
 
 ## whoami
 
@@ -16,7 +16,7 @@ Fun fact: I'm apparently the 3rd top OpenTelemetry Contributor according to Linu
 I'm not sure if that's impressive or just means I need better hobbies.
 
 I volunteered to design OpenTelemetry Go Logs and improve the OpenTelemetry Logs Specification in November 2023. 
-Apparently, someone thought I knew what I was doing.
+Apparently, someone thought I actually knew what I was doing.
 
 I am not an English native speaker.
 But if something is not clear, don't blame my English.
@@ -56,7 +56,7 @@ By the end of this talk, you'll understand why logs are no longer an afterthough
 
 Show hands: Who has seen logs like this?
 Keep your hands up!
-Don't worry, I won't judge you.
+Don't worry, nobody will judge you.
 
 *Say what part of the audience have their hands up.*
 
@@ -88,7 +88,7 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 - the event name identifies the type of event being recorded - we are going to discuss it later
 - the information what application and which library or component generated this log
 
-This isn't just regular logging made more complicated.
+This isn't just making your regular logging more complicated.
 It is structured logging that actually integrate with your traces.
 
 Here you can see the timestamp when the something happened and when it was recorded in OpenTelemetry.
@@ -103,7 +103,7 @@ Attributes are any additional metadata or log fields.
 
 Resource contains the data boostrapped by OpenTelemetry SDK that allows identifying the software that emited the log record.
 
-Instrumentation scope contains the information about the source code that emited the log record.
+Instrumentation scope contains information about the source code that emitted the log record.
 
 ## complex data
 
@@ -157,8 +157,8 @@ The **semantic conventions registry** is organized into groups:
 
 OpenTelemetry distinguishes between **Log Records** and **Event Records**.
 
-Log Record is for general-purpose logging, human-readable, "something happened".
-Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened".
+Log Record is for general-purpose logging, human-readable, "something happened."
+Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened."
 
 An Event Record is a Log Record with an event name and a well-known structure.
 
@@ -190,7 +190,7 @@ When you're stuck with one tool, you get creative.
 Turns out, constraints sometimes lead to good architectural decisions. Who knew?
 
 Of course, there are huge trade-offs.
-Storage costs and processing overhead on the backend, bigger network traffic, the existential crisis of "am I doing observability wrong?".
+Storage costs and processing overhead on the backend, bigger network traffic, the existential crisis of "am I doing observability wrong?"
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
 And always remember, there is no silver bulet.
@@ -240,7 +240,7 @@ OpenTelemetry recently added Enabled API.
 It is a way to check if logging is actually needed before you do all the expensive work of building log records.
 Think of it as "measure twice, cut once" but for telemetry.
 
-The idea is simple: before you spend CPU cycles formatting messages, serializing complex objects, or building those beautiful structured attributes, you ask: "Hey, is anyone actually going to process this log?".
+The idea is simple: before you spend CPU cycles formatting messages, serializing complex objects, or building those beautiful structured attributes, you ask: "Hey, is anyone actually going to process this log?"
 If the answer is no, you skip all the work.
 
 But here's where it gets really exciting.
