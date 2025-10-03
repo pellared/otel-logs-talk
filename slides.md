@@ -55,13 +55,13 @@ layout: center
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-🏠 Kraków, Poland
+🏠 [Kraków, Poland](https://krakow.travel)
 
-‍💻 @pellared on GitHub
+‍💻 [@pellared](https://github.com/pellared) on GitHub
 
-💼 Software Engineer at Splunk a Cisco company
+💼 Software Engineer at [Splunk a Cisco company](https://www.splunk.com)
 
-🔧 OpenTelemetry Go maintainer and Specification sponsor
+🔧 [OpenTelemetry Go](https://github.com/open-telemetry/opentelemetry-go) maintainer and [Specification](https://github.com/open-telemetry/opentelemetry-specification) sponsor
 
 🌴 Contributing to OTel Logs since Nov 2023
 

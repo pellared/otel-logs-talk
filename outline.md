@@ -22,7 +22,7 @@ I am not an English native speaker.
 But if something is not clear, don't blame my English.
 It simply means I have no idea whay I am talking about.
 
-## What is OpenTelemetry?
+## uname OpenTelemetry
 
 For those who might be new to OpenTelemetry, let me give you a quick overview.
 
