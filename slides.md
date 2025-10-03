@@ -73,16 +73,14 @@ layout: center
 
 <!--
 
-[click] I've traveled from the beautiful city of Kraków (Cracow).
+[click] I've traveled from the beautiful city of Kraków.
 
-[click] You can find me lurking around GitHub as pellared, probably creating some issue or opening yet another pull request.
+[click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
 [click] I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
 
 [click] I am an OpenTelemetry Go maintainer.
 I'm also an OpenTelemetry Specification sponsor.
-Fun fact: I'm apparently the 3rd top OpenTelemetry Contributor according to Linux Foundation Insights.
-I'm not sure if that's impressive or just means I need better hobbies.
 
 [click] I volunteered to design OpenTelemetry Go Logs and improve the OpenTelemetry Logs Specification in November 2023. 
 Apparently, someone thought I knew what I was doing.
@@ -166,14 +164,12 @@ class: text-center
 </div>
 
 <!--
-
 People usually talk about the past, present, and future.
 
 [click] But honestly, who cares about the past?
 We're here to talk about what's happening NOW and what's coming NEXT.
-We're not just talking about logs in isolation.
-We're talking about how logs and how they're driving major improvements across the entire OpenTelemetry ecosystem.
 
+And we're not just talking about logs in isolation.
 -->
 
 ---
@@ -197,9 +193,9 @@ layout: center
 </div>
 
 <!--
-During the talk are are going to explore the following areas in the context of OpenTelemetry:
+During the talk we are going to explore the following areas in the context of OpenTelemetry:
 
-[click] the syntax (or data model) of logs,
+[click] the data model of logs,
 
 [click] the semantics of logs and events,
 
@@ -259,7 +255,7 @@ We've ALL been there.
 "LOGGING HERE" with dashes?
 Classic debugging technique.
 Passwords in debug logs?
-Academic excellence right there.
+Academic cyber security best practices.
 -->
 
 ---
@@ -349,7 +345,7 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 
 [click] the event name identifies the type of event being recorded - we are going to discuss it later
 
-[click] the information what application and which library or component generated this log
+[click] the information what generated this log
 
 [click]
 This isn't just regular logging made more complicated.
@@ -402,7 +398,7 @@ Here you can see the timestamp when the something happened and when it was recor
 
 [click] Attributes are any additional metadata or log fields.
 
-[click] Resource contains the data boostrapped by OpenTelemetry SDK that allows identifying the software that emited the log record.
+[click] Resource allows identifying the software that emited the log record.
 
 [click] Instrumentation scope contains the information about the source code that emited the log record.
 
@@ -498,15 +494,18 @@ layout: center
 ]
 ```
 
-<!--
-Here are some examples of complex attributes.
-This means you can log entire payloads, complex error objects, or structured events without flattening them into strings.
-No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
--->
-
 <div class="mt-6 text-lg">
   <span class="text-green">✨</span> Rich, structured, meaningful data!
 </div>
+
+
+<!--
+Here are some examples of complex attributes.
+
+This means you can log entire payloads, complex error objects, or structured events without flattening them into strings.
+
+No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
+-->
 
 ---
 layout: statement
@@ -524,10 +523,6 @@ This won't be just a logs feature.
 It's like getting a free upgrade to business class for your entire observability stack.
 
 Imagine spans with complex attributes that can hold entire request/response objects. We're talking about a unified approach to complex data across all telemetry signals.
-
-Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breaking?" discussions.
-
-It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
 -->
 
 ---
@@ -537,7 +532,7 @@ layout: section
 # semantics
 
 <!--
-We've got structure and complex data.
+We've got structure.
 But how do we make sure everybody calls things the same way so we can actually search, correlate, and NOT cry when we merge data from five services written by five teams?
 -->
 
@@ -598,10 +593,6 @@ layout: center
 
 <!--
 There are also attributes that make sense only for log records.
-
-log.record.uid – stable unique ID for the log record
-
-log.iostream – stdout, stderr, or that custom log stream you regret creating
 -->
 
 ---
@@ -616,8 +607,6 @@ layout: center
 
 <!--
 At last, there are attributes ocused on protocols, systems, and shiny new tech.
-
-There are attributes for the web stuff, database things, and even AI.
 -->
 
 ---
@@ -630,6 +619,7 @@ layout: section
 OpenTelemetry distinguishes between Log Records and Event Records.
 
 Log Record is for general-purpose logging, human-readable, "something happened".
+
 Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened".
 -->
 
@@ -696,7 +686,7 @@ layout: center
 <!--
 Why the distinction?
 
-Because not every line your app spits out deserves to be treated like a meaningful business event.
+Because not every log your application emits deserves to be treated like something meaningful.
 
 Events are intentional, instrumented with purpose, not sprinkled around like debugging salt.
 
@@ -746,7 +736,7 @@ Read more about: <code><a href="https://brandur.org/canonical-log-lines">Canonic
 
 Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" that basically says: "What if we just logged everything we need in really rich, wide events?"
 
-The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed log events that contain ALL the context you need.
+The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed events that contain ALL the context you need.
 Then you can derive spans and metrics from these logs with proper semantics.
 
 Think about it:
@@ -760,14 +750,13 @@ Think about it:
 Now, I have to admit something: I was actually doing this back in 2019.
 Not because I was some visionary genius, but because I only had access to an efficient logs backend.
 When you're stuck with one tool, you get creative.
-Turns out, constraints sometimes lead to good architectural decisions. Who knew?
 
 [click]
-Of course, there are huge trade-offs.
-Storage costs and processing overhead on the backend, bigger network traffic, the existential crisis of "am I doing observability wrong?".
+Of course, there are huge trade-offs of such approach.
+Additional storage costs, processing overhead on the backend, bigger network traffic, not mentioning the existential crisis of "am I doing observability wrong?".
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
-And always remember, there is no silver bulet.
+However, always remember, there is no silver bulet.
 
 [click]
 You can read about it more online.
@@ -780,7 +769,7 @@ layout: section
 # api
 
 <!--
-Until recently, OpenTelemetry logs were mostly about getting logs from file streams or collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
+Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
 
 But what if you want to log directly using OpenTelemetry APIs?
 
@@ -828,7 +817,7 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 </div>
 
 <!--
-Now here's the big one – the User-facing OpenTelemetry Logging API.
+Now here's the big one – the user-facing OpenTelemetry logging API.
 This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
 
 [click] There is no need to go through traditional logging libraries and have the bridge overhead.
@@ -845,12 +834,6 @@ The best part? It plays nicely with existing logging.
 You can gradually migrate, use both approaches, or pick the right tool for each job.
 
 It's not about replacing everything. It's about giving you options.
-
-And yes, it takes forever to get right.
-Designing APIs that developers will actually want to use is hard.
-Making them consistent across 10+ programming languages?
-Even harder.
-But we're getting there.
 -->
 
 ---
