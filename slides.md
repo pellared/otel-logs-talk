@@ -801,6 +801,18 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 ) 
 ```
 
+<div class="text-xl text-left mx-auto space-y-4 max-w-4xl mb-8">
+<v-clicks>
+
+🚀 No format conversion
+
+✨ Full feature access
+
+🎯 Consistency
+
+</v-clicks>
+</div>
+
 <div class="grid grid-cols-2 gap-8 text-xl max-w-4xl mx-auto">
   <div v-click class="text-center p-6 bg-blue-900 rounded-xl border-2 border-blue-400">
     <div class="text-4xl mb-4">🔧</div>
