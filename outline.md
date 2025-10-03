@@ -107,7 +107,7 @@ Instrumentation scope contains the information about the source code that emited
 
 ## complex data
 
-The **Body** and **Attributes** fields in OpenTelemetry logs can contain complex data structures.
+The Body and Attributes fields in OpenTelemetry logs can contain complex data structures.
 Not just simple strings and numbers that make you cry at 3 AM.
 
 You can have:
@@ -120,12 +120,12 @@ Remember the dark days of parsing "user=alice,role=admin,lastLogin=2023-01-01"?
 Yeah, we don't talk about those anymore.
 No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
 
-But wait, there's more! These **complex values are coming to ALL OpenTelemetry signals**: traces, metrics, and profiles.
-This isn't just a logs feature.
+But wait, there's more! These complex values are coming to ALL OpenTelemetry signals: traces, metrics, and profiles.
+This won't be just a logs feature.
 It's like getting a free upgrade to business class for your entire observability stack.
 Imagine spans with complex attributes that can hold entire request/response objects.
 We're talking about a unified approach to complex data across all telemetry signals.
-Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breakingp?" discussions.
+Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breaking?" discussions.
 It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
 
 ## semantics
@@ -171,7 +171,7 @@ You can index them differently, correlate them intelligently, and maybe even gen
 
 ## spans & metrics from events
 
-Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" (https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events/) that basically says: "What if we just logged everything we need in really rich, wide events?"
+Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" that basically says: "What if we just logged everything we need in really rich, wide events?"
 
 The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed log events that contain ALL the context you need.
 Then you can derive spans and metrics from these logs with proper semantics.
@@ -183,8 +183,6 @@ Think about it:
 - Need metrics?
   Aggregate the numerical values in your event attributes.
 
-It's like having one data source to rule them all.
-One event to find them. One log to bring them all, and in the observability bind them.
 
 Now, I have to admit something: I was actually doing this back in 2019.
 Not because I was some visionary genius, but because I only had access to an efficient logs backend.
@@ -199,12 +197,12 @@ And always remember, there is no silver bulet.
 
 ## user-facing api
 
-Now here's the big one – the **User-facing OpenTelemetry Logging API**.
-This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
-
-Until now, OpenTelemetry logs were mostly about collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
+Until recently, OpenTelemetry logs were mostly about getting logs from streams or collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
 But what if you want to log directly using OpenTelemetry APIs?
 What if you want to emit those beautiful structured events we've been talking about?
+
+Now here's the big one – the **User-facing OpenTelemetry Logging API**.
+This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
 
 Well, now you can! The OpenTelemetry Logs API lets you:
 

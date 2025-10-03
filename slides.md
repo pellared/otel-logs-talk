@@ -451,6 +451,25 @@ layout: center
 </v-clicks>
 </div>
 
+<!--
+The Body and Attributes fields in OpenTelemetry logs can contain complex data structures.
+Not just simple strings and numbers that make you cry at 3 AM.
+The value can be:
+
+[click] primitive value like text, number or boolean value,
+
+[click] an array of any value, meaning that the first item in an array can be a string and the second item can be an integer
+
+[click] a map of string to any value, meaning you can compose any nested structure like a Matryoshka doll,
+
+[click] or even a binary object,
+
+[click] at last in can be nothing.
+
+You can approxiamte it to something like BSON format.
+
+-->
+
 ---
 layout: center
 ---
@@ -479,6 +498,12 @@ layout: center
 ]
 ```
 
+<!--
+Here are some examples of complex attributes.
+This means you can log entire payloads, complex error objects, or structured events without flattening them into strings.
+No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
+-->
+
 <div class="mt-6 text-lg">
   <span class="text-green">✨</span> Rich, structured, meaningful data!
 </div>
@@ -491,11 +516,30 @@ layout: statement
 
 OTel is dropping the attributes values restriction
 
+<!--
+But wait, there's more! These complex values are coming to ALL OpenTelemetry signals: traces, metrics, and profiles.
+
+This won't be just a logs feature.
+
+It's like getting a free upgrade to business class for your entire observability stack.
+
+Imagine spans with complex attributes that can hold entire request/response objects. We're talking about a unified approach to complex data across all telemetry signals.
+
+Getting agreement that this is even acceptable took about a year of proposals, bikeshedding, and "is this not breaking?" discussions.
+
+It's like finally getting your whole family to agree on pizza toppings: miraculous and life-changing.
+-->
+
 ---
 layout: section
 ---
 
 # semantics
+
+<!--
+We've got structure and complex data.
+But how do we make sure everybody calls things the same way so we can actually search, correlate, and NOT cry when we merge data from five services written by five teams?
+-->
 
 ---
 layout: statement
@@ -514,6 +558,14 @@ Making logs searchable & comparable
   Same semantics = Better queries and dashbaords
 </div>
 
+<!--
+That's where semantic conventions come in.
+
+Think of them as telemetry guidelines with a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
+
+The semantic conventions registry is organized into groups.
+-->
+
 ---
 layout: center
 ---
@@ -524,6 +576,17 @@ layout: center
 - `exception.message`
 - `service.name`, `deployment.environment`
 
+<!--
+We have cross-cutting attribute groups like code or exception groups.
+They apply across many signals and use cases. For example we have:
+
+code.line_number – because knowing where it broke is half the battle
+
+exception.message – the actual error
+
+service.name, deployment.environment – so you know what application broke and if it is on production or just staging
+-->
+
 ---
 layout: center
 ---
@@ -532,6 +595,14 @@ layout: center
 
 - `log.record.uid`
 - `log.iostream` 
+
+<!--
+There are also attributes that make sense only for log records.
+
+log.record.uid – stable unique ID for the log record
+
+log.iostream – stdout, stderr, or that custom log stream you regret creating
+-->
 
 ---
 layout: center
@@ -543,11 +614,24 @@ layout: center
 - `db.system`, `db.statement`
 - `gen_ai.provider.name`, `gen_ai.response.id`
 
+<!--
+At last, there are attributes ocused on protocols, systems, and shiny new tech.
+
+There are attributes for the web stuff, database things, and even AI.
+-->
+
 ---
 layout: section
 ---
 
 # event vs log
+
+<!--
+OpenTelemetry distinguishes between Log Records and Event Records.
+
+Log Record is for general-purpose logging, human-readable, "something happened".
+Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened".
+-->
 
 ---
 layout: statement
@@ -559,6 +643,10 @@ is a Log Record<br>
 with an <span class="text-orange">event name</span><br>
 and a <span class="text-blue">well-known structure</span>.
 </h1>
+
+<!--
+An Event Record is a Log Record with an event name and a well-known structure.
+-->
 
 ---
 layout: center
@@ -605,6 +693,18 @@ layout: center
   Same data model, different semantics.
 </div>
 
+<!--
+Why the distinction?
+
+Because not every line your app spits out deserves to be treated like a meaningful business event.
+
+Events are intentional, instrumented with purpose, not sprinkled around like debugging salt.
+
+This matters because platforms can now treat Events as first-class citizens.
+
+You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
+-->
+
 ---
 layout: statement
 ---
@@ -637,16 +737,55 @@ time="23:00:01.123Z" eventName="span.end"   traceID=T01 spanID=S01 parentID=    
 </div>
 
 <div>
-Read more about: <code>Canonical Log Lines</code> and <code>Wide Events</code>.
+Read more about: <code><a href="https://brandur.org/canonical-log-lines">Canonical Log Lines</a></code> and <code><a href="https://jeremymorrell.dev/blog/a-practitioners-guide-to-wide-events">Wide Events</a></code>.
 </div>
 
 </v-clicks>
+
+<!--
+
+Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" that basically says: "What if we just logged everything we need in really rich, wide events?"
+
+The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed log events that contain ALL the context you need.
+Then you can derive spans and metrics from these logs with proper semantics.
+
+Think about it:
+- Want a span?
+  Extract the start/end timestamps and duration from your events.
+  Follow the correlation IDs and build the trace graph.
+- Need metrics?
+  Aggregate the numerical values in your event attributes.
+
+[click]
+Now, I have to admit something: I was actually doing this back in 2019.
+Not because I was some visionary genius, but because I only had access to an efficient logs backend.
+When you're stuck with one tool, you get creative.
+Turns out, constraints sometimes lead to good architectural decisions. Who knew?
+
+[click]
+Of course, there are huge trade-offs.
+Storage costs and processing overhead on the backend, bigger network traffic, the existential crisis of "am I doing observability wrong?".
+But when it works, it's like having X-ray vision into your systems.
+Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
+And always remember, there is no silver bulet.
+
+[click]
+You can read about it more online.
+-->
 
 ---
 layout: section
 ---
 
 # api
+
+<!--
+Until recently, OpenTelemetry logs were mostly about getting logs from file streams or collecting (bridging) logs from existing logging frameworks (like log4j, Serilog, or Python's logging module) and adding correlation context.
+
+But what if you want to log directly using OpenTelemetry APIs?
+
+What if you want to emit those beautiful structured events we've been talking about?
+-->
 
 ---
 layout: center
@@ -807,6 +946,7 @@ This presentation: <https://otel-logs-talk.netlify.app>
 - Tyler Yahn, Cijo Thomas
 - OpenTelemetry Go and Specification SIG
 - Everyone who raised their hands
+- GenAI (sic!)
 
 </v-clicks>
 </div>
