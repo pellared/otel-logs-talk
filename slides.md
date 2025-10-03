@@ -676,9 +676,12 @@ This presentation: <https://otel-logs-talk.netlify.app>
 
 <div class="text-5xl mb-8"></div>
 
-## Special thanks 🙏
 
-<div class="text-lg mx-auto space-y-6">
+<div class="text-lg mx-auto space-y-2">
+
+
+
+<span v-click class="text-2xl">Special thanks 🙏</span>
 
 <v-clicks>
 
@@ -694,18 +697,10 @@ This presentation: <https://otel-logs-talk.netlify.app>
 <div class="mt-8 text-xl text-red">
   Don't let your logs be trash 🗑️
 </div>
-<div class="text-2xl mb-6 text-green">
+<div class="text-2xl mb-2 text-green">
   May your logs be structured! 🎉
 </div>
-</div>
-
-<div v-click class="text-xl">
-  
-**GitHub**: @pellared
-<br>
-**CNCF Slack**: Robert Pajak
-
-<div class="flex gap-2">
+<div class="flex text-2xl gap-2">
   <img src="./opentelemetry-logo-nav.png" alt="OpenTelemetry" class="h-8" />
   <strong>
     <span class="text-orange">Open</span>
@@ -713,4 +708,15 @@ This presentation: <https://otel-logs-talk.netlify.app>
   </strong>
   ❤️
 </div>
+</div>
+
+<div v-click class="text-xl">
+
+<br>
+
+**GitHub**: [@pellared](https://github.com/pellared)
+
+[**CNCF Slack**](https://slack.cncf.io/): Robert Pajak
+
+
 </div>
