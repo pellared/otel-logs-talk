@@ -674,12 +674,7 @@ layout: center
 
 This presentation: <https://otel-logs-talk.netlify.app>
 
-<div class="text-5xl mb-8"></div>
-
-
 <div class="text-lg mx-auto space-y-2">
-
-
 
 <span v-click class="text-2xl">Special thanks 🙏</span>
 
@@ -710,13 +705,11 @@ This presentation: <https://otel-logs-talk.netlify.app>
 </div>
 </div>
 
-<div v-click class="text-xl">
-
 <br>
+
+<div v-click class="text-xl">
 
 **GitHub**: [@pellared](https://github.com/pellared)
 
 [**CNCF Slack**](https://slack.cncf.io/): Robert Pajak
-
-
 </div>
