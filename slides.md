@@ -43,7 +43,7 @@ Logs
 <https://pellared.github.io/otel-logs-talk>
 
 <!--
-Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially becoming the foundation of major new enhancements.
+Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially become the foundation of major new enhancements.
 -->
 
 ---

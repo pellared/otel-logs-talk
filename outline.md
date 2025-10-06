@@ -1,6 +1,6 @@
 # OpenTelemetry Logs Driving a Major Shift: Events, Richer Data, and Smarter Semantics
 
-Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially becoming the foundation of major new enhancements.
+Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially become the foundation of major new enhancements.
 
 ## whoami
 
