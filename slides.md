@@ -77,7 +77,7 @@ layout: center
 
 [click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
-[click] I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
+[click] I'm a Software Engineer at Splunk (a company acquired by Cisco), which means I get paid for contributing to open source.
 
 [click] I am an OpenTelemetry Go maintainer.
 I'm also an OpenTelemetry Specification sponsor.
@@ -87,7 +87,7 @@ Apparently, someone thought I actually knew what I was doing.
 
 [click] I am not an English native speaker.
 But if something is not clear, don't blame my English.
-It simply means I have no idea whay I am talking about.
+It simply means I have no idea what I am talking about.
 
 -->
 
@@ -398,7 +398,7 @@ Here you can see the timestamp when the something happened and when it was recor
 
 [click] Attributes are any additional metadata or log fields.
 
-[click] Resource allows identifying the software that emited the log record.
+[click] Resource allows identifying the software that emitted the log record.
 
 [click] Instrumentation scope contains information about the source code that emitted the log record.
 
@@ -462,7 +462,7 @@ The value can be:
 
 [click] at last in can be nothing.
 
-You can approxiamte it to something like BSON format.
+You can approximate it to something like BSON format.
 
 -->
 
@@ -551,7 +551,7 @@ Semantic Conventions
 Making logs searchable & comparable
 
 <div class="text-2xl font-bold text-green mb-6">
-  Same semantics = Better queries and dashbaords
+  Same semantics = Better queries and dashboards
 </div>
 
 <!--
@@ -764,7 +764,7 @@ Additional storage costs, processing overhead on the backend, bigger network tra
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
 
-However, always remember, there is no silver bulet.
+However, always remember, there is no silver bullet.
 
 You can read about it more online.
 -->
@@ -831,7 +831,7 @@ This is the piece that finally gives developers a proper, first-class way to emi
 
 [click] You can use complex attributes and 
 
-[click] You can also reuse the attributes accross signals.
+[click] You can also reuse the attributes across signals.
 
 [click] It is critical for libraries and frameworks adding OpenTelemetry instrumentation to make sure to not couple it to any other library like log4j.
 
@@ -1062,7 +1062,7 @@ I hope you learned something useful today.
 
 [click] Special credits to
 
-[click] People who continously help with all the logs work
+[click] People who continuously help with all the logs work
 
 [click] Those who helped me a lot during implementation of logs in OTel Go 
 

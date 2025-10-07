@@ -8,7 +8,7 @@ I've traveled from the beautiful city of Kraków.
 
 You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
-I'm a Software Engineer at Splunk (a company aquired by Cisco), which means I get paid for contributing to open source.
+I'm a Software Engineer at Splunk (a company acquired by Cisco), which means I get paid for contributing to open source.
 
 I am an OpenTelemetry Go maintainer.
 I'm also an OpenTelemetry Specification sponsor.
@@ -18,7 +18,7 @@ Apparently, someone thought I actually knew what I was doing.
 
 I am not an English native speaker.
 But if something is not clear, don't blame my English.
-It simply means I have no idea whay I am talking about.
+It simply means I have no idea what I am talking about.
 
 ## uname OpenTelemetry
 
@@ -111,7 +111,7 @@ Body is typically the log message.
 
 Attributes are any additional metadata or log fields.
 
-Resource contains the data boostrapped by OpenTelemetry SDK that allows identifying the software that emited the log record.
+Resource contains the data bootstrapped by OpenTelemetry SDK that allows identifying the software that emitted the log record.
 
 Instrumentation scope contains information about the source code that emitted the log record.
 
@@ -127,7 +127,7 @@ The value can be:
 - or even a binary object,
 - at last in can be nothing.
 
-You can approxiamte it to something like BSON format.
+You can approximate it to something like BSON format.
 
 ## Complex values
 
@@ -178,7 +178,7 @@ There are also attributes that make sense only for log records.
 
 ## Domain-specific attributes
 
-At last, there are attributes ocused on protocols, systems, and shiny new tech.
+At last, there are attributes focused on protocols, systems, and shiny new tech.
 
 
 
@@ -228,7 +228,7 @@ Additional storage costs, processing overhead on the backend, bigger network tra
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
 
-However, always remember, there is no silver bulet.
+However, always remember, there is no silver bullet.
 
 You can read about it more online.
 
@@ -249,7 +249,7 @@ There is no need to go through traditional logging libraries and have the bridge
 
 You can use complex attributes and 
 
-You can also reuse the attributes accross signals.
+You can also reuse the attributes across signals.
 
 It is critical for libraries and frameworks adding OpenTelemetry instrumentation to make sure to not couple it to any other library like log4j.
 
@@ -314,7 +314,7 @@ I hope you learned something useful today.
 
 Special credits to:
 
-- People who continously help with all the logs work
+- People who continuously help with all the logs work
 - Those who helped me a lot during implementation of logs in OTel Go 
 - OTel contributors for reviewing my pull requests and providing a lot of comments
 - Everyone who raised their hands during the "trash logs" section; your honesty is appreciated. Also thank you for all those that asked questions.
