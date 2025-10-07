@@ -4,6 +4,8 @@ Welcome to my talk about how OpenTelemetry Logs evolved from the least mature si
 
 ## whoami
 
+Hello, I am Robert Pająk.
+
 I've traveled from the beautiful city of Kraków.
 
 You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.

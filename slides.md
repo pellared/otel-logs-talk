@@ -72,6 +72,7 @@ layout: center
 </div>
 
 <!--
+Hello, I am Robert Pająk.
 
 [click] I've traveled from the beautiful city of Kraków.
 
