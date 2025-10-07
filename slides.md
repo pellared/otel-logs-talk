@@ -156,7 +156,7 @@ A **framework** for generating, processing, and exporting telemetry data:
 For those who might be new to OpenTelemetry, let me give you a quick overview.
 
 [click] OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
-It provides a unified approach to observability across different signal such as
+It provides a unified approach to observability across different signals such as
 
 [click] traces
 
@@ -348,7 +348,7 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 This isn't just making your regular logging more complicated.
 
 [click]
-It is structured logging that actually integrate with your traces.
+It is structured logging that actually integrates with your traces.
 
 -->
 
@@ -408,7 +408,7 @@ The value can be:
 
 [click] or even a binary object,
 
-[click] at last in can be nothing.
+[click] at last it can be nothing.
 
 You can approximate it to something like BSON format.
 
@@ -466,7 +466,7 @@ OTel is dropping the attributes values restriction
 <!--
 But wait, there's more! These complex values are coming to ALL OpenTelemetry signals: traces, metrics, and profiles.
 
-This won't be just a logs feature.
+This won't be just a logging feature.
 
 It's like getting a free upgrade to business class for your entire observability stack.
 
@@ -846,7 +846,7 @@ Now, let's talk about performance.
 Because what good is amazing structured logging if it kills your application's performance?
 
 [click]
-OpenTelemetry recently added Enabled API.
+OpenTelemetry recently added an Enabled API.
 It is a way to check if logging is actually needed before you do all the expensive work of building log records.
 Think of it as "measure twice, cut once" but for telemetry.
 
@@ -948,7 +948,7 @@ class: text-center
 <div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
 
 <!--
-Alright, that was a lot of information about logs, events, complex data.
+Alright, that was a lot of information about logs, events, and complex data.
 
 I apparently spend too much time talking.
 Time for questions!

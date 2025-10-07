@@ -34,7 +34,7 @@ We're here to talk about what's happening NOW and what's coming NEXT.
 For those who might be new to OpenTelemetry, let me give you a quick overview.
 
 OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
-It provides a unified approach to observability across different signal such as traces, metrics, logs, profiles.
+It provides a unified approach to observability across different signals such as traces, metrics, logs, profiles.
 
 The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
@@ -85,7 +85,7 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 
 This isn't just making your regular logging more complicated.
 
-It is structured logging that actually integrate with your traces.
+It is structured logging that actually integrates with your traces.
 
 ## complex data
 
@@ -97,7 +97,7 @@ The value can be:
 - an array of any value, meaning that the first item in an array can be a string and the second item can be an integer
 - a map of string to any value, meaning you can compose any nested structure like a Matryoshka doll,
 - or even a binary object,
-- at last in can be nothing.
+- at last it can be nothing.
 
 You can approximate it to something like BSON format.
 
@@ -113,7 +113,7 @@ No more trying to reconstruct object hierarchies from flat attributes like some 
 
 But wait, there's more! These complex values are coming to ALL OpenTelemetry signals: traces, metrics, and profiles.
 
-This won't be just a logs feature.
+This won't be just a logging feature.
 
 It's like getting a free upgrade to business class for your entire observability stack.
 
@@ -236,7 +236,7 @@ Now, let's talk about performance.
 
 Because what good is amazing structured logging if it kills your application's performance?
 
-OpenTelemetry recently added Enabled API.
+OpenTelemetry recently added an Enabled API.
 It is a way to check if logging is actually needed before you do all the expensive work of building log records.
 Think of it as "measure twice, cut once" but for telemetry.
 
@@ -272,7 +272,7 @@ That's the kind of evolution that should make everyone happy: developers get bet
 
 ## q&a
 
-Alright, that was a lot of information about logs, events, complex data.
+Alright, that was a lot of information about logs, events, and complex data.
 
 I apparently spend too much time talking.
 Time for questions!
