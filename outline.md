@@ -10,15 +10,9 @@ You can find me on GitHub as pellared, probably creating some issue or opening y
 
 I'm a Software Engineer at Splunk (a company acquired by Cisco), which means I get paid for contributing to open source.
 
-I am an OpenTelemetry Go maintainer.
-I'm also an OpenTelemetry Specification sponsor.
+I am an OpenTelemetry Go maintainer and Specification sponsor.
 
-I volunteered to design OpenTelemetry Go Logs and improve the OpenTelemetry Logs Specification in November 2023. 
-Apparently, someone thought I actually knew what I was doing.
-
-I am not an English native speaker.
-But if something is not clear, don't blame my English.
-It simply means I have no idea what I am talking about.
+I've been contributing to OpenTelemetry Logs since November 2023.
 
 ## uname OpenTelemetry
 
@@ -29,15 +23,6 @@ It provides a unified approach to observability across different signal such as 
 
 The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
-
-## past, present, future
-
-People usually talk about the past, present, and future.
-
-But honestly, who cares about the past?
-We're here to talk about what's happening NOW and what's coming NEXT.
-
-And we're not just talking about logs in isolation.
 
 ## init()
 
@@ -59,25 +44,12 @@ Don't worry, nobody will judge you.
 
 *Say what part of the audience have their hands up.*
 
-I've written logs like this too.
 We've ALL been there.
-"LOGGING HERE" with dashes?
-Classic debugging technique.
-Passwords in debug logs?
-Academic cyber security best practices.
+"LOGGING HERE" with dashes, passwords in debug logs.
 
 # THIS is why we need better logging standards
 
-But seriously, this is what we're working with in production systems everywhere.
-
-Note that wasted logs cost money.
-
-There's nothing like a free meal, and every useless "It works" message is burning through your observability budget.
-
-Plus, it slows down your application.
-
-Moreover, it adds noise to the captured telemetry.
-
+Wasted logs cost money, slow down applications, and add noise.
 THIS is why we need better logging standards.
 
 ## syntax
@@ -88,32 +60,17 @@ What does a proper log record look like in OpenTelemetry? Let's talk about the L
 
 In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
 
-- the timestamps when it happened and when it was captured
-- the trace and span IDs for correlation magic
-- not just "INFO/WARN/ERROR" but proper severity levels
-- the actual log message or payload that can be complex
-- the key-value pairs for structured metadata
-- the event name identifies the type of event being recorded - we are going to discuss it later
-- the information what application and which library or component generated this log
+- timestamps when it happened and when it was captured
+- trace context for correlation magic
+- proper severity level
+- actual log message or payload
+- any additional metadata or log fields
+- Resource allows identifying the software that emitted the log record
+- Instrumentation scope containing information about the source code that emitted the log record
 
 This isn't just making your regular logging more complicated.
+
 It is structured logging that actually integrate with your traces.
-
-## Log Record
-
-Here you can see the timestamp when the something happened and when it was recorded in OpenTelemetry.
-
-As you can see the log record contains the trace context.
-
-The severity is a level which is a number, but it is also a text so that the names from logging libraries can be preserved.
-
-Body is typically the log message.
-
-Attributes are any additional metadata or log fields.
-
-Resource contains the data bootstrapped by OpenTelemetry SDK that allows identifying the software that emitted the log record.
-
-Instrumentation scope contains information about the source code that emitted the log record.
 
 ## complex data
 
@@ -179,8 +136,6 @@ There are also attributes that make sense only for log records.
 ## Domain-specific attributes
 
 At last, there are attributes focused on protocols, systems, and shiny new tech.
-
-
 
 ## event vs log
 
@@ -322,4 +277,4 @@ Special credits to:
 
 Now go forth and log responsibly!
 
-You can find me on GitHub as pellared and on CNCF Slack as Robert Pajak, if you have questions that didn't fit into today's talk.
+Find me on GitHub as pellared or CNCF Slack as Robert Pajak.

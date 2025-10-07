@@ -79,11 +79,9 @@ layout: center
 
 [click] I'm a Software Engineer at Splunk (a company acquired by Cisco), which means I get paid for contributing to open source.
 
-[click] I am an OpenTelemetry Go maintainer.
-I'm also an OpenTelemetry Specification sponsor.
+[click] I am an OpenTelemetry Go maintainer and Specification sponsor.
 
-[click] I volunteered to design OpenTelemetry Go Logs and improve the OpenTelemetry Logs Specification in November 2023. 
-Apparently, someone thought I actually knew what I was doing.
+[click] I've been contributing to OpenTelemetry Logs since November 2023.
 
 [click] I am not an English native speaker.
 But if something is not clear, don't blame my English.
@@ -146,30 +144,6 @@ It provides a unified approach to observability across different signal such as
 [click] The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
 
--->
-
----
-layout: center
-class: text-center
----
-
-<div class="text-5xl text-left mx-auto space-y-18">
-
-<span v-click.hide>🕰️ Past (Deprecated)</span>
-
-📍 Present (Stable)
-
-🚀 Future (Development)
-
-</div>
-
-<!--
-People usually talk about the past, present, and future.
-
-[click] But honestly, who cares about the past?
-We're here to talk about what's happening NOW and what's coming NEXT.
-
-And we're not just talking about logs in isolation.
 -->
 
 ---
@@ -250,12 +224,8 @@ Don't worry, nobody will judge you.
 
 *Say what part of the audience have their hands up.*
 
-I've written logs like this too.
 We've ALL been there.
-"LOGGING HERE" with dashes?
-Classic debugging technique.
-Passwords in debug logs?
-Academic cyber security best practices.
+"LOGGING HERE" with dashes, passwords in debug logs.
 -->
 
 ---
@@ -265,15 +235,7 @@ layout: statement
 # THIS is why<br>we need better logging standards
 
 <!--
-But seriously, this is what we're working with in production systems everywhere.
-
-Note that wasted logs cost money.
-
-There's nothing like a free meal, and every useless "It works" message is burning through your observability budget.
-
-Plus, it slows down your application.
-
-Moreover, it adds noise to the captured telemetry.
+Wasted logs cost money, slow down applications, and add noise.
 
 THIS is why we need better logging standards.
 -->
@@ -299,67 +261,10 @@ class: text-center
 <span class="text-blue">Telemetry</span>
 Logs
 </strong>
-<br>
 Data Model
 </h1>
-
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
-
-⏰ Timestamp & Observed Timestamp
-
-🔗 Trace Context
-
-📊 Severity
-
-📝 Body
-
-🏷️ Attributes
-
-🎯 Event Name
-
-📍 Resource & Instrumentation Scope
-
-<div class="text-xl mb-6 text-orange">
-  Not just strings with timestamps.
-</div>
-<div class="mt-8 text-xl font-bold text-blue">
-  Logs that carry context. Logs that make sense! ✨
-</div>
-
-</v-clicks>
-</div>
-
-<!--
-In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
-
-[click] the timestamps when it happened and when it was captured
-
-[click] the trace and span IDs for correlation magic
-
-[click] not just "INFO/WARN/ERROR" but proper severity levels
-
-[click] the actual log message or payload that can be complex
-
-[click] the key-value pairs for structured metadata
-
-[click] the event name identifies the type of event being recorded - we are going to discuss it later
-
-[click] the information what generated this log
-
-[click]
-This isn't just making your regular logging more complicated.
-
-[click]
-It is structured logging that actually integrate with your traces.
-
--->
-
----
-layout: center
----
-
-# Log Record
 
 ```json {1-2|3-5|6-7|8|9-14|15-19|20-22}
 "Timestamp": "2023-11-15T09:15:20.250Z",
@@ -386,21 +291,39 @@ layout: center
 }
 ```
 
+
+<span class="text-xl mb-6 text-orange">
+  Not just strings with timestamps.
+</span>
+<span class="mt-8 text-xl font-bold text-blue">
+  Logs that carry context.
+</span>
+
+</v-clicks>
+</div>
+
 <!--
+In OpenTelemetry, a log record isn't just a string with a timestamp. It's a structured piece of telemetry with:
 
-Here you can see the timestamp when the something happened and when it was recorded in OpenTelemetry.
+[click] timestamps when it happened and when it was captured
 
-[click] As you can see the log record contains the trace context.
+[click] trace context for correlation magic
 
-[click] The severity is a level which is a number, but it is also a text so that the names from logging libraries can be preserved.
+[click] proper severity level
 
-[click] Body is typically the log message.
+[click] actual log message or payload
 
-[click] Attributes are any additional metadata or log fields.
+[click] any additional metadata or log fields
 
-[click] Resource allows identifying the software that emitted the log record.
+[click] Resource allows identifying the software that emitted the log record
 
-[click] Instrumentation scope contains information about the source code that emitted the log record.
+[click] Instrumentation scope containing information about the source code that emitted the log record
+
+[click]
+This isn't just making your regular logging more complicated.
+
+[click]
+It is structured logging that actually integrate with your traces.
 
 -->
 
@@ -1074,6 +997,6 @@ I hope you learned something useful today.
 
 [click] Now go forth and log responsibly!
 
-[click] You can find me on GitHub as pellared and on CNCF Slack as Robert Pajak, if you have questions that didn't fit into today's talk.
+[click] Find me on GitHub as pellared or CNCF Slack as Robert Pajak.
 
 -->
