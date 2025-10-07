@@ -87,6 +87,30 @@ Hello, I am Robert Pająk.
 [click] I am not an English native speaker.
 But if something is not clear, don't blame my English.
 It simply means I have no idea what I am talking about.
+Or that I am bad at reading.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+<div class="text-5xl text-left mx-auto space-y-18">
+
+<span v-click.hide>🕰️ Past (Deprecated)</span>
+
+📍 Present (Stable)
+
+🚀 Future (Development)
+
+</div>
+
+<!--
+People often talk about the past, present, and future.
+
+[click] But honestly, who cares about the past?
+
+We're here to talk about what's happening NOW and what's coming NEXT.
 
 -->
 

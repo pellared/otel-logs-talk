@@ -16,6 +16,19 @@ I am an OpenTelemetry Go maintainer and Specification sponsor.
 
 I've been contributing to OpenTelemetry Logs since November 2023.
 
+I am not an English native speaker.
+But if something is not clear, don't blame my English.
+It simply means I have no idea what I am talking about.
+Or that I am bad at reading.
+
+## past, present, future
+
+People usually talk about the past, present, and future.
+
+But honestly, who cares about the past?
+
+We're here to talk about what's happening NOW and what's coming NEXT.
+
 ## uname OpenTelemetry
 
 For those who might be new to OpenTelemetry, let me give you a quick overview.
