@@ -522,7 +522,8 @@ This won't be just a logs feature.
 
 It's like getting a free upgrade to business class for your entire observability stack.
 
-Imagine spans with complex attributes that can hold entire request/response objects. We're talking about a unified approach to complex data across all telemetry signals.
+Imagine spans with complex attributes that can hold entire request/response objects.
+We're talking about a unified approach to complex data across all telemetry signals.
 -->
 
 ---
@@ -759,7 +760,6 @@ When you're stuck with one tool, you get creative.
 Of course, there are huge trade-offs of such approach.
 Additional storage costs, processing overhead on the backend, bigger network traffic, not mentioning the existential crisis of "am I doing observability wrong?"
 
-
 [click]
 But when it works, it's like having X-ray vision into your systems.
 Everything is connected, everything has context, and you can slice and dice your data however you want without wondering if you forgot to add that one crucial attribute to your metric.
@@ -982,7 +982,10 @@ Let me summarize this journey through the chaotic world of logs.
 We've all been writing trash logs. "LOGGING HERE" with dashes?
 We've ALL been there. But trash logs cost money, slow down apps, and make observability engineers cry into their coffee.
 
-In OpenTelemetry, logs are structured and can contain complex data. Moreover, complex attributes are going to also arrive to other signals. OpenTelemetry has semantic conventions that not only define the attributes, but also distinguish between log and event records. Logs are getting faster too.
+In OpenTelemetry, logs are structured and can contain complex data.
+Moreover, complex attributes are going to also arrive to other signals.
+OpenTelemetry has semantic conventions that not only define the attributes, but also distinguish between log and event records.
+Logs are getting faster too.
 
 That's the kind of evolution that should make everyone happy: developers get better observability, operations get cleaner data.
 -->
@@ -1000,8 +1003,7 @@ class: text-center
 Alright, that was a lot of information about logs, events, complex data.
 
 I apparently spend too much time talking.
-
-Time for questions! Fire away!
+Time for questions!
 -->
 
 ---
@@ -1056,7 +1058,7 @@ This presentation: <https://pellared.github.io/otel-logs-talk>
 <!--
 
 Thank you all for listening.
-I hope you learned something useful today, or at least got a few laughs.
+I hope you learned something useful today.
 
 [click] Special credits to
 
@@ -1068,7 +1070,7 @@ I hope you learned something useful today, or at least got a few laughs.
 
 [click] Everyone who raised their hands during the "trash logs" section; your honesty is appreciated. Also thank you for all those that asked questions.
 
-[click] GenAI and Copilot who helped me a lot in preparing the presentation.
+[click] GenAI and Copilot that helped me a lot in preparing the presentation.
 
 [click] Now go forth and log responsibly!
 
