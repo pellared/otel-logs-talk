@@ -562,7 +562,7 @@ At last, there are attributes focused on protocols, systems, and shiny new tech.
 layout: section
 ---
 
-# event vs log
+# log vs event
 
 <!--
 OpenTelemetry distinguishes between Log Records and Event Records.

@@ -152,7 +152,7 @@ There are also attributes that make sense only for log records.
 
 At last, there are attributes focused on protocols, systems, and shiny new tech.
 
-## event vs log
+## log vs event
 
 OpenTelemetry distinguishes between Log Records and Event Records.
 
