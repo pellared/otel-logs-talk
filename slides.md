@@ -697,7 +697,7 @@ Think about it:
   Extract the start/end timestamps and duration from your events.
   Follow the correlation IDs and build the trace graph.
 - Need metrics?
-  Aggregate the numerical values in your event attributes.
+  Aggregate the numerical values from your event attributes.
 
 [click]
 Now, I have to admit something: I was actually doing this back in 2019.
