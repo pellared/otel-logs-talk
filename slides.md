@@ -397,7 +397,7 @@ layout: center
 
 <!--
 The Body and Attributes fields in OpenTelemetry logs can contain complex data structures.
-Not just simple strings and numbers that make you cry at 3 AM.
+Not just simple strings and numbers.
 The value can be:
 
 [click] primitive value like text, number or boolean value,
