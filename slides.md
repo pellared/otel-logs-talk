@@ -599,11 +599,11 @@ layout: center
 
 ```json
 {
-  "Body": "User logged in successfully",
+  "Body": "Product purchased successfully",
   "SeverityNumber": 9,
   "SeverityText": "INFO", 
   "Attributes": {
-    "user.id": "octobot"
+    "product": "telescope",
   }
 }
 ```
@@ -616,10 +616,10 @@ layout: center
 
 ```json
 {
-  "EventName": "user.login",
+  "EventName": "product.purchase",
   "SeverityNumber": 9,
   "Attributes": {
-    "user.id": "octobot"
+    "product.id": 1024
   }
 }
 ```
@@ -772,12 +772,12 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 </div>
 
 <!--
-Now here's the big one – the user-facing OpenTelemetry logging API.
+Now let's talk the user-facing OpenTelemetry logging API.
 This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
 
 [click] There is no need to go through traditional logging libraries and have the bridge overhead.
 
-[click] You can use complex attributes and 
+[click] You can use complex attributes. 
 
 [click] You can also reuse the attributes across signals.
 
@@ -871,8 +871,6 @@ layout: center
 
 <Youtube id="Ej-z2WwWWak" />
 
-
-
 </v-clicks>
 
 </div>
@@ -936,22 +934,6 @@ OpenTelemetry has semantic conventions that not only define the attributes, but 
 Logs are getting faster too.
 
 That's the kind of evolution that should make everyone happy: developers get better observability, operations get cleaner data.
--->
-
----
-layout: center
-class: text-center
----
-
-# Questions?
-
-<div class="text-6xl mb-8">🙋‍♀️🙋‍♂️</div>
-
-<!--
-Alright, that was a lot of information about logs, events, and complex data.
-
-I apparently spend too much time talking.
-Time for questions!
 -->
 
 ---
