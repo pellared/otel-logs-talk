@@ -942,7 +942,7 @@ layout: center
 
 # Thank You!
 
-This presentation: <https://pellared.github.io/otel-logs-talk>
+This presentation: <https://github.com/pellared/otel-logs-talk>
 
 <div class="text-lg mx-auto space-y-2">
 
