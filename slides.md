@@ -50,6 +50,53 @@ Welcome to my talk about how OpenTelemetry Logs evolved from the least mature si
 
 ---
 layout: center
+class: text-center
+---
+
+# trash logs
+
+<div class="text-left">
+
+```log
+[2025-09-10 14:22:01] INFO: It works
+[2025-09-10 14:22:02] INFO: Still works
+[2025-09-10 14:22:03] INFO: Yep, still working
+[2025-09-10 14:23:44] ERROR: Failed
+[2025-09-10 14:25:10] DEBUG: User payload: {"user":"alice","password":"hunter2"}
+[2025-09-10 14:26:30] WARN: Something went wrong!!!
+StackTrace: java.lang.Exception: oh no
+at com.company.module.Class.method(Class.java:42)
+at com.company.module.Other.method(Other.java:99)
+at com.company...
+(more 800 lines)
+LOGGING HERE ----------------------------------
+value=1
+LOGGING HERE ----------------------------------
+value=2
+LOGGING HERE ----------------------------------
+value=3
+```
+
+</div>
+
+<div class="text-2xl">
+Who has seen logs like this? 🙋‍♂️
+</div>
+
+<!--
+
+Show hands: Who has seen logs like this?
+Keep your hands up!
+Don't worry, nobody will judge you.
+
+*Say what part of the audience have their hands up.*
+
+We've ALL been there.
+"LOGGING HERE" with dashes, passwords in debug logs.
+-->
+
+---
+layout: center
 ---
 
 # `whoami`
@@ -206,53 +253,6 @@ We'll dive into the design decisions, and emerging patterns that are turning log
 
 By the end of this talk, you'll understand why logs are no longer an afterthought, but a first-class citizen among other OpenTelemetry signals.
 
--->
-
----
-layout: center
-class: text-center
----
-
-# trash logs
-
-<div class="text-left">
-
-```log
-[2025-09-10 14:22:01] INFO: It works
-[2025-09-10 14:22:02] INFO: Still works
-[2025-09-10 14:22:03] INFO: Yep, still working
-[2025-09-10 14:23:44] ERROR: Failed
-[2025-09-10 14:25:10] DEBUG: User payload: {"user":"alice","password":"hunter2"}
-[2025-09-10 14:26:30] WARN: Something went wrong!!!
-StackTrace: java.lang.Exception: oh no
-at com.company.module.Class.method(Class.java:42)
-at com.company.module.Other.method(Other.java:99)
-at com.company...
-(more 800 lines)
-LOGGING HERE ----------------------------------
-value=1
-LOGGING HERE ----------------------------------
-value=2
-LOGGING HERE ----------------------------------
-value=3
-```
-
-</div>
-
-<div class="text-2xl">
-Who has seen logs like this? 🙋‍♂️
-</div>
-
-<!--
-
-Show hands: Who has seen logs like this?
-Keep your hands up!
-Don't worry, nobody will judge you.
-
-*Say what part of the audience have their hands up.*
-
-We've ALL been there.
-"LOGGING HERE" with dashes, passwords in debug logs.
 -->
 
 ---
