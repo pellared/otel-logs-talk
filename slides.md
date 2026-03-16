@@ -99,6 +99,56 @@ We've ALL been there.
 layout: center
 ---
 
+# on the other side...
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🐧 <span class="font-mono text-orange">eBPF & tracepoints</span> <span class="text-gray ml-2"> Linux kernel dynamic instrumentation</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
+  🐧 <span class="font-mono text-yellow">user_events</span> <span class="text-gray ml-2"> Linux user-space structured tracing</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  🪟 <span class="font-mono text-blue">ETW</span> <span class="text-gray ml-2"> Event Tracing for Windows</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
+  🐹 <span class="font-mono text-green">Go runtime tracing</span> <span class="text-gray ml-2"> structured events built into the Go runtime</span>
+</div>
+
+<div class="mt-4 text-2xl text-center text-purple font-bold">
+  Structured + Fast ⚡
+</div>
+
+</v-clicks>
+</div>
+
+<!--
+But on the other side of the spectrum, far away from "LOGGING HERE" with dashes, there are technologies that have been doing structured event telemetry right for decades.
+
+OS kernels and language runtimes don't mess around. They emit events with known structure, typed fields, and near-zero overhead.
+
+[click] eBPF and tracepoints in Linux let you hook into the kernel and user-space programs dynamically, emitting rich structured events with minimal cost.
+
+[click] user_events is a Linux mechanism for user-space programs to emit structured, typed events directly into the kernel tracing infrastructure.
+
+[click] ETW — Event Tracing for Windows — is the Windows equivalent: a high-performance, structured event system used across the entire OS and ecosystem.
+
+[click] Even the Go runtime uses structured event tracing for its own diagnostics — goroutine scheduling, GC events, and more are all emitted as well-defined, typed events.
+
+The lesson from these systems? Structure and performance are not opposites. You can have both.
+That's exactly the direction OpenTelemetry Logs is heading.
+-->
+
+---
+layout: center
+---
+
 # `whoami`
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
@@ -137,29 +187,6 @@ Hello, I am Robert Pająk.
 But if something is not clear, don't blame my English.
 It simply means I have no idea what I am talking about.
 Or that I am bad at reading.
--->
-
----
-layout: center
-class: text-center
----
-
-<div class="text-5xl text-left mx-auto space-y-18">
-
-<span v-click.hide>🕰️ Past (Deprecated)</span>
-
-📍 Present (Stable)
-
-🚀 Future (Development)
-
-</div>
-
-<!--
-People often talk about the past, present, and future.
-
-[click] But honestly, who cares about the past?
-
-We're here to talk about what's happening NOW and what's coming NEXT.
 -->
 
 ---
