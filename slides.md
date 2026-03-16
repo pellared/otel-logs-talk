@@ -45,7 +45,9 @@ Logs
 <https://pellared.github.io/otel-logs-talk>
 
 <!--
-Welcome to my talk about how OpenTelemetry Logs evolved from the least mature signal to potentially become the foundation of major new enhancements.
+Hi everyone!
+I want to start with a disclaimer.
+This an updated version of my talk that I gave a few months ago.
 -->
 
 ---
@@ -84,10 +86,8 @@ Who has seen logs like this? 🙋‍♂️
 </div>
 
 <!--
-
-Show hands: Who has seen logs like this?
-Keep your hands up!
-Don't worry, nobody will judge you.
+Let me start with an ask.
+Please raise your hand if you have seen logs like this.
 
 *Say what part of the audience have their hands up.*
 
