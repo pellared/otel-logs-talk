@@ -28,6 +28,8 @@ Logs
 
 ## Events, Richer Data, and Smarter Semantics
 
+<h2 class="text-purple">v1.1.0</h2>
+
 <div class="pt-12">
   by Robert Pająk
 </div>
