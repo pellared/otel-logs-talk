@@ -160,7 +160,6 @@ People often talk about the past, present, and future.
 [click] But honestly, who cares about the past?
 
 We're here to talk about what's happening NOW and what's coming NEXT.
-
 -->
 
 ---
@@ -217,7 +216,6 @@ It provides a unified approach to observability across different signals such as
 
 [click] The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
-
 -->
 
 ---
@@ -252,7 +250,6 @@ During the talk we are going to explore the following areas in the context of Op
 We'll dive into the design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
 
 By the end of this talk, you'll understand why logs are no longer an afterthought, but a first-class citizen among other OpenTelemetry signals.
-
 -->
 
 ---
@@ -351,7 +348,6 @@ This isn't just making your regular logging more complicated.
 
 [click]
 It is structured logging that actually integrates with your traces.
-
 -->
 
 ---
@@ -413,7 +409,6 @@ The value can be:
 [click] at last it can be nothing.
 
 You can approximate it to something like BSON format.
-
 -->
 
 ---
@@ -540,7 +535,7 @@ layout: center
 # Signal-specific attributes
 
 - `log.record.uid`
-- `log.iostream` 
+- `log.iostream`
 
 <!--
 There are also attributes that make sense only for log records.
@@ -688,7 +683,6 @@ Read more about: <code><a href="https://brandur.org/canonical-log-lines">Canonic
 </v-clicks>
 
 <!--
-
 Jeremy Morrell wrote a nice blog post called "A Practitioner's Guide to Wide Events" that basically says: "What if we just logged everything we need in really rich, wide events?"
 
 The idea is simple but powerful: instead of having traces, metrics, and logs as separate things, you emit super-detailed events that contain ALL the context you need.
@@ -854,7 +848,6 @@ Think of it as "measure twice, cut once" but for telemetry.
 
 The idea is simple: before you spend CPU cycles formatting messages, serializing complex objects, or building those beautiful structured attributes, you ask: "Hey, is anyone actually going to process this log?"
 If the answer is no, you skip all the work.
-
 -->
 
 ---
@@ -878,7 +871,6 @@ layout: center
 </div>
 
 <!--
-
 But here's where it gets really exciting.
 
 [click]
@@ -988,7 +980,6 @@ This presentation: <https://github.com/pellared/otel-logs-talk>
 </div>
 
 <!--
-
 Thank you all for listening.
 I hope you learned something useful today.
 
@@ -1007,5 +998,4 @@ I hope you learned something useful today.
 [click] Now go forth and log responsibly!
 
 [click] Find me on GitHub as pellared or CNCF Slack as Robert Pajak.
-
 -->
