@@ -86,7 +86,7 @@ Who has seen logs like this? 🙋‍♂️
 </div>
 
 <!--
-Let me start with an ask.
+Let me begin with a quick question.
 Please raise your hand if you have seen logs like this.
 
 *Say what part of the audience have their hands up.*
@@ -115,14 +115,12 @@ layout: center
 
 <div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
 
-<v-clicks>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
-  🐧 <span class="font-mono text-orange">eBPF & tracepoints</span> <span class="text-gray ml-2"> Linux kernel dynamic instrumentation</span>
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
+  🐧 <span class="font-mono text-yellow">tracepoints & user_events</span> <span class="text-gray ml-2"> Linux user-space event tracing</span>
 </div>
 
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
-  🐧 <span class="font-mono text-yellow">user_events</span> <span class="text-gray ml-2"> Linux user-space structured tracing</span>
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🐧 <span class="font-mono text-orange">eBPF</span> <span class="text-gray ml-2"> Linux kernel dynamic instrumentation</span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
@@ -130,28 +128,19 @@ layout: center
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
-  🐹 <span class="font-mono text-green">Go runtime tracing</span> <span class="text-gray ml-2"> structured events built into the Go runtime</span>
+  🐹 <span class="font-mono text-green">Go runtime tracing</span> <span class="text-gray ml-2"> event tracing built into the Go runtime</span>
 </div>
 
 <div class="mt-4 text-2xl text-center text-purple font-bold">
   Structured + Fast ⚡
 </div>
 
-</v-clicks>
 </div>
 
 <!--
 But on the other side of the spectrum, far away from "LOGGING HERE" with dashes, there are technologies that have been doing structured event telemetry right for decades.
 
 OS kernels and language runtimes don't mess around. They emit events with known structure, typed fields, and near-zero overhead.
-
-[click] eBPF and tracepoints in Linux let you hook into the kernel and user-space programs dynamically, emitting rich structured events with minimal cost.
-
-[click] user_events is a Linux mechanism for user-space programs to emit structured, typed events directly into the kernel tracing infrastructure.
-
-[click] ETW — Event Tracing for Windows — is the Windows equivalent: a high-performance, structured event system used across the entire OS and ecosystem.
-
-[click] Even the Go runtime uses structured event tracing for its own diagnostics — goroutine scheduling, GC events, and more are all emitted as well-defined, typed events.
 
 The lesson from these systems? Structure and performance are not opposites. You can have both.
 That's exactly the direction we are aiming.
@@ -174,23 +163,20 @@ layout: center
 
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 
-<v-clicks>
-
 A **framework** for generating, processing, and exporting telemetry data:
 
-📊 **traces** - distributed request flows
+📊 **traces**
 
-📈 **metrics** - numerical measurements over time
+📈 **metrics**
 
-📝 **logs (and events)** - timestamped records
+📝 **logs (and events)**
 
-🔍 **profiles** - performance profiling data
+🔍 **profiles**
 
 <div class="text-xl mt-8 text-orange">
   One standard to observe them all 💍
 </div>
 
-</v-clicks>
 
 </div>
 
@@ -320,20 +306,21 @@ Data Model
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-```json {1-2|3-5|6-7|8|9-14|15-19|20-22}
+```json {1-2|3-5|6|7-8|9|10-15|16-20|21-23}
 "Timestamp": "2023-11-15T09:15:20.250Z",
 "ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
 "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
 "SpanId": "c1d2e3f4a5b6c7d8",
 "TraceFlags": 1,
-"SeverityText": "ERROR",
+"EventName": "db.client.operation.exception",
+"SeverityText": "WARN",
 "SeverityNumber": 17,
-"Body": "Exception occurred while fetching user data",
+"Body": "Exception occurred while fetching user data: Connection timeout after 3000ms",
 "Attributes": {
   "exception.type": "java.sql.SQLTransientConnectionException",
   "exception.message": "Connection timeout after 3000ms",
   "user.id": "alice",
-  "db.operation": "select"
+  "db.operation.name": "SELECT"
 },
 "Resource": {
   "service.name": "user-service",
@@ -363,9 +350,11 @@ In OpenTelemetry, a log record isn't just a string with a timestamp. It's a stru
 
 [click] trace context for correlation magic
 
+[click] event name that identifies the type of the log record
+
 [click] proper severity level
 
-[click] actual log message or payload
+[click] human-readable log message
 
 [click] any additional metadata or log fields
 
