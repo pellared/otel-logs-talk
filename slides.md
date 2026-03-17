@@ -643,6 +643,48 @@ At last, there are attributes focused on protocols, systems, and shiny new tech.
 -->
 
 ---
+layout: center
+---
+
+# Semantic conventions also guide *how* to emit
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  📦 <span class="font-mono text-blue">event structure</span> <span class="text-gray ml-2">what attributes an event must and should contain</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
+  🚨 <span class="font-mono text-red">exception events</span> <span class="text-gray ml-2">how to record errors with full context</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🤖 <span class="font-mono text-orange">gen_ai events</span> <span class="text-gray ml-2">prompt, response, and tool call payloads</span>
+</div>
+
+
+</v-clicks>
+</div>
+
+<div v-click class="mt-8 text-2xl text-center text-purple font-bold">
+  Not just naming — also <em>behavior</em>.
+</div>
+
+<!--
+Semantic conventions don't just define attribute names.
+They also specify guidelines and best practices for how to emit telemetry correctly.
+
+[click] Event conventions define the expected structure of an event: required fields, recommended fields, and how to pick the right severity level, and what the body should contain.
+
+[click] For example, the exception event convention tells you exactly how to record an error: which attributes are required, how to capture the stack trace.
+
+[click] Domain specific, e.g. GenAI semantic conventions, defining how to capture AI prompts, responses, and tool calls as structured events so any platform can understand and query them.
+
+[click] In short, semantic conventions guide not just naming, but behavior — ensuring every library and SDK emits telemetry in a consistent, interoperable way.
+-->
+
+---
 layout: section
 ---
 
