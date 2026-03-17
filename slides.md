@@ -482,79 +482,6 @@ But how do we make sure everybody calls things the same way so we can actually s
 -->
 
 ---
-layout: statement
----
-
-<h1>
-<span class="text-orange">Open</span>
-<span class="text-blue">Telemetry</span>
-<br>
-Semantic Conventions
-</h1>
-
-Making logs searchable & comparable
-
-<div class="text-2xl font-bold text-green mb-6">
-  Same semantics = Better queries and dashboards
-</div>
-
-<!--
-That's where semantic conventions come in.
-
-Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
-
-The semantic conventions registry is organized into groups.
--->
-
----
-layout: center
----
-
-# Cross-cutting attributes
-
-- `code.line_number`
-- `exception.message`
-- `service.name`, `deployment.environment`
-
-<!--
-We have cross-cutting attribute groups like code or exception groups.
-They apply across many signals and use cases. For example we have:
-
-code.line_number – because knowing where it broke is half the battle
-
-exception.message – the actual error
-
-service.name, deployment.environment – so you know what application broke and if it is on production or just staging
--->
-
----
-layout: center
----
-
-# Signal-specific attributes
-
-- `log.record.uid`
-- `log.iostream`
-
-<!--
-There are also attributes that make sense only for log records.
--->
-
----
-layout: center
----
-
-# Domain-specific attributes
-
-- `http.method`, `http.request.body.size`
-- `db.system`, `db.statement`
-- `gen_ai.provider.name`, `gen_ai.response.id`
-
-<!--
-At last, there are attributes focused on protocols, systems, and shiny new tech.
--->
-
----
 layout: section
 ---
 
@@ -640,6 +567,79 @@ Events are intentional, instrumented with purpose, not sprinkled around like deb
 This matters because platforms can now treat Events as first-class citizens.
 
 You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
+-->
+
+---
+layout: statement
+---
+
+<h1>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
+<br>
+Semantic Conventions
+</h1>
+
+Making logs searchable & comparable
+
+<div class="text-2xl font-bold text-green mb-6">
+  Same semantics = Better queries and dashboards
+</div>
+
+<!--
+That's where semantic conventions come in.
+
+Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
+
+The semantic conventions registry is organized into groups.
+-->
+
+---
+layout: center
+---
+
+# Cross-cutting attributes
+
+- `code.line_number`
+- `exception.message`
+- `service.name`, `deployment.environment`
+
+<!--
+We have cross-cutting attribute groups like code or exception groups.
+They apply across many signals and use cases. For example we have:
+
+code.line_number – because knowing where it broke is half the battle
+
+exception.message – the actual error
+
+service.name, deployment.environment – so you know what application broke and if it is on production or just staging
+-->
+
+---
+layout: center
+---
+
+# Signal-specific attributes
+
+- `log.record.uid`
+- `log.iostream`
+
+<!--
+There are also attributes that make sense only for log records.
+-->
+
+---
+layout: center
+---
+
+# Domain-specific attributes
+
+- `http.method`, `http.request.body.size`
+- `db.system`, `db.statement`
+- `gen_ai.provider.name`, `gen_ai.response.id`
+
+<!--
+At last, there are attributes focused on protocols, systems, and shiny new tech.
 -->
 
 ---
