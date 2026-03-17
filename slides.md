@@ -864,7 +864,7 @@ All of this progress around logs and events leads us to one of the biggest upcom
 layout: center
 ---
 
-# Two ways to emit events — one too many
+# Two ways to emit events is one too many
 
 <div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
 <v-clicks>
@@ -881,9 +881,9 @@ layout: center
 </div>
 
 <div v-click class="mt-8 text-xl text-left mx-auto max-w-4xl space-y-3 text-red">
-  ❌ Split guidance for instrumentation authors<br/>
-  ❌ Duplicate concepts for users<br/>
-  ❌ Slower evolution — improvements must land in two places
+  ❌ Split guidance for instrumentation authors <br>
+  ❌ Duplicate concepts for users <br>
+  ❌ Slower evolution as improvements must land in two places <br>
 </div>
 
 <!--
@@ -901,8 +901,8 @@ layout: statement
 ---
 
 <h1>
-Deprecating the <span class="text-yellow">Span Event API</span>,<br>
-not the ability to see<br>
+Deprecating <span class="text-yellow">Span Event API</span>,<br>
+not the ability to see
 events on spans.
 </h1>
 
@@ -925,19 +925,19 @@ layout: center
 <v-clicks>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
-  🚫 <span class="font-mono text-red">deprecated</span> <span class="text-gray ml-2"><code>Span.AddEvent()</code> and <code>Span.RecordException()</code></span>
+  🚫 <span class="font-mono text-red">deprecation</span> <span class="text-gray ml-2"><code>Span.AddEvent()</code> and <code>Span.RecordException()</code></span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
-  ✅ <span class="font-mono text-green">preferred</span> <span class="text-gray ml-2">log-based events via the Logs API</span>
+  ✅ <span class="font-mono text-green">preferred</span> <span class="text-gray ml-2">emit (log-based) events via the Logs API</span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
-  🔄 <span class="font-mono text-blue">compatibility</span> <span class="text-gray ml-2">SDKs can project log-based events back onto spans</span>
+  🔄 <span class="font-mono text-blue">compatibility</span> <span class="text-gray ml-2">SDKs can transform log-based events back onto span events</span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
-  📐 <span class="font-mono text-purple">semconv</span> <span class="text-gray ml-2">next major versions migrate events to the Logs API</span>
+  📐 <span class="font-mono text-purple">semconv</span> <span class="text-gray ml-2">next major versions migrate events to use Logs API</span>
 </div>
 
 </v-clicks>
@@ -946,9 +946,9 @@ layout: center
 <!--
 Here is what is actually changing:
 
-[click] The Tracing API methods Span.AddEvent and Span.RecordException are being deprecated.
+[click] The Tracing API methods Span.AddEvent and Span.RecordException are going to be deprecated.
 
-[click] The Logs API becomes the single recommended way to emit events, including exceptions.
+[click] The Logs API is going to be the single recommended way to emit events, including exceptions.
 
 [click] SDKs will provide a compatibility layer that can project log-based events back onto spans, so backends that show events in trace views keep working.
 
