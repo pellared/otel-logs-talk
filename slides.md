@@ -590,56 +590,40 @@ Making logs searchable & comparable
 That's where semantic conventions come in.
 
 Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
+-->
 
+---
+layout: center
+---
+
+# Semantic conventions registry
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  🔗 <span class="font-mono text-blue">cross-cutting</span> <span class="text-gray ml-2"><code>code.line_number</code>, <code>error.type</code>, <code>service.name</code></span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
+  📝 <span class="font-mono text-purple">signal-specific</span> <span class="text-gray ml-2"><code>log.record.uid</code>, <code>log.iostream</code></span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🌐 <span class="font-mono text-orange">domain-specific</span> <span class="text-gray ml-2"><code>http.method</code>, <code>db.system</code>, <code>gen_ai.request.model</code></span>
+</div>
+
+</v-clicks>
+</div>
+
+<!--
 The semantic conventions registry is organized into groups.
--->
 
----
-layout: center
----
+[click] Cross-cutting attributes apply across many signals and use cases: code.line_number tells you where it broke, error.type gives you the actual error, and service.name tell you what application broke.
 
-# Cross-cutting attributes
+[click] Signal-specific attributes only make sense for a particular signal, like log.record.uid or log.iostream for log records.
 
-- `code.line_number`
-- `exception.message`
-- `service.name`, `deployment.environment`
-
-<!--
-We have cross-cutting attribute groups like code or exception groups.
-They apply across many signals and use cases. For example we have:
-
-code.line_number – because knowing where it broke is half the battle
-
-exception.message – the actual error
-
-service.name, deployment.environment – so you know what application broke and if it is on production or just staging
--->
-
----
-layout: center
----
-
-# Signal-specific attributes
-
-- `log.record.uid`
-- `log.iostream`
-
-<!--
-There are also attributes that make sense only for log records.
--->
-
----
-layout: center
----
-
-# Domain-specific attributes
-
-- `http.method`, `http.request.body.size`
-- `db.system`, `db.statement`
-- `gen_ai.provider.name`, `gen_ai.response.id`
-
-<!--
-At last, there are attributes focused on protocols, systems, and shiny new tech.
+[click] Domain-specific attributes are focused on protocols, systems, and shiny new tech like HTTP, databases, or GenAI.
 -->
 
 ---
