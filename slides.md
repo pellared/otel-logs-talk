@@ -851,6 +851,111 @@ Enabled has been added to other signals to offer the same functionality.
 -->
 
 ---
+layout: section
+---
+
+# span events → log events
+
+<!--
+All of this progress around logs and events leads us to one of the biggest upcoming changes in OpenTelemetry: the deprecation of the Span Events API.
+-->
+
+---
+layout: center
+---
+
+# Two ways to emit events — one too many
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
+  🕸️ <span class="font-mono text-yellow">Span Events</span> <span class="text-gray ml-2"><code>Span.AddEvent()</code>, <code>Span.RecordException()</code> via Tracing API</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
+  📝 <span class="font-mono text-green">Log-based Events</span> <span class="text-gray ml-2">named events emitted via the Logs API</span>
+</div>
+
+</v-clicks>
+</div>
+
+<div v-click class="mt-8 text-xl text-left mx-auto max-w-4xl space-y-3 text-red">
+  ❌ Split guidance for instrumentation authors<br/>
+  ❌ Duplicate concepts for users<br/>
+  ❌ Slower evolution — improvements must land in two places
+</div>
+
+<!--
+Until now, OpenTelemetry offered two competing ways to emit events correlated with traces:
+
+[click] Span Events, created by calling Span.AddEvent or Span.RecordException on a span through the Tracing API.
+
+[click] Log-based Events, emitted through the Logs API and correlated with the active trace context.
+
+[click] Having both creates split guidance for instrumentation authors, duplicate mental models for users, and means every improvement to the event model has to be specified and implemented twice.
+-->
+
+---
+layout: statement
+---
+
+<h1>
+Deprecating the <span class="text-yellow">Span Event API</span>,<br>
+not the ability to see<br>
+events on spans.
+</h1>
+
+Read more: [Deprecating Span Events API](https://opentelemetry.io/blog/2026/deprecating-span-events/)
+
+<!--
+The plan is clear: deprecate the API for recording span events, not the span event data model itself.
+
+Existing span event data stays valid, and backends can still surface events in span timeline views.
+What changes is the recommended way to write new events.
+-->
+
+---
+layout: center
+---
+
+# What is changing
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
+  🚫 <span class="font-mono text-red">deprecated</span> <span class="text-gray ml-2"><code>Span.AddEvent()</code> and <code>Span.RecordException()</code></span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
+  ✅ <span class="font-mono text-green">preferred</span> <span class="text-gray ml-2">log-based events via the Logs API</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  🔄 <span class="font-mono text-blue">compatibility</span> <span class="text-gray ml-2">SDKs can project log-based events back onto spans</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
+  📐 <span class="font-mono text-purple">semconv</span> <span class="text-gray ml-2">next major versions migrate events to the Logs API</span>
+</div>
+
+</v-clicks>
+</div>
+
+<!--
+Here is what is actually changing:
+
+[click] The Tracing API methods Span.AddEvent and Span.RecordException are being deprecated.
+
+[click] The Logs API becomes the single recommended way to emit events, including exceptions.
+
+[click] SDKs will provide a compatibility layer that can project log-based events back onto spans, so backends that show events in trace views keep working.
+
+[click] Semantic conventions will migrate events and exceptions to log-based definitions in their next major versions, while keeping existing behavior stable.
+-->
+
+---
 layout: center
 ---
 
