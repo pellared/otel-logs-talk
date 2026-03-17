@@ -265,7 +265,7 @@ During the talk we are going to explore the following areas in the context of Op
 
 [click] the Logs API.
 
-I hope that by the end of this talk, you'll understand why logs are no longer just a way to bridge your logs from logging libraries and frameworks, but a first-class citizen among other OpenTelemetry signals.
+I hope that by the end of this talk, you'll understand why logs in OpenTelemetry are no longer just about bridging your logs from logging libraries and frameworks into OpenTelemtry SDK, but a first-class citizen among other OpenTelemetry signals. We are also going to see how it is affecting other areas of OpenTelemetry.
 -->
 
 ---
@@ -325,7 +325,7 @@ Data Model
   Not just strings with timestamps.
 </span>
 <span class="mt-8 text-xl font-bold text-blue">
-  Logs that carry context.
+  Structured logs that carry context.
 </span>
 
 </v-clicks>
@@ -457,6 +457,20 @@ The would be no need to reconstruct object hierarchies from JSON-encoded strings
 -->
 
 ---
+layout: statement
+---
+
+# Complex values are supported across ALL signals
+
+Read more: [Announcing Support for Complex Attribute Types in OTel](https://opentelemetry.io/blog/2025/complex-attribute-types/)
+
+<!--
+But wait, there's more! These complex values are supported across ALL OpenTelemetry signals: traces, metrics, and profiles.
+
+This is no longer just a logging feature.
+-->
+
+---
 layout: section
 ---
 
@@ -487,7 +501,7 @@ Making logs searchable & comparable
 <!--
 That's where semantic conventions come in.
 
-Think of them as telemetry guidelines with a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
+Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
 
 The semantic conventions registry is organized into groups.
 -->
@@ -564,6 +578,8 @@ is a Log Record<br>
 with an <span class="text-orange">event name</span><br>
 and a <span class="text-blue">well-known structure</span>.
 </h1>
+
+Read more: [OpenTelemetry Logging and You](https://opentelemetry.io/blog/2025/opentelemetry-logging-and-you/)
 
 <!--
 An Event Record is a Log Record with an event name and a well-known structure.
