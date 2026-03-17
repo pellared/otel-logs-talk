@@ -263,11 +263,9 @@ During the talk we are going to explore the following areas in the context of Op
 
 [click] the semantics of logs and events,
 
-[click] the logging APIs.
+[click] the Logs API.
 
-We'll dive into the design decisions, and emerging patterns that are turning logs from "legacy baggage" into the foundation for the next generation of OpenTelemetry-powered insights.
-
-By the end of this talk, you'll understand why logs are no longer an afterthought, but a first-class citizen among other OpenTelemetry signals.
+I hope that by the end of this talk, you'll understand why logs are no longer just a way to bridge your logs from logging libraries and frameworks, but a first-class citizen among other OpenTelemetry signals.
 -->
 
 ---
