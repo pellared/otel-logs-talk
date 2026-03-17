@@ -881,9 +881,11 @@ layout: center
 </div>
 
 <div v-click class="mt-8 text-xl text-left mx-auto max-w-4xl space-y-3 text-red">
-  ❌ Split guidance for instrumentation authors <br>
-  ❌ Duplicate concepts for users <br>
-  ❌ Slower evolution as improvements must land in two places <br>
+  ❌ Split guidance for instrumentation authors
+
+  ❌ Duplicate concepts for users
+
+  ❌ Slower evolution as improvements must land in two places
 </div>
 
 <!--
@@ -961,23 +963,19 @@ layout: center
 
 # `tl;dr;`
 
-### syntax
+Summary
 
 📝 Logs are more than strings
 
-⚡ Structure unlocks superpowers  
+⚡ Complex values across **ALL** signals
 
-### semantics
-
-🎯 Semantic conventions = consistency
+🔧 Logs API can be used directly
 
 ✨ Events are logs with well-known structure
 
-### api
+🚀 `Enabled` methods added to **ALL** signals
 
-🔧 Direct usage
-
-🚀 Performance and integration improvements
+🔄 Span Events → Log Events
 
 <div class="text-xl mt-8">
   <span class="text-orange">Performance</span> + 
