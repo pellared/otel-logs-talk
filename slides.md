@@ -826,8 +826,6 @@ layout: center
 </div>
 
 <!--
-But here's where it gets really exciting.
-
 [click]
 This Enabled functionality doesn't just make the OpenTelemetry Logs faster.
 
@@ -838,6 +836,18 @@ These systems are so fast they make regular logging look like writing with a pen
 
 [click]
 If you want the deep dive, check out the presentation by Cijo Thomas & Chris Gray: "Beyond OTLP: Unlocking the Potential of OS-native Tracing".
+-->
+
+---
+layout: statement
+---
+
+# `Enabled` API is being added to ALL signals
+
+<!--
+But here's where it gets really exciting.
+
+Enabled has been added to other signals to offer the same functionality.
 -->
 
 ---
