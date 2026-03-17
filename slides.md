@@ -734,7 +734,7 @@ This is the piece that finally gives developers a proper, first-class way to emi
 
 [click] It is critical for libraries and frameworks adding OpenTelemetry instrumentation to make sure to not couple it to any other library like log4j.
 
-[click] But it is all the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
+[click] But it is all the piece that finally gives developers a proper, first-class way to emit logs and events directly through OpenTelemetry.
 
 The best part? It plays nicely with existing logging.
 You can gradually migrate, use both approaches, or pick the right tool for each job.
@@ -908,7 +908,7 @@ Here is what is actually changing:
 
 [click] Semantic conventions will migrate events and exceptions to log-based definitions in their next major versions, while keeping existing behavior stable.
 
-[click] The plan is deprecate the API for recording span events, not the span event data model itself. Existing span event data stays valid, and backends can still surface events in span timeline views. What changes is the recommended way to write new events.
+[click] The plan is deprecate the API for recording span events, not the span event data model itself. Existing span event data stays valid, and backends can still surface events in span timeline views. What changes is the recommended way to write new events. Our goal is to make events in OpenTelemetry simpler, more consistent, and more powerful, while providing a graceful transition to the new recommendations.
 -->
 
 ---
@@ -960,35 +960,12 @@ layout: center
 
 This presentation: <https://github.com/pellared/otel-logs-talk>
 
-<div class="text-lg mx-auto space-y-2">
-
-<span v-click class="text-2xl">Special thanks 🙏</span>
-
-<v-clicks>
-
-- Liudmila Molkova, Trask Stalnaker, Ted Young, Austin Parker
-- Tyler Yahn, Cijo Thomas, Jonathan Amsterdam
-- OpenTelemetry Go and Specification SIG
-- Everyone who raised their hands
-- GenAI (sic!)
-
-</v-clicks>
-</div>
-
 <div v-click>
-<div class="mt-8 text-xl text-red">
+<div class="mt-8 text-2xl text-red">
   Don't let your logs be trash 🗑️
 </div>
 <div class="text-2xl mb-2 text-green">
-  May your logs be structured! 🎉
-</div>
-<div class="flex text-2xl gap-2">
-  <img src="./opentelemetry-logo-nav.png" alt="OpenTelemetry" class="h-8" />
-  <strong>
-    <span class="text-orange">Open</span>
-    <span class="text-blue">Telemetry</span>
-  </strong>
-  ❤️
+  May your logs be structured 🔧
 </div>
 </div>
 
@@ -1004,18 +981,6 @@ This presentation: <https://github.com/pellared/otel-logs-talk>
 <!--
 Thank you all for listening.
 I hope you learned something useful today.
-
-[click] Special credits to
-
-[click] People who continuously help with all the logs work
-
-[click] Those who helped me a lot during implementation of logs in OTel Go 
-
-[click] OTel contributors for reviewing my pull requests and providing a lot of comments
-
-[click] Everyone who raised their hands during the "trash logs" section; your honesty is appreciated. Also thank you for all those that asked questions.
-
-[click] GenAI and Copilot that helped me a lot in preparing the presentation.
 
 [click] Now go forth and log responsibly!
 
