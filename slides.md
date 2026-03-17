@@ -478,7 +478,7 @@ layout: section
 
 <!--
 We've got structure.
-But how do we make sure everybody calls things the same way so we can actually search, correlate, and NOT cry when we merge data from five services written by five teams?
+But how do we make sure everybody calls things the same way so we can actually search, correlate, merge data from five services written by five teams?
 -->
 
 ---
