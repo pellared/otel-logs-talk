@@ -939,17 +939,18 @@ Summary
 
 <!--
 What did we learn today?
-Let me summarize this journey through the chaotic world of logs.
 
-We've all been writing trash logs. "LOGGING HERE" with dashes?
-We've ALL been there. But trash logs cost money, slow down apps, and make observability engineers cry into their coffee.
+Logs are more than strings, they carry structure, context, and typed attributes.
 
-In OpenTelemetry, logs are structured and can contain complex data.
-Moreover, complex attributes are going to also arrive to other signals.
-OpenTelemetry has semantic conventions that not only define the attributes, but also distinguish between log and event records.
-Logs are getting faster too.
+Complex values are now supported across ALL signals, not just logs.
 
-That's the kind of evolution that should make everyone happy: developers get better observability, operations get cleaner data.
+The Logs API can be used directly. There is no need to go through a logging library.
+
+Events are logs with a well-known structure and an event name.
+
+The Enabled API is being added to ALL signals to avoid doing expensive work when telemetry is going to be discared.
+
+Span Events are being deprecated in favor of log-based events via the Logs API.
 -->
 
 ---
