@@ -154,51 +154,7 @@ OS kernels and language runtimes don't mess around. They emit events with known 
 [click] Even the Go runtime uses structured event tracing for its own diagnostics — goroutine scheduling, GC events, and more are all emitted as well-defined, typed events.
 
 The lesson from these systems? Structure and performance are not opposites. You can have both.
-That's exactly the direction OpenTelemetry Logs is heading.
--->
-
----
-layout: center
----
-
-# `whoami`
-
-<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
-<v-clicks>
-
-🏠 [Kraków, Poland](https://krakow.travel)
-
-‍💻 [@pellared](https://github.com/pellared) on GitHub
-
-💼 Software Engineer at [Splunk a Cisco company](https://www.splunk.com)
-
-🔧 [OpenTelemetry Go](https://github.com/open-telemetry/opentelemetry-go) maintainer and [Specification](https://github.com/open-telemetry/opentelemetry-specification) sponsor
-
-🌴 Contributing to OTel Logs since Nov 2023
-
-<div class="text-lg mt-8 opacity-80">
-  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
-</div>
-</v-clicks>
-</div>
-
-<!--
-Hello, I am Robert Pająk.
-
-[click] I've traveled from the beautiful city of Kraków.
-
-[click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
-
-[click] I'm a Software Engineer at Splunk (a company acquired by Cisco), which means I get paid for contributing to open source.
-
-[click] I am an OpenTelemetry Go maintainer and Specification sponsor.
-
-[click] I've been contributing to OpenTelemetry Logs since November 2023.
-
-[click] I am not an English native speaker.
-But if something is not clear, don't blame my English.
-It simply means I have no idea what I am talking about.
-Or that I am bad at reading.
+That's exactly the direction we are aiming.
 -->
 
 ---
@@ -226,7 +182,7 @@ A **framework** for generating, processing, and exporting telemetry data:
 
 📈 **metrics** - numerical measurements over time
 
-📝 **logs** - timestamped records
+📝 **logs (and events)** - timestamped records
 
 🔍 **profiles** - performance profiling data
 
@@ -239,6 +195,7 @@ A **framework** for generating, processing, and exporting telemetry data:
 </div>
 
 <!--
+When I talk about "we", I mean OpenTelemetry.
 
 For those who might be new to OpenTelemetry, let me give you a quick overview.
 
@@ -249,12 +206,54 @@ It provides a unified approach to observability across different signals such as
 
 [click] metrics
 
-[click] logs
+[click] logs and events
 
 [click] profiles
 
 [click] The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
+-->
+
+---
+layout: center
+---
+
+# `whoami`
+
+<div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
+<v-clicks>
+
+‍💻 [@pellared](https://github.com/pellared) on GitHub
+
+🔧 [OpenTelemetry Go](https://github.com/open-telemetry/opentelemetry-go) maintainer and [Specification](https://github.com/open-telemetry/opentelemetry-specification) sponsor
+
+🌴 Contributing to OTel Logs since Nov 2023
+
+💼 Software Engineer at [Splunk a Cisco company](https://www.splunk.com)
+
+<div class="text-lg mt-8 opacity-80">
+  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
+</div>
+</v-clicks>
+</div>
+
+<!--
+Ah, maybe I should introduce myself?
+Good habits require it, right?
+I am Robert Pająk.
+
+[click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
+
+[click] I am an OpenTelemetry Go maintainer and Specification sponsor.
+
+[click] I've been actively contributing to OpenTelemetry Logs since November 2023.
+However, I have been working with different logging systems (including high throughput) for a lot longer time.
+
+[click] I'm a Software Engineer at Splunk. I get paid for working on open source.
+
+[click] I am not an English native speaker.
+But if something is not clear, don't blame my English.
+It simply means I have no idea what I am talking about.
 -->
 
 ---
