@@ -116,7 +116,7 @@ layout: center
 <div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
-  🐧 <span class="font-mono text-yellow">tracepoints & user_events</span> <span class="text-gray ml-2"> Linux user-space event tracing</span>
+  🐧 <span class="font-mono text-yellow">tracepoints & user_events</span> <span class="text-gray ml-2"> Linux event tracing</span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
@@ -138,9 +138,9 @@ layout: center
 </div>
 
 <!--
-But on the other side of the spectrum, far away from "LOGGING HERE" with dashes, there are technologies that have been doing structured event telemetry right for decades.
+But on the other side of the spectrum, far away from these noisy logs, there are technologies that have been doing structured event telemetry right for decades.
 
-OS kernels and language runtimes don't mess around. They emit events with known structure, typed fields, and near-zero overhead.
+OS kernels and language runtimes emit events with known structure, typed fields, and near-zero overhead.
 
 The lesson from these systems? Structure and performance are not opposites. You can have both.
 That's exactly the direction we are aiming.
@@ -185,18 +185,10 @@ When I talk about "we", I mean OpenTelemetry.
 
 For those who might be new to OpenTelemetry, let me give you a quick overview.
 
-[click] OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
-It provides a unified approach to observability across different signals such as
+OpenTelemetry is a framework for generating, processing, and exporting telemetry data.
+It provides a unified approach to observability across different signals such as traces, metrics, logs, events, profiles.
 
-[click] traces
-
-[click] metrics
-
-[click] logs and events
-
-[click] profiles
-
-[click] The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
+The beauty of OpenTelemetry is that it gives you one standard way to instrument your applications, regardless of the language or backend you're using.
 Whether you're sending data to Jaeger, Prometheus, Splunk, or any other observability platform, OpenTelemetry provides the common foundation.
 -->
 
@@ -209,7 +201,7 @@ layout: center
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-‍💻 [@pellared](https://github.com/pellared) on GitHub
+‍💻 Robert Pająk, [@pellared](https://github.com/pellared) on GitHub
 
 🌴 Contributing to OTel Logs since Nov 2023
 
@@ -220,24 +212,22 @@ layout: center
 💼 Software Engineer at [Splunk a Cisco company](https://www.splunk.com)
 
 <div class="text-lg mt-8 opacity-80">
-  <strong>Disclaimer:</strong> Non-native English speaker.<br/>
+  <strong>🇵🇱 Disclaimer:</strong> Non-native English speaker.<br/>
 </div>
 </v-clicks>
 </div>
 
 <!--
-Ah, maybe I should introduce myself?
-Good habits require it, right?
-I am Robert Pająk.
+Ah, my bad manners.
+Maybe I should introduce myself?
 
-[click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
+[click] I am Robert Pająk. You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
-[click] I've been actively contributing to OpenTelemetry Logs since November 2023.
-However, I have been working with different logging systems (including high throughput) for a lot longer time.
+[click] I've been actively contributing to OpenTelemetry Logs since November 2023. Yet, I have been working with different logging systems (including high throughput) for a lot longer time.
 
 [click] I am responsible for designing and development of OpenTelemetry Go Logs.
 
-[click] I am also part of the OpenTelemetry Logs Special Interest Group that works on the developent of OpenTelemetry Logs and Events accorss whole OpenTelemetry ecosystem.
+[click] I am also part of the OpenTelemetry Logs Special Interest Group that works on the development of OpenTelemetry Logs and Events across the whole OpenTelemetry ecosystem.
 
 [click] I'm a Software Engineer at Splunk, a company that embraces logging, where I get paid for working on open source.
 
@@ -413,15 +403,13 @@ layout: center
 </div>
 
 <!--
-The Attributes fields in OpenTelemetry logs can contain complex data structures.
-Not just simple strings and numbers.
-The value can be:
+The attribute values in OpenTelemetry logs can contain complex data structures. Not just simple strings and numbers. The value can be:
 
 [click] primitive value like text, number or boolean value,
 
 [click] an array of any value, meaning that the first item in an array can be a string and the second item can be an integer
 
-[click] a map of string to any value, meaning you can compose any nested structure like a Matryoshka doll,
+[click] a map of string to any value, meaning you can compose any nested structure,
 
 [click] or even a binary object,
 
@@ -463,30 +451,11 @@ layout: center
 </div>
 
 <!--
-Here are some examples of complex attributes.
+Here is are some examples of complex attributes based on the GenAI semantic conventions.
 
-This means you can log entire payloads, complex error objects, or structured events without flattening them into strings.
+As you can see, you can log entire payloads, complex error objects, or structured events without flattening them into strings.
 
-No more trying to reconstruct object hierarchies from flat attributes like some kind of archaeological dig through your own code.
--->
-
----
-layout: statement
----
-
-# Complex values<br>are coming<br>to ALL signals!
-
-OTel is dropping the attributes values restriction
-
-<!--
-But wait, there's more! These complex values are coming to ALL OpenTelemetry signals: traces, metrics, and profiles.
-
-This won't be just a logging feature.
-
-It's like getting a free upgrade to business class for your entire observability stack.
-
-Imagine spans with complex attributes that can hold entire request/response objects.
-We're talking about a unified approach to complex data across all telemetry signals.
+The would be no need to reconstruct object hierarchies from JSON-encoded strings.
 -->
 
 ---
