@@ -806,39 +806,6 @@ If the answer is no, you skip all the work.
 -->
 
 ---
-layout: center
----
-
-# `Enabled` functionality
-
-<div class="text-left mx-auto space-y-6">
-
-<v-clicks>
-
-⚡ Check before you emit records to skip expensive work
-
-🚀 A door for better integrations
-
-<Youtube id="Ej-z2WwWWak" />
-
-</v-clicks>
-
-</div>
-
-<!--
-[click]
-This Enabled functionality doesn't just make the OpenTelemetry Logs faster.
-
-[click]
-It opens the door to hooking into extremely performant, OS-native tracing systems like Linux user_events and 
-ETW (Event Tracing for Windows).
-These systems are so fast they make regular logging look like writing with a pen.
-
-[click]
-If you want the deep dive, check out the presentation by Cijo Thomas & Chris Gray: "Beyond OTLP: Unlocking the Potential of OS-native Tracing".
--->
-
----
 layout: statement
 ---
 
@@ -856,8 +823,10 @@ layout: section
 
 # span events → log events
 
+Read more: [Deprecating Span Events API](https://opentelemetry.io/blog/2026/deprecating-span-events/)
+
 <!--
-All of this progress around logs and events leads us to one of the biggest upcoming changes in OpenTelemetry: the deprecation of the Span Events API.
+All of this progress around logs and events leads us to one of the biggest upcoming changes in OpenTelemetry: the deprecation of the Span Events API in favor of emitting logs through Logs API.
 -->
 
 ---
@@ -899,25 +868,6 @@ Until now, OpenTelemetry offered two competing ways to emit events correlated wi
 -->
 
 ---
-layout: statement
----
-
-<h1>
-Deprecating <span class="text-yellow">Span Event API</span>,<br>
-not the ability to see
-events on spans.
-</h1>
-
-Read more: [Deprecating Span Events API](https://opentelemetry.io/blog/2026/deprecating-span-events/)
-
-<!--
-The plan is clear: deprecate the API for recording span events, not the span event data model itself.
-
-Existing span event data stays valid, and backends can still surface events in span timeline views.
-What changes is the recommended way to write new events.
--->
-
----
 layout: center
 ---
 
@@ -942,6 +892,8 @@ layout: center
   📐 <span class="font-mono text-purple">semconv</span> <span class="text-gray ml-2">next major versions migrate events to use Logs API</span>
 </div>
 
+Deprecating <span class="text-yellow">Span Event API</span>,
+not the ability to see events on spans.
 </v-clicks>
 </div>
 
@@ -955,6 +907,8 @@ Here is what is actually changing:
 [click] SDKs will provide a compatibility layer that can project log-based events back onto spans, so backends that show events in trace views keep working.
 
 [click] Semantic conventions will migrate events and exceptions to log-based definitions in their next major versions, while keeping existing behavior stable.
+
+[click] The plan is deprecate the API for recording span events, not the span event data model itself. Existing span event data stays valid, and backends can still surface events in span timeline views. What changes is the recommended way to write new events.
 -->
 
 ---
