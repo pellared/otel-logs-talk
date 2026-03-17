@@ -961,13 +961,8 @@ layout: center
 
 This presentation: <https://github.com/pellared/otel-logs-talk>
 
-<div v-click>
-<div class="mt-8 text-2xl text-red">
+<div v-click class="mt-8 text-2xl text-red">
   Don't let your logs be trash 🗑️
-</div>
-<div class="text-2xl mb-2 text-green">
-  May your logs be structured 🔧
-</div>
 </div>
 
 <br>
