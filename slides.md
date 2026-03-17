@@ -225,9 +225,11 @@ layout: center
 
 ‍💻 [@pellared](https://github.com/pellared) on GitHub
 
-🔧 [OpenTelemetry Go](https://github.com/open-telemetry/opentelemetry-go) maintainer and [Specification](https://github.com/open-telemetry/opentelemetry-specification) sponsor
-
 🌴 Contributing to OTel Logs since Nov 2023
+
+🔧 [OTel Go](https://github.com/open-telemetry/opentelemetry-go) maintainer
+
+🧾 [OTel Specification](https://github.com/open-telemetry/opentelemetry-specification) sponsor
 
 💼 Software Engineer at [Splunk a Cisco company](https://www.splunk.com)
 
@@ -244,12 +246,14 @@ I am Robert Pająk.
 
 [click] You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
-[click] I am an OpenTelemetry Go maintainer and Specification sponsor.
-
 [click] I've been actively contributing to OpenTelemetry Logs since November 2023.
 However, I have been working with different logging systems (including high throughput) for a lot longer time.
 
-[click] I'm a Software Engineer at Splunk. I get paid for working on open source.
+[click] I am responsible for designing and development of OpenTelemetry Go Logs.
+
+[click] I am also part of the OpenTelemetry Logs Special Interest Group that works on the developent of OpenTelemetry Logs and Events accorss whole OpenTelemetry ecosystem.
+
+[click] I'm a Software Engineer at Splunk, a company that embraces logging, where I get paid for working on open source.
 
 [click] I am not an English native speaker.
 But if something is not clear, don't blame my English.
