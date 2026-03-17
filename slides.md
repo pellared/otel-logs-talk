@@ -377,7 +377,7 @@ layout: center
 
 <div class="mb-8">
   <div class="text-2xl text-blue mb-4">
-    <code class="text-orange">Attribute</code> and <code class="text-orange">Body</code> values can be complex
+    <code class="text-orange">Attribute</code>  values can be complex
     (<code class="text-green">AnyValue</code>).
   </div>
   
@@ -413,7 +413,7 @@ layout: center
 </div>
 
 <!--
-The Body and Attributes fields in OpenTelemetry logs can contain complex data structures.
+The Attributes fields in OpenTelemetry logs can contain complex data structures.
 Not just simple strings and numbers.
 The value can be:
 
@@ -437,10 +437,10 @@ layout: center
 # Complex values
 
 ```json
-"gen_ai.request.model": "gpt-4-turbo",
+"gen_ai.request.model": "gpt-4",
 "gen_ai.usage.input_tokens": 110,
 "gen_ai.usage.output_tokens": 45,
-"gen_ai.prompt": [
+"gen_ai.input.messages": [
   {
     "role": "system",
     "content": "You are a helpful and knowledgeable AI assistant from Splunk."
@@ -450,7 +450,7 @@ layout: center
     "content": "What is OpenTelemetry?"
   }
 ],
-"gen_ai.completion": [
+"gen_ai.output.messages": [
   {
     "role": "assistant",
     "content": "OpenTelemetry is an open-source observability framework for collecting telemetry data."
@@ -461,7 +461,6 @@ layout: center
 <div class="mt-6 text-lg">
   <span class="text-green">✨</span> Rich, structured, meaningful data!
 </div>
-
 
 <!--
 Here are some examples of complex attributes.
