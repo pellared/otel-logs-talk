@@ -221,9 +221,9 @@ layout: center
 Ah, my bad manners.
 Maybe I should introduce myself?
 
-[click] I am Robert Pająk. You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
+[click] I am Robert Pająk. You can find me on GitHub as pellared.
 
-[click] I've been actively contributing to OpenTelemetry Logs since November 2023. Yet, I have been working with different logging systems (including high throughput) for a lot longer.
+[click] I've been actively contributing to OpenTelemetry Logs since November 2023. Yet, I have been working with different logging systems for a lot longer than that.
 
 [click] I am responsible for designing and developing OpenTelemetry Go Logs.
 
@@ -272,12 +272,6 @@ layout: section
 
 <!--
 What does a proper log record look like in OpenTelemetry? Let's talk about the Logs Data Model.
-
-Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
-
-But what if you want to log directly using OpenTelemetry APIs?
-
-What if you want to emit those beautiful structured events we've been talking about?
 -->
 
 ---
@@ -602,6 +596,7 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 
 <!--
 Now let's talk the user-facing OpenTelemetry logging API.
+Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
 This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
 
 [click] There is no need to go through traditional logging libraries and have the bridge overhead.
@@ -687,7 +682,7 @@ If the answer is no, you skip all the work.
 layout: statement
 ---
 
-# `Enabled` API is being added to ALL signals
+# Enabled API is being added to ALL signals
 
 <!--
 But here's where it gets really exciting.
@@ -867,7 +862,7 @@ layout: center
 <v-clicks>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
-  📦 <span class="font-mono text-blue">event structure</span> <span class="text-gray ml-2">what attributes an event must and should contain</span>
+  📦 <span class="font-mono text-blue">event structure</span> <span class="text-gray ml-2">what fields an event must and should contain</span>
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
@@ -882,11 +877,11 @@ layout: center
 </div>
 
 <div v-click class="mt-8 text-2xl text-center text-purple font-bold">
-  Not just naming — also <em>behavior</em>.
+  Not just naming, but also <em>behavior</em>.
 </div>
 
 <!--
-Semantic conventions don't just define attribute names.
+Semantic conventions don't just define attributes.
 They also specify guidelines and best practices for how to emit telemetry correctly.
 
 [click] Event conventions define the expected structure of an event: required fields, recommended fields, and how to pick the right severity level, and what the body should contain.
@@ -906,13 +901,15 @@ layout: center
 
 Summary
 
+<v-clicks>
+
 📝 Logs are more than strings
 
-⚡ Complex values across **ALL** signals
+⚡ Complex attributes across **ALL** signals
 
-✨ Events are logs with well-known structure
+✨ Events are logs with a name and well-known structure
 
-🔧 Logs API can be used directly
+🔧 Emit events directly via OTel Logs API
 
 🚀 `Enabled` methods added to **ALL** signals
 
@@ -926,20 +923,26 @@ Summary
   <span class="text-green">Integrations</span> = 💖
 </div>
 
+</v-clicks>
+
 <!--
 What did we learn today?
 
-Logs are more than strings, they carry structure, context, and typed attributes.
+[click] Logs are more than strings, they carry structure, context, and typed attributes.
 
-Complex values are now supported across ALL signals, not just logs.
+[click] Complex attributes are now supported across ALL signals, not just logs.
 
-The Logs API can be used directly. There is no need to go through a logging library.
+[click] Events are logs with a well-known structure and an event name.
 
-Events are logs with a well-known structure and an event name.
+[click] The Logs API can be used directly. There is no need to go through a logging library.
 
-The Enabled API is being added to ALL signals to avoid doing expensive work when telemetry is going to be discared.
+[click] The Enabled API is being added to ALL signals to avoid doing expensive work when telemetry is going to be discared.
 
-Span Events are being deprecated in favor of log-based events via the Logs API.
+[click] Span Events are being deprecated in favor of log-based events via the Logs API.
+
+[click] Follow semantic conventions guidelines and attributes registry.
+
+[click] We want logging in OpenTelemetry to be performant, structured, and possible to be integrated with robust event tracing systems.
 -->
 
 ---
