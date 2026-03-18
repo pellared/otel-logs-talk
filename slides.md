@@ -223,9 +223,9 @@ Maybe I should introduce myself?
 
 [click] I am Robert Pająk. You can find me on GitHub as pellared, probably creating some issue or opening yet another pull request.
 
-[click] I've been actively contributing to OpenTelemetry Logs since November 2023. Yet, I have been working with different logging systems (including high throughput) for a lot longer time.
+[click] I've been actively contributing to OpenTelemetry Logs since November 2023. Yet, I have been working with different logging systems (including high throughput) for a lot longer.
 
-[click] I am responsible for designing and development of OpenTelemetry Go Logs.
+[click] I am responsible for designing and developing OpenTelemetry Go Logs.
 
 [click] I am also part of the OpenTelemetry Logs Special Interest Group that works on the development of OpenTelemetry Logs and Events across the whole OpenTelemetry ecosystem.
 
@@ -261,7 +261,7 @@ During the talk we are going to explore the following areas in the context of Op
 
 [click] the semantics of logs and events,
 
-I hope that by the end of this talk, you'll understand why logs in OpenTelemetry are no longer just about bridging your logs from logging libraries and frameworks into OpenTelemtry SDK, but a first-class citizen among other OpenTelemetry signals. We are also going to see how it is affecting other areas of OpenTelemetry.
+I hope that by the end of this talk, you'll understand why logs in OpenTelemetry are no longer just about bridging your logs from logging libraries and frameworks into OpenTelemetry SDK, but a first-class citizen among other OpenTelemetry signals. We are also going to see how it is affecting other areas of OpenTelemetry.
 -->
 
 ---
@@ -612,7 +612,7 @@ This is the piece that finally gives developers a proper, first-class way to emi
 
 [click] It is critical for libraries and frameworks adding OpenTelemetry instrumentation to make sure to not couple it to any other library like log4j.
 
-[click] But it is all the piece that finally gives developers a proper, first-class way to emit logs and events directly through OpenTelemetry.
+[click] But it is also the piece that finally gives developers a proper, first-class way to emit logs and events directly through OpenTelemetry.
 
 The best part? It plays nicely with existing logging.
 You can gradually migrate, use both approaches, or pick the right tool for each job.
@@ -786,7 +786,7 @@ Here is what is actually changing:
 
 [click] Semantic conventions will migrate events and exceptions to log-based definitions in their next major versions, while keeping existing behavior stable.
 
-[click] The plan is deprecate the API for recording span events, not the span event data model itself. Existing span event data stays valid, and backends can still surface events in span timeline views. What changes is the recommended way to write new events. Our goal is to make events in OpenTelemetry simpler, more consistent, and more powerful, while providing a graceful transition to the new recommendations.
+[click] The plan is to deprecate the API for recording span events, not the span event data model itself. Existing span event data stays valid, and backends can still surface events in span timeline views. What changes is the recommended way to write new events. Our goal is to make events in OpenTelemetry simpler, more consistent, and more powerful, while providing a graceful transition to the new recommendations.
 -->
 
 ---
@@ -850,7 +850,7 @@ layout: center
 <!--
 The semantic conventions registry is organized into groups.
 
-[click] Cross-cutting attributes apply across many signals and use cases: code.line_number tells you where it broke, error.type gives you the actual error, and service.name tell you what application broke.
+[click] Cross-cutting attributes apply across many signals and use cases: code.line_number tells you where it broke, error.type gives you the actual error, and service.name tells you what application broke.
 
 [click] Signal-specific attributes only make sense for a particular signal, like log.record.uid or log.iostream for log records.
 
@@ -920,7 +920,7 @@ Summary
 
 🔄 Span Events → Log Events
 
-📚 Semantic convetions tell you how to use events
+📚 Semantic conventions tell you how to use events
 
 <div class="text-xl mt-8">
   <span class="text-orange">Performance</span> + 
