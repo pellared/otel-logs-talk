@@ -349,7 +349,6 @@ Data Model
 }
 ```
 
-
 <span class="text-xl mb-6 text-orange">
   Not just strings with timestamps.
 </span>
