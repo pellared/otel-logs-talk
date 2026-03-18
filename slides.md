@@ -15,6 +15,42 @@ mdc: true
 .light .prose {
   color: black;
 }
+
+/* Light mode: darken accent colors for contrast on white background */
+.light .text-orange {
+  color: #ea6d0e !important;
+}
+.light .text-blue {
+  color: #1d4ed8 !important;
+}
+.light .text-green {
+  color: #15803d !important;
+}
+.light .text-purple {
+  color: #7e22ce !important;
+}
+.light .text-yellow {
+  color: #854d0e !important;
+}
+.light .text-red {
+  color: #b91c1c !important;
+}
+
+/* Light mode: darken muted gray description text */
+.light .text-gray {
+  color: #374151 !important;
+}
+
+/* Light mode: give dark cards a light-friendly appearance */
+.light .bg-gray-800 {
+  background-color: #f3f4f6 !important;
+}
+
+/* Light mode: fix dark card text that expects a dark background */
+.light .bg-gray-800 span,
+.light .bg-gray-800 code {
+  color: inherit;
+}
 </style>
 
 <h1>
