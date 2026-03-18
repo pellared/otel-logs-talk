@@ -250,8 +250,6 @@ layout: center
 
 📚 semantics
 
-⚡  api
-
 </v-clicks>
 
 </div>
@@ -259,11 +257,9 @@ layout: center
 <!--
 During the talk we are going to explore the following areas in the context of OpenTelemetry:
 
-[click] the data model of logs,
+[click] the data model of logs and Logs API,
 
 [click] the semantics of logs and events,
-
-[click] the Logs API.
 
 I hope that by the end of this talk, you'll understand why logs in OpenTelemetry are no longer just about bridging your logs from logging libraries and frameworks into OpenTelemtry SDK, but a first-class citizen among other OpenTelemetry signals. We are also going to see how it is affecting other areas of OpenTelemetry.
 -->
@@ -276,6 +272,12 @@ layout: section
 
 <!--
 What does a proper log record look like in OpenTelemetry? Let's talk about the Logs Data Model.
+
+Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
+
+But what if you want to log directly using OpenTelemetry APIs?
+
+What if you want to emit those beautiful structured events we've been talking about?
 -->
 
 ---
@@ -474,17 +476,6 @@ This is no longer just a logging feature.
 layout: section
 ---
 
-# semantics
-
-<!--
-We've got structure.
-But how do we make sure everybody calls things the same way so we can actually search, correlate, merge data from five services written by five teams?
--->
-
----
-layout: section
----
-
 # log vs event
 
 <!--
@@ -554,7 +545,7 @@ layout: center
 </div>
 
 <div class="text-center mt-8 text-xl text-green">
-  Same data model, different semantics.
+  Unified data model.
 </div>
 
 <!--
@@ -567,119 +558,6 @@ Events are intentional, instrumented with purpose, not sprinkled around like deb
 This matters because platforms can now treat Events as first-class citizens.
 
 You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
--->
-
----
-layout: statement
----
-
-<h1>
-<span class="text-orange">Open</span>
-<span class="text-blue">Telemetry</span>
-<br>
-Semantic Conventions
-</h1>
-
-Making logs searchable & comparable
-
-<div class="text-2xl font-bold text-green mb-6">
-  Same semantics = Better queries and dashboards
-</div>
-
-<!--
-That's where semantic conventions come in.
-
-Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
--->
-
----
-layout: center
----
-
-# Semantic conventions registry
-
-<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
-<v-clicks>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
-  🔗 <span class="font-mono text-blue">cross-cutting</span> <span class="text-gray ml-2"><code>code.line_number</code>, <code>error.type</code>, <code>service.name</code></span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
-  📝 <span class="font-mono text-purple">signal-specific</span> <span class="text-gray ml-2"><code>log.record.uid</code>, <code>log.iostream</code></span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
-  🌐 <span class="font-mono text-orange">domain-specific</span> <span class="text-gray ml-2"><code>http.method</code>, <code>db.system</code>, <code>gen_ai.request.model</code></span>
-</div>
-
-</v-clicks>
-</div>
-
-<!--
-The semantic conventions registry is organized into groups.
-
-[click] Cross-cutting attributes apply across many signals and use cases: code.line_number tells you where it broke, error.type gives you the actual error, and service.name tell you what application broke.
-
-[click] Signal-specific attributes only make sense for a particular signal, like log.record.uid or log.iostream for log records.
-
-[click] Domain-specific attributes are focused on protocols, systems, and shiny new tech like HTTP, databases, or GenAI.
--->
-
----
-layout: center
----
-
-# Semantic conventions also guide *how* to emit
-
-<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
-<v-clicks>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
-  📦 <span class="font-mono text-blue">event structure</span> <span class="text-gray ml-2">what attributes an event must and should contain</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
-  🚨 <span class="font-mono text-red">exception events</span> <span class="text-gray ml-2">how to record errors with full context</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
-  🤖 <span class="font-mono text-orange">gen_ai events</span> <span class="text-gray ml-2">prompt, response, and tool call payloads</span>
-</div>
-
-
-</v-clicks>
-</div>
-
-<div v-click class="mt-8 text-2xl text-center text-purple font-bold">
-  Not just naming — also <em>behavior</em>.
-</div>
-
-<!--
-Semantic conventions don't just define attribute names.
-They also specify guidelines and best practices for how to emit telemetry correctly.
-
-[click] Event conventions define the expected structure of an event: required fields, recommended fields, and how to pick the right severity level, and what the body should contain.
-
-[click] For example, the exception event convention tells you exactly how to record an error: which attributes are required, how to capture the stack trace.
-
-[click] Domain specific, e.g. GenAI semantic conventions, defining how to capture AI prompts, responses, and tool calls as structured events so any platform can understand and query them.
-
-[click] In short, semantic conventions guide not just naming, but behavior — ensuring every library and SDK emits telemetry in a consistent, interoperable way.
--->
-
----
-layout: section
----
-
-# api
-
-<!--
-Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
-
-But what if you want to log directly using OpenTelemetry APIs?
-
-What if you want to emit those beautiful structured events we've been talking about?
 -->
 
 ---
@@ -912,6 +790,117 @@ Here is what is actually changing:
 -->
 
 ---
+layout: section
+---
+
+# semantics
+
+<!--
+We've got structure.
+But how do we make sure everybody calls things the same way so we can actually search, correlate, merge data from five services written by five teams?
+-->
+
+---
+layout: statement
+---
+
+<h1>
+<span class="text-orange">Open</span>
+<span class="text-blue">Telemetry</span>
+<br>
+Semantic Conventions
+</h1>
+
+Making logs searchable & comparable
+
+<div class="text-2xl font-bold text-green mb-6">
+  Same semantics = Better queries and dashboards
+</div>
+
+<!--
+That's where semantic conventions come in.
+
+Think of them as telemetry guidelines containing a giant shared dictionary of attribute names that all SDKs, libraries, instrumentation, and software agree to use.
+-->
+
+---
+layout: center
+---
+
+# Semantic conventions registry
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  🔗 <span class="font-mono text-blue">cross-cutting</span> <span class="text-gray ml-2"><code>code.line_number</code>, <code>error.type</code>, <code>service.name</code></span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
+  📝 <span class="font-mono text-purple">signal-specific</span> <span class="text-gray ml-2"><code>log.record.uid</code>, <code>log.iostream</code></span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🌐 <span class="font-mono text-orange">domain-specific</span> <span class="text-gray ml-2"><code>http.method</code>, <code>db.system</code>, <code>gen_ai.request.model</code></span>
+</div>
+
+</v-clicks>
+</div>
+
+<!--
+The semantic conventions registry is organized into groups.
+
+[click] Cross-cutting attributes apply across many signals and use cases: code.line_number tells you where it broke, error.type gives you the actual error, and service.name tell you what application broke.
+
+[click] Signal-specific attributes only make sense for a particular signal, like log.record.uid or log.iostream for log records.
+
+[click] Domain-specific attributes are focused on protocols, systems, and shiny new tech like HTTP, databases, or GenAI.
+-->
+
+---
+layout: center
+---
+
+# Semantic conventions also guide *how* to emit
+
+<div class="text-xl text-left mx-auto space-y-6 max-w-4xl">
+<v-clicks>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
+  📦 <span class="font-mono text-blue">event structure</span> <span class="text-gray ml-2">what attributes an event must and should contain</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-red">
+  🚨 <span class="font-mono text-red">exception events</span> <span class="text-gray ml-2">how to record errors with full context</span>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-orange">
+  🤖 <span class="font-mono text-orange">gen_ai events</span> <span class="text-gray ml-2">prompt, response, and tool call payloads</span>
+</div>
+
+</v-clicks>
+</div>
+
+<div v-click class="mt-8 text-2xl text-center text-purple font-bold">
+  Not just naming — also <em>behavior</em>.
+</div>
+
+<!--
+Semantic conventions don't just define attribute names.
+They also specify guidelines and best practices for how to emit telemetry correctly.
+
+[click] Event conventions define the expected structure of an event: required fields, recommended fields, and how to pick the right severity level, and what the body should contain.
+
+[click] For example, the exception event convention tells you exactly how to record an error: which attributes are required, how to capture the stack trace.
+
+[click] Domain specific, e.g. GenAI semantic conventions, defining how to capture AI prompts, responses, and tool calls as structured events so any platform can understand and query them.
+
+[click] In short, semantic conventions guide not just naming, but behavior — ensuring every library and SDK emits telemetry in a consistent, interoperable way.
+-->
+
+
+
+---
 layout: center
 ---
 
@@ -923,13 +912,15 @@ Summary
 
 ⚡ Complex values across **ALL** signals
 
-🔧 Logs API can be used directly
-
 ✨ Events are logs with well-known structure
+
+🔧 Logs API can be used directly
 
 🚀 `Enabled` methods added to **ALL** signals
 
 🔄 Span Events → Log Events
+
+📚 Semantic convetions tell you how to use events
 
 <div class="text-xl mt-8">
   <span class="text-orange">Performance</span> + 
