@@ -326,26 +326,23 @@ Data Model
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-```json {1-2|3-5|6|7-8|9|10-15|16-20|21-23}
+```json {1-2|3-5|6|7|8|9-14|15-19|20-22}
 "Timestamp": "2023-11-15T09:15:20.250Z",
 "ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
 "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
 "SpanId": "c1d2e3f4a5b6c7d8",
 "TraceFlags": 1,
 "EventName": "db.client.operation.exception",
-"SeverityText": "WARN",
-"SeverityNumber": 17,
+"SeverityNumber": 13, // WARN
 "Body": "Exception occurred while fetching user data: Connection timeout after 3000ms",
 "Attributes": {
   "exception.type": "java.sql.SQLTransientConnectionException",
   "exception.message": "Connection timeout after 3000ms",
-  "user.id": "alice",
   "db.operation.name": "SELECT"
 },
 "Resource": {
   "service.name": "user-service",
-  "service.version": "1.5.2", 
-  "deployment.environment": "staging"
+  "deployment.environment.name": "staging"
 },
 "InstrumentationScope": {
   "Name": "org.example.user.controller.UserController"
