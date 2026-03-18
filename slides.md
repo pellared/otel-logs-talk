@@ -898,8 +898,6 @@ They also specify guidelines and best practices for how to emit telemetry correc
 [click] In short, semantic conventions guide not just naming, but behavior — ensuring every library and SDK emits telemetry in a consistent, interoperable way.
 -->
 
-
-
 ---
 layout: center
 ---
