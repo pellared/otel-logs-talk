@@ -950,7 +950,15 @@ layout: center
 
 # Thank You!
 
-This presentation: <https://github.com/pellared/otel-logs-talk>
+This presentation: <https://pellared.github.io/otel-logs-talk/>
+
+<div class="mt-4">
+  <img
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fpellared.github.io%2Fotel-logs-talk%2F"
+    alt="QR code to the otel-logs-talk presentation site"
+    class="mx-auto"
+  />
+</div>
 
 <div v-click class="mt-8 text-2xl text-red">
   Don't let your logs be trash 🗑️
