@@ -326,7 +326,7 @@ Data Model
 <div class="text-2xl text-left mx-auto space-y-6 max-w-3xl">
 <v-clicks>
 
-```json {1-2|3-5|6|7|8|9-14|15-19|20-22}
+```json {1-2|3-5|6|7|8|9-13|14-17|18-20}
 "Timestamp": "2023-11-15T09:15:20.250Z",
 "ObservedTimestamp": "2023-11-15T09:15:20.251Z", 
 "TraceId": "b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3",
@@ -728,7 +728,6 @@ layout: section
 
 # span events → log events
 
-Read more: [Deprecating Span Events API](https://opentelemetry.io/blog/2026/deprecating-span-events/)
 
 <!--
 All of this progress around logs and events leads us to one of the biggest upcoming changes in OpenTelemetry: the deprecation of the Span Events API in favor of emitting logs through Logs API.
@@ -799,6 +798,8 @@ layout: center
 
 Deprecating <span class="text-yellow">Span Event API</span>,
 not the ability to see events on spans.
+
+Read more: [Deprecating Span Events API](https://opentelemetry.io/blog/2026/deprecating-span-events/)
 </v-clicks>
 </div>
 
