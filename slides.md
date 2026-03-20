@@ -477,11 +477,11 @@ layout: center
 </div>
 
 <!--
-Here is are some examples of complex attributes based on the GenAI semantic conventions.
+Here are some examples of complex attributes based on the GenAI semantic conventions.
 
 As you can see, you can log entire payloads, complex error objects, or structured events without flattening them into strings.
 
-The would be no need to reconstruct object hierarchies from JSON-encoded strings.
+There would be no need to reconstruct object hierarchies from JSON-encoded strings.
 -->
 
 ---
@@ -627,7 +627,7 @@ logger.WarnEvent(ctx, "rate_limit.approached",
 </div>
 
 <!--
-Now let's talk the user-facing OpenTelemetry logging API.
+Now let's talk about the user-facing OpenTelemetry logging API.
 Until recently, OpenTelemetry Logs were mostly about getting logs from file streams or bridging logs from existing logging frameworks like log4j, Serilog, or Python's logging module.
 This is the piece that finally gives developers a proper, first-class way to emit logs directly through OpenTelemetry.
 
@@ -969,7 +969,7 @@ What did we learn today?
 
 [click] The Logs API can be used directly. There is no need to go through a logging library.
 
-[click] The Enabled API is being added to ALL signals to avoid doing expensive work when telemetry is going to be discared.
+[click] The Enabled API is being added to ALL signals to avoid doing expensive work when telemetry is going to be discarded.
 
 [click] Span Events are being deprecated in favor of log-based events via the Logs API.
 
