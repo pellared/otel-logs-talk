@@ -72,7 +72,7 @@ During the talk we are going to explore the following areas in the context of Op
 
 I hope that by the end of this talk, you'll understand why logs in OpenTelemetry are no longer just about bridging your logs from logging libraries and frameworks into OpenTelemetry SDK, but a first-class citizen among other OpenTelemetry signals. We are also going to see how it is affecting other areas of OpenTelemetry.
 
-## syntax (section)
+## syntax
 
 What does a proper log record look like in OpenTelemetry? Let's talk about the Logs Data Model.
 
@@ -132,7 +132,7 @@ But wait, there's more! These complex values are supported across ALL OpenTeleme
 
 This is no longer just a logging feature.
 
-## log vs event (section)
+## log vs event
 
 OpenTelemetry distinguishes between Log Records and Event Records.
 
@@ -198,7 +198,7 @@ But here's where it gets really exciting.
 
 Enabled has been added to other signals to offer the same functionality.
 
-## span events → log events (section)
+## span events → log events
 
 All of this progress around logs and events leads us to one of the biggest upcoming changes in OpenTelemetry: the deprecation of the Span Events API in favor of emitting logs through Logs API.
 
