@@ -102,23 +102,9 @@ This isn't just making your regular logging more complicated.
 [click]
 It is structured logging that actually integrates with your traces.
 
-## complex data
+## complex attributes
 
-The attribute values in OpenTelemetry logs can contain complex data structures. Not just simple strings and numbers. The value can be:
-
-[click] primitive value like text, number or boolean value,
-
-[click] an array of any value, meaning that the first item in an array can be a string and the second item can be an integer
-
-[click] a map of string to any value, meaning you can compose any nested structure,
-
-[click] or even a binary object,
-
-[click] at last it can be nothing.
-
-You can approximate it to something like BSON format.
-
-## Complex values (example)
+The attribute values in OpenTelemetry logs can contain complex data structures. Not just simple strings and numbers.
 
 Here are some examples of complex attributes based on the GenAI semantic conventions.
 

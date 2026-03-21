@@ -389,66 +389,7 @@ It is structured logging that actually integrates with your traces.
 layout: center
 ---
 
-# complex data
-
-<div class="mb-8">
-  <div class="text-2xl text-blue mb-4">
-    <code class="text-orange">Attribute</code>  values can be complex
-    (<code class="text-green">AnyValue</code>).
-  </div>
-  
-  <div class="text-2xl">
-    <code class="text-green">AnyValue</code> can be one of:
-  </div>
-</div>
-
-<div class="grid grid-cols-1 gap-4 max-w-4xl mx-auto text-xl">
-<v-clicks>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-blue">
-  🔤 <span class="font-mono text-blue">primitive value</span> <span class="text-gray">(<code>string</code>, <code>int</code>, <code>bool</code>, <code>double</code>)</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-green">
-  📋 <span class="font-mono text-green">array of AnyValue</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-purple">
-  🗂️ <span class="font-mono text-purple">map of string to AnyValue</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-yellow">
-  💾 <span class="font-mono text-yellow">byte array (BLOB)</span>
-</div>
-
-<div class="flex items-center gap-4 p-4 bg-gray-800 rounded-lg border-l-4 border-gray">
-  ⚪ <span class="font-mono text-gray">empty value</span>
-</div>
-
-</v-clicks>
-</div>
-
-<!--
-The attribute values in OpenTelemetry logs can contain complex data structures. Not just simple strings and numbers. The value can be:
-
-[click] primitive value like text, number or boolean value,
-
-[click] an array of any value, meaning that the first item in an array can be a string and the second item can be an integer
-
-[click] a map of string to any value, meaning you can compose any nested structure,
-
-[click] or even a binary object,
-
-[click] at last it can be nothing.
-
-You can approximate it to something like BSON format.
--->
-
----
-layout: center
----
-
-# Complex values
+# complex attributes
 
 ```json
 "gen_ai.request.model": "gpt-4",
@@ -477,6 +418,8 @@ layout: center
 </div>
 
 <!--
+The attribute values in OpenTelemetry logs can contain complex data structures. Not just simple strings and numbers.
+
 Here are some examples of complex attributes based on the GenAI semantic conventions.
 
 As you can see, you can log entire payloads, complex error objects, or structured events without flattening them into strings.
