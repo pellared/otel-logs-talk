@@ -126,12 +126,6 @@ Log Record is for general-purpose logging, human-readable, "something happened."
 
 Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened."
 
-## An Event Record is a Log Record with an event name and a well-known structure
-
-An Event Record is a Log Record with an event name and a well-known structure.
-
-## Log vs Event comparison
-
 Why the distinction?
 
 Because not every log your application emits deserves to be treated like something meaningful.
@@ -141,6 +135,10 @@ Events are intentional, instrumented with purpose, not sprinkled around like deb
 This matters because platforms can now treat Events as first-class citizens.
 
 You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
+
+## An Event Record is a Log Record with an event name and a well-known structure
+
+You can check out the referenced blog post for more context.
 
 ## User-facing logging API
 

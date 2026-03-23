@@ -442,37 +442,6 @@ This is no longer just a logging feature.
 -->
 
 ---
-layout: section
----
-
-# log vs event
-
-<!--
-OpenTelemetry distinguishes between Log Records and Event Records.
-
-Log Record is for general-purpose logging, human-readable, "something happened."
-
-Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened."
--->
-
----
-layout: statement
----
-
-<h1>
-An Event Record<br>
-is a Log Record<br>
-with an <span class="text-orange">event name</span><br>
-and a <span class="text-blue">well-known structure</span>.
-</h1>
-
-Read more: [OpenTelemetry Logging and You](https://opentelemetry.io/blog/2025/opentelemetry-logging-and-you/)
-
-<!--
-An Event Record is a Log Record with an event name and a well-known structure.
--->
-
----
 layout: center
 ---
 
@@ -518,6 +487,12 @@ layout: center
 </div>
 
 <!--
+OpenTelemetry distinguishes between Log Records and Event Records.
+
+Log Record is for general-purpose logging, human-readable, "something happened."
+
+Event Record is a well-defined occurrence with stronger semantics, "this specific thing happened."
+
 Why the distinction?
 
 Because not every log your application emits deserves to be treated like something meaningful.
@@ -527,6 +502,23 @@ Events are intentional, instrumented with purpose, not sprinkled around like deb
 This matters because platforms can now treat Events as first-class citizens.
 
 You can index them differently, correlate them intelligently, and maybe even generate useful alerts instead of just noise.
+-->
+
+---
+layout: statement
+---
+
+<h1>
+An Event Record<br>
+is a Log Record<br>
+with an <span class="text-orange">event name</span><br>
+and a <span class="text-blue">well-known structure</span>.
+</h1>
+
+Read more: [OpenTelemetry Logging and You](https://opentelemetry.io/blog/2025/opentelemetry-logging-and-you/)
+
+<!--
+You can check out the referenced blog post for more context.
 -->
 
 ---
