@@ -568,7 +568,7 @@ This is the piece that finally gives developers a proper, first-class way to emi
 
 [click] There is no need to go through traditional logging libraries and have the bridge overhead.
 
-[click] You can use complex attributes. 
+[click] You can use complex attributes.
 
 [click] You can also reuse the attributes across signals.
 
